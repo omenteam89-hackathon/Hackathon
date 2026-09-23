@@ -1,32 +1,31 @@
-# React + TypeScript + Vite
+# KSRTC Grievance Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A unified platform for managing passenger complaints, empowering depot and regional officers to resolve issues efficiently within SLA deadlines.
 
-Currently, two official plugins are available:
+## How to run locally
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## How to build
+1. Run the build command:
+   ```bash
+   npm run build
+   ```
+2. Preview the production build locally:
+   ```bash
+   npm run preview
+   ```
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Demo Flow
+To test out the capabilities of this system:
+1. **Report**: Go to `/report` and submit a new passenger complaint.
+2. **Depot**: Select a depot from the header dropdown to view the newly assigned complaint in the Inbox.
+3. **Jump Clock**: Navigate to `/demo` and use the "+24h" buttons to simulate the passage of time.
+4. **Escalated**: Check the depot's Escalated tab to see SLA breaches automatically flagged.
+5. **Dashboard**: Navigate to `/dashboard` (or select "HQ" from the header) to view realtime metrics.

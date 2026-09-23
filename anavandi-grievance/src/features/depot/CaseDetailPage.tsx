@@ -106,17 +106,14 @@ export default function CaseDetailPage() {
   };
 
   const onRequestInfo = () => {
-    if (!infoQuestion) return toast.error('Enter question');
     handleAction({ status: 'AWAITING_INFO', slaPausedTotalMs: complaint.slaPausedTotalMs }, { type: 'INFO_REQUEST', message: `Requested info: ${infoQuestion}` }, `Additional information required for your complaint: ${infoQuestion}`);
   };
 
   const onResolve = () => {
-    if (!resolveAction || resolveNote.length < 20) return toast.error('Action and 20+ chars note required');
     handleAction({ status: 'RESOLVED' }, { type: 'RESOLVED', message: `Resolved (${resolveAction}): ${resolveNote}` }, `Your complaint has been resolved. Action: ${resolveAction}`);
   };
 
   const onReject = () => {
-    if (!rejectReason) return toast.error('Reason required');
     handleAction({ status: 'REJECTED' }, { type: 'REJECTED', message: `Rejected (${rejectReason}): ${rejectNote}` }, `Your complaint was closed. Reason: ${rejectReason}`);
   };
 
@@ -311,10 +308,11 @@ export default function CaseDetailPage() {
             {activeDialog === 'requestInfo' && (
               <>
                 <h3 className="font-semibold text-lg mb-4">Request info</h3>
-                <textarea className="w-full border border-border rounded px-3 py-2 text-sm mb-4 h-24" placeholder="Type your question..." value={infoQuestion} onChange={e => setInfoQuestion(e.target.value)} />
-                <div className="flex justify-end gap-2">
+                <textarea className={`w-full border rounded px-3 py-2 text-sm mb-1 h-24 ${!infoQuestion.trim() ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-border focus:ring-brand'}`} placeholder="Type your question..." value={infoQuestion} onChange={e => setInfoQuestion(e.target.value)} />
+                {!infoQuestion.trim() && <p className="text-red-500 text-xs mb-4">Add a short note</p>}
+                <div className="flex justify-end gap-2 mt-4">
                   <button onClick={() => setActiveDialog(null)} className="px-4 py-2 text-sm font-medium bg-surface border border-border rounded">Cancel</button>
-                  <button onClick={onRequestInfo} className="px-4 py-2 text-sm font-medium bg-primary text-white rounded">Send Request</button>
+                  <button onClick={onRequestInfo} disabled={!infoQuestion.trim()} className="px-4 py-2 text-sm font-medium bg-primary text-white rounded disabled:opacity-50">Send Request</button>
                 </div>
               </>
             )}
@@ -322,17 +320,21 @@ export default function CaseDetailPage() {
             {activeDialog === 'resolve' && (
               <>
                 <h3 className="font-semibold text-lg mb-4">Resolve Complaint</h3>
-                <select className="w-full border border-border rounded px-3 py-2 text-sm mb-3" value={resolveAction} onChange={e => setResolveAction(e.target.value)}>
+                <select className={`w-full border rounded px-3 py-2 text-sm mb-1 ${!resolveAction ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-border focus:ring-brand'}`} value={resolveAction} onChange={e => setResolveAction(e.target.value)}>
                   <option value="">Select action taken...</option>
                   <option value="Staff Warned">Staff Warned</option>
                   <option value="Penalty Imposed">Penalty Imposed</option>
                   <option value="Bus Repaired">Bus Repaired</option>
                   <option value="Other">Other</option>
                 </select>
-                <textarea className="w-full border border-border rounded px-3 py-2 text-sm mb-4 h-24" placeholder="Detailed note (min 20 chars)..." value={resolveNote} onChange={e => setResolveNote(e.target.value)} />
-                <div className="flex justify-end gap-2">
+                {!resolveAction && <p className="text-red-500 text-xs mb-3">Choose the action taken</p>}
+                
+                <textarea className={`w-full border rounded px-3 py-2 text-sm mb-1 h-24 mt-2 ${!resolveNote.trim() ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-border focus:ring-brand'}`} placeholder="Detailed note..." value={resolveNote} onChange={e => setResolveNote(e.target.value)} />
+                {!resolveNote.trim() && <p className="text-red-500 text-xs mb-4">Add a short note</p>}
+                
+                <div className="flex justify-end gap-2 mt-4">
                   <button onClick={() => setActiveDialog(null)} className="px-4 py-2 text-sm font-medium bg-surface border border-border rounded">Cancel</button>
-                  <button onClick={onResolve} className="px-4 py-2 text-sm font-medium bg-green-600 text-white rounded">Resolve Case</button>
+                  <button onClick={onResolve} disabled={!resolveAction || !resolveNote.trim()} className="px-4 py-2 text-sm font-medium bg-green-600 text-white rounded disabled:opacity-50">Resolve Case</button>
                 </div>
               </>
             )}
@@ -340,17 +342,20 @@ export default function CaseDetailPage() {
             {activeDialog === 'reject' && (
               <>
                 <h3 className="font-semibold text-lg mb-4 text-brand">Reject Complaint</h3>
-                <select className="w-full border border-border rounded px-3 py-2 text-sm mb-3" value={rejectReason} onChange={e => setRejectReason(e.target.value)}>
+                <select className={`w-full border rounded px-3 py-2 text-sm mb-1 ${!rejectReason ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-border focus:ring-brand'}`} value={rejectReason} onChange={e => setRejectReason(e.target.value)}>
                   <option value="">Select rejection reason...</option>
                   <option value="Duplicate">Duplicate</option>
                   <option value="Insufficient Evidence">Insufficient Evidence</option>
                   <option value="False Claim">False Claim</option>
                   <option value="Out of Jurisdiction">Out of Jurisdiction</option>
                 </select>
-                <textarea className="w-full border border-border rounded px-3 py-2 text-sm mb-4 h-24" placeholder="Add a note (optional)..." value={rejectNote} onChange={e => setRejectNote(e.target.value)} />
+                {!rejectReason && <p className="text-red-500 text-xs mb-3">Choose the reason for rejection</p>}
+                
+                <textarea className="w-full border border-border rounded px-3 py-2 text-sm mb-4 h-24 mt-2" placeholder="Add a note (optional)..." value={rejectNote} onChange={e => setRejectNote(e.target.value)} />
+                
                 <div className="flex justify-end gap-2">
                   <button onClick={() => setActiveDialog(null)} className="px-4 py-2 text-sm font-medium bg-surface border border-border rounded">Cancel</button>
-                  <button onClick={onReject} className="px-4 py-2 text-sm font-medium bg-brand text-white rounded">Reject Case</button>
+                  <button onClick={onReject} disabled={!rejectReason} className="px-4 py-2 text-sm font-medium bg-brand text-white rounded disabled:opacity-50">Reject Case</button>
                 </div>
               </>
             )}
