@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
 type Role = 'PASSENGER' | 'DEPOT' | 'REGIONAL' | 'HQ';
 
@@ -12,12 +13,17 @@ interface SessionState {
   setRegionId: (regionId: string | null) => void;
 }
 
-export const useSessionStore = create<SessionState>((set) => ({
-  role: 'DEPOT', // default
-  depotId: 'TVM-CTY',
-  regionId: null,
-  
-  setRole: (role) => set({ role }),
-  setDepotId: (depotId) => set({ depotId }),
-  setRegionId: (regionId) => set({ regionId })
-}));
+export const useSessionStore = create<SessionState>()(
+  persist(
+    (set) => ({
+      role: 'DEPOT', // default
+      depotId: 'TVM-CTY',
+      regionId: null,
+      
+      setRole: (role) => set({ role }),
+      setDepotId: (depotId) => set({ depotId }),
+      setRegionId: (regionId) => set({ regionId })
+    }),
+    { name: 'grievance-session-v1' }
+  )
+);

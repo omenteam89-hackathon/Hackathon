@@ -104,18 +104,6 @@ const router = createBrowserRouter([
   }
 ]);
 
-import { useEffect } from 'react';
-import { useClockStore } from '../store/useClockStore';
-
 export default function AppRouter() {
-  const tick = useClockStore(s => s.tick);
-  
-  useEffect(() => {
-    const interval = setInterval(() => {
-      tick();
-    }, 1000);
-    return () => clearInterval(interval);
-  }, [tick]);
-
   return <RouterProvider router={router} />;
 }

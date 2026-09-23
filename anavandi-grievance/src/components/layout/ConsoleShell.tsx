@@ -1,58 +1,19 @@
 import { Outlet } from 'react-router-dom';
-import { useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 import TopBar from './TopBar';
 import SideNav from './SideNav';
 import { useComplaintStore } from '../../store/useComplaintStore';
 import { useSessionStore } from '../../store/useSessionStore';
-import { useDataStore } from '../../store/useDataStore';
-import { loadAppData } from '../../data/loaders';
-import { repository } from '../../data/repository';
 import { Toaster } from '../ui/sonner';
-import { Loader2 } from 'lucide-react';
 
 export default function ConsoleShell() {
   const depotId = useSessionStore(s => s.depotId);
-  const isLoaded = useComplaintStore(state => state.isLoaded);
   const complaintsMap = useComplaintStore(state => state.complaints);
-  const setRouteMap = useDataStore(state => state.setRouteMap);
-  const setDepots = useDataStore(state => state.setDepots);
-  const setCategories = useDataStore(state => state.setCategories);
-  const setRegions = useDataStore(state => state.setRegions);
-  
   const openCount = useMemo(() => {
     return Object.values(complaintsMap).filter(c => 
       c.depotId === depotId && !['RESOLVED', 'REJECTED'].includes(c.status)
     ).length;
   }, [complaintsMap, depotId]);
-
-  useEffect(() => {
-    // Auto-load data and set mock session for demo
-    if (!isLoaded) {
-      loadAppData().then((res) => {
-        setRouteMap(res.data.routeMap);
-        setDepots(res.data.depots);
-        setCategories(res.data.categories);
-        setRegions(res.data.regions);
-        const currentComplaints = repository.list();
-        if (currentComplaints.length === 0) {
-          repository.seed(res.data.complaints);
-          console.log(`Loaded ${res.data.complaints.length} complaints`);
-        } else {
-          // Just mark it loaded if it wasn't
-          useComplaintStore.setState({ isLoaded: true });
-        }
-      });
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isLoaded]);
-
-  if (!isLoaded) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-bg">
-        <Loader2 className="w-8 h-8 animate-spin text-brand" />
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-bg flex flex-col font-sans text-ink">

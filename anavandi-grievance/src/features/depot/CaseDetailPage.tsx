@@ -12,7 +12,8 @@ import SlaTimer from '../../shared/SlaTimer';
 import Timeline from '../../shared/Timeline';
 import MaskedPhone from '../../shared/MaskedPhone';
 import CategoryIcon from '../../shared/CategoryIcon';
-import { formatAppDate, capitalize } from '../../lib/utils';
+import { capitalize } from '../../lib/utils';
+import { useFormatters } from '../../lib/formatters';
 import { toast } from 'sonner';
 import { MessageSquare, Lock, AlertCircle, UserCircle } from 'lucide-react';
 import type { CategoryId, TimelineEvent } from '../../domain/types';
@@ -24,9 +25,8 @@ export default function CaseDetailPage() {
   const addNotification = useNotificationStore(s => s.addNotification);
   
   const complaintsMap = useComplaintStore(state => state.complaints);
-  const routeMap = useDataStore(state => state.routeMap);
-  const categories = useDataStore(state => state.categories);
   const depots = useDataStore(state => state.depots);
+  const { categoryLabel, routeName, formatDate } = useFormatters();
 
   const complaint = id ? complaintsMap[id] : null;
 
@@ -57,10 +57,8 @@ export default function CaseDetailPage() {
     );
   }
 
-  const routeInfo = routeMap.find(r => r.routeNo === complaint.routeNo);
-  const displayRoute = routeInfo ? routeInfo.routeName || complaint.routeNo : complaint.routeNo;
-  const catInfo = categories.find(cat => cat.id === complaint.category);
-  const displayCategory = catInfo ? catInfo.label.en : complaint.category;
+  const displayRoute = routeName(complaint.routeNo);
+  const displayCategory = categoryLabel(complaint.category);
 
   const handleAction = (statusUpdate: Partial<typeof complaint>, timelineEvent: { type: TimelineEvent['type'], message: string, internal?: boolean }, notificationBody?: string) => {
     if (!id) return;
@@ -168,7 +166,7 @@ export default function CaseDetailPage() {
               </div>
               <div>
                 <span className="text-muted block mb-1">Incident Time</span>
-                <div className="font-medium">{formatAppDate(complaint.incidentAt)}</div>
+                <div className="font-medium">{formatDate(complaint.incidentAt)}</div>
               </div>
               <div>
                 <span className="text-muted block mb-1">Stop / Location</span>

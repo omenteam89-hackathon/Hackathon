@@ -3,21 +3,19 @@ import { useParams, Link } from 'react-router-dom';
 import { repository } from '../../data/repository';
 import { useClockStore } from '../../store/useClockStore';
 import { useComplaintStore } from '../../store/useComplaintStore';
-import { useDataStore } from '../../store/useDataStore';
 import Timeline from '../../shared/Timeline';
 import StatusBadge from '../../shared/StatusBadge';
 import CategoryIcon from '../../shared/CategoryIcon';
 import { ArrowLeft, CheckCircle2, Clock, AlertCircle } from 'lucide-react';
-import { cn, formatAppDate } from '../../lib/utils';
+import { cn } from '../../lib/utils';
+import { useFormatters } from '../../lib/formatters';
 import type { TimelineEvent } from '../../domain/types';
 
 export default function TrackDetailPage() {
   const { id } = useParams<{ id: string }>();
   const simNow = useClockStore(s => s.simNow);
   const complaint = useComplaintStore(s => id ? s.complaints[id] : null);
-  
-  const categories = useDataStore(s => s.categories);
-  const routeMap = useDataStore(s => s.routeMap);
+  const { categoryLabel, routeName, actorLabel, formatDate } = useFormatters();
   const [infoReply, setInfoReply] = useState('');
   
   if (!complaint) {
@@ -62,11 +60,7 @@ export default function TrackDetailPage() {
   const passengerTimeline = complaint.timeline
     .filter(t => !t.internal)
     .map(t => {
-      let actorName = t.actorName;
-      if (t.actor === 'DEPOT') actorName = 'Depot officer';
-      if (t.actor === 'REGIONAL') actorName = 'Regional officer';
-      if (t.actor === 'HQ') actorName = 'Headquarters';
-      return { ...t, actorName } as TimelineEvent;
+      return { ...t, actorName: actorLabel(t.actor) } as TimelineEvent;
     });
 
   const handleSubmitInfo = () => {
@@ -115,19 +109,19 @@ export default function TrackDetailPage() {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
           <div>
             <h1 className="text-2xl font-bold font-mono text-ink tracking-tight">{complaint.id}</h1>
-            <p className="text-muted text-sm mt-1">Reported on {formatAppDate(complaint.createdAt)}</p>
+            <p className="text-muted text-sm mt-1">Reported on {formatDate(complaint.createdAt)}</p>
           </div>
           <div className="flex flex-col items-end gap-2">
             <StatusBadge status={complaint.status} className="text-base px-3 py-1.5 self-start md:self-auto" />
             {complaint.category && (
               <div className="text-sm font-medium flex items-center gap-1.5 text-muted bg-surface px-2 py-1 rounded">
                 <CategoryIcon category={complaint.category as any} className="w-4 h-4" />
-                {categories.find(c => c.id === complaint.category)?.label.en || complaint.category}
+                {categoryLabel(complaint.category)}
               </div>
             )}
             {complaint.routeNo && (
               <div className="text-sm font-medium text-muted bg-surface px-2 py-1 rounded">
-                {routeMap.find(r => r.routeNo === complaint.routeNo)?.routeName || complaint.routeNo}
+                {routeName(complaint.routeNo)}
               </div>
             )}
           </div>

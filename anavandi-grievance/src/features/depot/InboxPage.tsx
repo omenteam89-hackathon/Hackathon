@@ -2,17 +2,15 @@ import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useComplaintStore } from '../../store/useComplaintStore';
 import { useSessionStore } from '../../store/useSessionStore';
-import { useDataStore } from '../../store/useDataStore';
 import StatusBadge from '../../shared/StatusBadge';
 import CategoryIcon from '../../shared/CategoryIcon';
 import EscalationLevelChip from '../../shared/EscalationLevelChip';
-import { formatAppDate } from '../../lib/utils';
+import { useFormatters } from '../../lib/formatters';
 
 export default function InboxPage() {
   const depotId = useSessionStore(s => s.depotId);
   const complaintsMap = useComplaintStore(state => state.complaints);
-  const routeMap = useDataStore(state => state.routeMap);
-  const categories = useDataStore(state => state.categories);
+  const { categoryLabel, routeName, formatDate } = useFormatters();
   
   const inbox = useMemo(() => {
     return Object.values(complaintsMap)
@@ -42,10 +40,8 @@ export default function InboxPage() {
           </thead>
           <tbody className="divide-y divide-border">
             {inbox.map(c => {
-              const routeInfo = routeMap.find(r => r.routeNo === c.routeNo);
-              const displayRoute = routeInfo ? routeInfo.routeName || c.routeNo : c.routeNo;
-              const catInfo = categories.find(cat => cat.id === c.category);
-              const displayCategory = catInfo ? catInfo.label.en : c.category.toLowerCase().replace('_', ' ');
+              const displayRoute = routeName(c.routeNo);
+              const displayCategory = categoryLabel(c.category);
               
               return (
                 <tr key={c.id} className="hover:bg-muted/5 transition-colors group">
@@ -68,7 +64,7 @@ export default function InboxPage() {
                     </div>
                   </td>
                   <td className="px-4 py-3 text-muted">
-                    {formatAppDate(c.createdAt)}
+                    {formatDate(c.createdAt)}
                   </td>
                 </tr>
               );
