@@ -49,6 +49,45 @@ describe('SLA Engine', () => {
     expect(logs[0].message).toContain('escalated L0 → L1');
 
     const outbox = useNotificationStore.getState().notifications;
-    expect(outbox.length).toBe(1);
+    expect(outbox.length).toBe(3); // passenger SMS + regional email + depot email
+
+    // idempotent: ticking again at the same time changes nothing
+    sla.tick(T_plus_3h);
+    expect(useEngineStore.getState().logs.length).toBe(1);
+  });
+
+  const base = (id: string, T: number, status: 'ASSIGNED_TO_DEPOT' | 'IN_PROGRESS') => ({
+    id, complainant: { lang: 'en' as const }, category: 'UNSAFE_DRIVING' as const, routeNo: 'TVM-KZK-ORD',
+    incidentAt: new Date(T).toISOString(), location: { stopName: 'Pattom' }, description: 'Test',
+    status, escalationLevel: 0 as const, depotId: 'TVM-CTY',
+    ackDeadline: new Date(T + 2 * 3600000).toISOString(),
+    resolveDeadline: new Date(T + 24 * 3600000).toISOString(),
+    createdAt: new Date(T).toISOString(), verified: false, slaPausedTotalMs: 0, evidence: [], timeline: [],
+  });
+
+  it('escalates when the ACKNOWLEDGE deadline is missed (before the resolve deadline)', () => {
+    const T = new Date('2026-09-24T10:00:00Z').getTime();
+    repository.create(base('GRV-2026-000500', T, 'ASSIGNED_TO_DEPOT'));
+    sla.tick(new Date(T + 1 * 3600000).toISOString());
+    expect(repository.get('GRV-2026-000500')?.status).toBe('ASSIGNED_TO_DEPOT');
+    sla.tick(new Date(T + 3 * 3600000).toISOString());
+    expect(repository.get('GRV-2026-000500')?.status).toBe('ESCALATED');
+    expect(repository.get('GRV-2026-000500')?.escalationLevel).toBe(1);
+  });
+
+  it('does not use the acknowledge deadline once the depot has acknowledged', () => {
+    const T = new Date('2026-09-24T10:00:00Z').getTime();
+    repository.create(base('GRV-2026-000501', T, 'IN_PROGRESS'));
+    sla.tick(new Date(T + 3 * 3600000).toISOString());
+    expect(repository.get('GRV-2026-000501')?.status).toBe('IN_PROGRESS');
+  });
+
+  it('escalates to Level 2 (Head Office) if still unresolved after the grace period', () => {
+    const T = new Date('2026-09-24T10:00:00Z').getTime();
+    repository.create(base('GRV-2026-000502', T, 'IN_PROGRESS'));
+    sla.tick(new Date(T + 25 * 3600000).toISOString());
+    expect(repository.get('GRV-2026-000502')?.escalationLevel).toBe(1);
+    sla.tick(new Date(T + 49 * 3600000).toISOString());
+    expect(repository.get('GRV-2026-000502')?.escalationLevel).toBe(2);
   });
 });
