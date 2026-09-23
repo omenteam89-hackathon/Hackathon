@@ -1,0 +1,6 @@
+{
+  "installCommand": "cd anavandi-grievance && npm install",
+  "buildCommand": "cd anavandi-grievance && npm run build",
+  "outputDirectory": "anavandi-grievance/dist",
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
