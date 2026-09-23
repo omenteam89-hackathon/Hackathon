@@ -1,0 +1,6359 @@
+[
+  {
+    "id": "GRV-2026-000001",
+    "createdAt": "2026-09-21T18:30:00Z",
+    "incidentAt": "2026-09-21T17:25:00Z",
+    "routeNo": "KKD-MCH-ORD",
+    "category": "CONCESSION_DENIAL",
+    "location": {
+      "stopName": "Mofussil Stand",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Student was asked to stand and pay full fare despite the pass.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ta",
+      "phone": "9000000001"
+    },
+    "depotId": "KKD",
+    "status": "ESCALATED",
+    "escalationLevel": 1,
+    "ackDeadline": "2026-09-21T22:30:00Z",
+    "resolveDeadline": "2026-09-23T18:30:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-21T18:30:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-21T18:30:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-MCH-ORD"
+      },
+      {
+        "at": "2026-09-21T18:30:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-21T22:30:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Acknowledgement deadline missed. Escalated to Regional Officer (Level 1)"
+      },
+      {
+        "at": "2026-09-21T22:30:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint escalated"
+      }
+    ]
+  },
+  {
+    "id": "GRV-2026-000002",
+    "createdAt": "2026-09-02T13:29:00Z",
+    "incidentAt": "2026-09-02T12:45:00Z",
+    "routeNo": "KKD-VDK-FP",
+    "category": "UNSAFE_DRIVING",
+    "location": {
+      "stopName": "Vadakara",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Bus overtook dangerously near a curve.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml",
+      "phone": "9000000002"
+    },
+    "depotId": "KKD",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-02T15:29:00Z",
+    "resolveDeadline": "2026-09-03T13:29:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-02T13:29:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-02T13:29:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-VDK-FP"
+      },
+      {
+        "at": "2026-09-02T13:29:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-02T14:22:19Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-02T14:36:19Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector B",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-03T08:52:03Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Speed governor checked; driver counselled",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-03T08:52:03Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Inspector B",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Speed governor checked; driver counselled",
+      "at": "2026-09-03T08:52:03Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000003",
+    "createdAt": "2026-09-22T04:16:00Z",
+    "incidentAt": "2026-09-22T03:06:00Z",
+    "busNo": "KL-99-Z-8114",
+    "routeNo": "ALV-KLM-ORD",
+    "category": "UNSAFE_DRIVING",
+    "location": {
+      "stopName": "Kalamassery",
+      "areaBucket": "Aluva"
+    },
+    "description": "The bus was overspeeding on a crowded road.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en"
+    },
+    "depotId": "ALV",
+    "status": "ESCALATED",
+    "escalationLevel": 1,
+    "ackDeadline": "2026-09-22T06:16:00Z",
+    "resolveDeadline": "2026-09-23T04:16:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-22T04:16:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-22T04:16:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Aluva depot using route ALV-KLM-ORD"
+      },
+      {
+        "at": "2026-09-22T04:16:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "Depot notified"
+      },
+      {
+        "at": "2026-09-22T06:16:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Acknowledgement deadline missed. Escalated to Regional Officer (Level 1)"
+      }
+    ]
+  },
+  {
+    "id": "GRV-2026-000004",
+    "createdAt": "2026-08-30T10:45:00Z",
+    "incidentAt": "2026-08-30T09:35:00Z",
+    "routeNo": "TVM-CIR-BLU",
+    "category": "OVERCROWDING",
+    "location": {
+      "stopName": "Thampanoor",
+      "areaBucket": "Thiruvananthapuram City"
+    },
+    "description": "Crowd was so heavy that elderly passengers could not board.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml",
+      "phone": "9000000004"
+    },
+    "depotId": "TVM-CTY",
+    "status": "REOPENED",
+    "escalationLevel": 1,
+    "ackDeadline": "2026-08-30T18:45:00Z",
+    "resolveDeadline": "2026-09-02T10:45:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-08-30T10:45:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-08-30T10:45:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thiruvananthapuram City depot using route TVM-CIR-BLU"
+      },
+      {
+        "at": "2026-08-30T10:45:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-08-30T17:08:18Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-30T18:05:18Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector A",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-02T10:45:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Resolution deadline missed. Escalated to Regional Officer (Level 1)"
+      },
+      {
+        "at": "2026-09-02T12:46:34Z",
+        "actor": "REGIONAL",
+        "type": "RESOLVED",
+        "message": "Resolved: Extra trip added in peak hours",
+        "actorName": "Regional Transport Officer"
+      },
+      {
+        "at": "2026-09-03T12:46:34Z",
+        "actor": "PASSENGER",
+        "type": "REOPENED",
+        "message": "Passenger reopened: issue happened again"
+      },
+      {
+        "at": "2026-09-03T12:46:34Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint reopened"
+      }
+    ],
+    "assignedTo": "Inspector A"
+  },
+  {
+    "id": "GRV-2026-000005",
+    "createdAt": "2026-08-26T11:26:00Z",
+    "incidentAt": "2026-08-26T11:11:00Z",
+    "busNo": "KL-99-Z-2979",
+    "routeNo": "TVM-KZK-ORD",
+    "category": "OVERCROWDING",
+    "location": {
+      "stopName": "East Fort",
+      "areaBucket": "Thiruvananthapuram City"
+    },
+    "description": "Only one bus came in an hour, so it was badly overcrowded.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ta",
+      "phone": "9000000005"
+    },
+    "depotId": "TVM-CTY",
+    "status": "REJECTED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-08-26T19:26:00Z",
+    "resolveDeadline": "2026-08-29T11:26:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-08-26T11:26:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-08-26T11:26:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thiruvananthapuram City depot using route TVM-KZK-ORD"
+      },
+      {
+        "at": "2026-08-26T11:26:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-08-26T15:29:28Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-26T22:41:56Z",
+        "actor": "DEPOT",
+        "type": "REJECTED",
+        "message": "Rejected: Route could not be identified.",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-26T22:41:56Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint rejected"
+      }
+    ],
+    "rejection": {
+      "reason": "WRONG_ROUTE",
+      "note": "Route could not be identified."
+    }
+  },
+  {
+    "id": "GRV-2026-000006",
+    "createdAt": "2026-09-21T20:57:00Z",
+    "incidentAt": "2026-09-21T19:36:00Z",
+    "busNo": "KL-99-Z-2383",
+    "routeNo": "KLM-KNP-ORD",
+    "category": "MISSED_STOP",
+    "location": {
+      "stopName": "Chavara",
+      "areaBucket": "Kollam"
+    },
+    "description": "Bus skipped the stop and dropped us 500 m away.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en"
+    },
+    "depotId": "KLM",
+    "status": "ESCALATED",
+    "escalationLevel": 1,
+    "ackDeadline": "2026-09-22T04:57:00Z",
+    "resolveDeadline": "2026-09-24T20:57:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-21T20:57:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-21T20:57:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kollam depot using route KLM-KNP-ORD"
+      },
+      {
+        "at": "2026-09-21T20:57:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "Depot notified"
+      },
+      {
+        "at": "2026-09-22T04:57:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Acknowledgement deadline missed. Escalated to Regional Officer (Level 1)"
+      }
+    ]
+  },
+  {
+    "id": "GRV-2026-000007",
+    "createdAt": "2026-08-29T19:55:00Z",
+    "incidentAt": "2026-08-29T18:44:00Z",
+    "busNo": "KL-99-Z-2738",
+    "routeNo": "EKM-VPN-ORD",
+    "category": "MISSED_STOP",
+    "location": {
+      "stopName": "Narakkal",
+      "areaBucket": "Ernakulam"
+    },
+    "description": "Bus did not stop at the designated stop even though I signalled.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en"
+    },
+    "depotId": "EKM",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-08-30T03:55:00Z",
+    "resolveDeadline": "2026-09-01T19:55:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-08-29T19:55:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-08-29T19:55:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Ernakulam depot using route EKM-VPN-ORD"
+      },
+      {
+        "at": "2026-08-29T19:55:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "Depot notified"
+      },
+      {
+        "at": "2026-08-30T02:17:12Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-30T02:30:12Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector A",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-31T13:34:32Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Stop added to crew briefing",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Inspector A",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Stop added to crew briefing",
+      "at": "2026-08-31T13:34:32Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000008",
+    "createdAt": "2026-08-29T21:53:00Z",
+    "incidentAt": "2026-08-29T21:29:00Z",
+    "busNo": "KL-99-Z-6511",
+    "routeNo": "TSR-WDK-ORD",
+    "category": "OVERCROWDING",
+    "location": {
+      "stopName": "Wadakkanchery",
+      "areaBucket": "Thrissur"
+    },
+    "description": "Too many passengers standing; could not breathe properly.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ta",
+      "phone": "9000000008"
+    },
+    "depotId": "TSR",
+    "status": "REJECTED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-08-30T05:53:00Z",
+    "resolveDeadline": "2026-09-01T21:53:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-08-29T21:53:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-08-29T21:53:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thrissur depot using route TSR-WDK-ORD"
+      },
+      {
+        "at": "2026-08-29T21:53:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-08-30T03:27:43Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-30T04:52:09Z",
+        "actor": "DEPOT",
+        "type": "REJECTED",
+        "message": "Rejected: No reply to request for details.",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-30T04:52:09Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint rejected"
+      }
+    ],
+    "rejection": {
+      "reason": "INSUFFICIENT_INFO",
+      "note": "No reply to request for details."
+    }
+  },
+  {
+    "id": "GRV-2026-000009",
+    "createdAt": "2026-08-31T06:26:00Z",
+    "incidentAt": "2026-08-31T05:57:00Z",
+    "routeNo": "KKD-VDK-FP",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "Kozhikode",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Windows were covered in dust and the bus smelled bad.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ta",
+      "phone": "9000000009"
+    },
+    "depotId": "KKD",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-08-31T18:26:00Z",
+    "resolveDeadline": "2026-09-03T06:26:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-08-31T06:26:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-08-31T06:26:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-VDK-FP"
+      },
+      {
+        "at": "2026-08-31T06:26:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-08-31T17:39:29Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-31T18:06:29Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector B",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-01T15:25:00Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Cleaning schedule corrected for this bus",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-01T15:25:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Inspector B",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Cleaning schedule corrected for this bus",
+      "at": "2026-09-01T15:25:00Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000010",
+    "createdAt": "2026-09-22T14:23:00Z",
+    "incidentAt": "2026-09-22T13:45:00Z",
+    "routeNo": "TVM-MCH-ORD",
+    "category": "OVERCROWDING",
+    "location": {
+      "stopName": "Pattom",
+      "areaBucket": "Thiruvananthapuram City"
+    },
+    "description": "Only one bus came in an hour, so it was badly overcrowded.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml",
+      "phone": "9000000010"
+    },
+    "depotId": "TVM-CTY",
+    "status": "IN_PROGRESS",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-22T22:23:00Z",
+    "resolveDeadline": "2026-09-25T14:23:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-22T14:23:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-22T14:23:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thiruvananthapuram City depot using route TVM-MCH-ORD"
+      },
+      {
+        "at": "2026-09-22T14:23:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-22T19:44:16Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-22T21:01:16Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Duty Officer",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Duty Officer"
+  },
+  {
+    "id": "GRV-2026-000011",
+    "createdAt": "2026-09-23T08:20:00Z",
+    "incidentAt": "2026-09-23T07:17:00Z",
+    "busNo": "KL-99-Z-3989",
+    "routeNo": "KLM-TVM-SF",
+    "category": "UNSAFE_DRIVING",
+    "location": {
+      "stopName": "Kollam",
+      "areaBucket": "Kollam"
+    },
+    "description": "Driver was using a mobile phone while driving.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000011"
+    },
+    "depotId": "KLM",
+    "status": "IN_PROGRESS",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-23T10:20:00Z",
+    "resolveDeadline": "2026-09-24T08:20:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-23T08:20:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-23T08:20:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kollam depot using route KLM-TVM-SF"
+      },
+      {
+        "at": "2026-09-23T08:20:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-23T10:00:27Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-23T10:37:27Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector A",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Inspector A"
+  },
+  {
+    "id": "GRV-2026-000012",
+    "createdAt": "2026-09-22T17:55:00Z",
+    "incidentAt": "2026-09-22T17:16:00Z",
+    "busNo": "KL-99-Z-5320",
+    "routeNo": "KKD-FRK-ORD",
+    "category": "OTHER",
+    "location": {
+      "stopName": "Kozhikode",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Conductor did not return the balance change.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000012"
+    },
+    "depotId": "KKD",
+    "status": "IN_PROGRESS",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-23T05:55:00Z",
+    "resolveDeadline": "2026-09-25T17:55:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-22T17:55:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-22T17:55:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-FRK-ORD"
+      },
+      {
+        "at": "2026-09-22T17:55:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-22T20:26:30Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-22T22:18:30Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector B",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Inspector B"
+  },
+  {
+    "id": "GRV-2026-000013",
+    "createdAt": "2026-09-18T22:04:00Z",
+    "incidentAt": "2026-09-18T21:19:00Z",
+    "busNo": "KL-99-Z-1227",
+    "routeNo": "EKM-KTM-FP",
+    "category": "UNSAFE_DRIVING",
+    "location": {
+      "stopName": "Piravom",
+      "areaBucket": "Ernakulam"
+    },
+    "description": "Driver was using a mobile phone while driving.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml",
+      "phone": "9000000013"
+    },
+    "depotId": "EKM",
+    "status": "AWAITING_INFO",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-19T00:04:00Z",
+    "resolveDeadline": "2026-09-19T22:04:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-18T22:04:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-18T22:04:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Ernakulam depot using route EKM-KTM-FP"
+      },
+      {
+        "at": "2026-09-18T22:04:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-18T22:28:52Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-18T23:17:52Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector A",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-19T00:17:52Z",
+        "actor": "DEPOT",
+        "type": "INFO_REQUEST",
+        "message": "Requested more details from passenger (SLA paused)",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Inspector A",
+    "slaPausedAt": "2026-09-19T00:17:52Z"
+  },
+  {
+    "id": "GRV-2026-000014",
+    "createdAt": "2026-08-28T11:52:00Z",
+    "incidentAt": "2026-08-28T11:07:00Z",
+    "routeNo": "KKD-VDK-FP",
+    "category": "MISSED_STOP",
+    "location": {
+      "stopName": "Vadakara",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Bus did not stop at the designated stop even though I signalled.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml"
+    },
+    "depotId": "KKD",
+    "status": "RESOLVED",
+    "escalationLevel": 1,
+    "ackDeadline": "2026-08-28T19:52:00Z",
+    "resolveDeadline": "2026-08-31T11:52:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-08-28T11:52:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-08-28T11:52:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-VDK-FP"
+      },
+      {
+        "at": "2026-08-28T11:52:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "Depot notified"
+      },
+      {
+        "at": "2026-08-28T14:47:30Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-28T16:23:30Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector A",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-31T11:52:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Resolution deadline missed. Escalated to Regional Officer (Level 1)"
+      },
+      {
+        "at": "2026-08-31T14:10:41Z",
+        "actor": "REGIONAL",
+        "type": "RESOLVED",
+        "message": "Resolved: Stop added to crew briefing",
+        "actorName": "Regional Transport Officer"
+      }
+    ],
+    "assignedTo": "Inspector A",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Stop added to crew briefing",
+      "at": "2026-08-31T14:10:41Z",
+      "by": "Regional Transport Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000015",
+    "createdAt": "2026-09-08T20:29:00Z",
+    "incidentAt": "2026-09-08T20:21:00Z",
+    "busNo": "KL-99-Z-3004",
+    "routeNo": "ALV-PBR-ORD",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "Keezhmad",
+      "areaBucket": "Aluva"
+    },
+    "description": "Floor was wet and slippery near the rear door.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000015"
+    },
+    "depotId": "ALV",
+    "status": "AWAITING_INFO",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-09T08:29:00Z",
+    "resolveDeadline": "2026-09-11T20:29:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-08T20:29:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-08T20:29:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Aluva depot using route ALV-PBR-ORD"
+      },
+      {
+        "at": "2026-09-08T20:29:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-08T22:31:35Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-08T23:06:35Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Duty Officer",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-09T00:06:35Z",
+        "actor": "DEPOT",
+        "type": "INFO_REQUEST",
+        "message": "Requested more details from passenger (SLA paused)",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Duty Officer",
+    "slaPausedAt": "2026-09-09T00:06:35Z"
+  },
+  {
+    "id": "GRV-2026-000016",
+    "createdAt": "2026-09-17T10:51:00Z",
+    "incidentAt": "2026-09-17T10:30:00Z",
+    "busNo": "KL-99-Z-5951",
+    "routeNo": "TVM-NYK-ORD",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "Thampanoor",
+      "areaBucket": "Thiruvananthapuram City"
+    },
+    "description": "Floor was wet and slippery near the rear door.",
+    "evidence": [],
+    "complainant": {
+      "lang": "hi",
+      "phone": "9000000016"
+    },
+    "depotId": "TVM-CTY",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-17T22:51:00Z",
+    "resolveDeadline": "2026-09-20T10:51:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-09-17T10:51:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-17T10:51:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thiruvananthapuram City depot using route TVM-NYK-ORD"
+      },
+      {
+        "at": "2026-09-17T10:51:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-17T17:38:00Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-17T19:27:00Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Vehicle Supervisor",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-20T07:52:27Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Bus cleaned and inspected",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-20T07:52:27Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Vehicle Supervisor",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Bus cleaned and inspected",
+      "at": "2026-09-20T07:52:27Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000017",
+    "createdAt": "2026-08-27T15:20:00Z",
+    "incidentAt": "2026-08-27T14:57:00Z",
+    "busNo": "KL-99-Z-9866",
+    "routeNo": "KKD-VDK-FP",
+    "category": "CONCESSION_DENIAL",
+    "location": {
+      "stopName": "Koyilandy",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Student was asked to stand and pay full fare despite the pass.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000017"
+    },
+    "depotId": "KKD",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-08-27T19:20:00Z",
+    "resolveDeadline": "2026-08-29T15:20:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-08-27T15:20:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-08-27T15:20:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-VDK-FP"
+      },
+      {
+        "at": "2026-08-27T15:20:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-08-27T16:29:16Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-27T16:50:16Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector B",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-29T08:15:43Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Concession rules re-circulated to all crew",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-29T08:15:43Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Inspector B",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Concession rules re-circulated to all crew",
+      "at": "2026-08-29T08:15:43Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000018",
+    "createdAt": "2026-09-20T08:06:00Z",
+    "incidentAt": "2026-09-20T07:30:00Z",
+    "routeNo": "EKM-KTM-FP",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "Kottayam",
+      "areaBucket": "Ernakulam"
+    },
+    "description": "Windows were covered in dust and the bus smelled bad.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml",
+      "phone": "9000000018"
+    },
+    "depotId": "EKM",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-20T20:06:00Z",
+    "resolveDeadline": "2026-09-23T08:06:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-09-20T08:06:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-20T08:06:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Ernakulam depot using route EKM-KTM-FP"
+      },
+      {
+        "at": "2026-09-20T08:06:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-20T14:13:09Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-20T15:34:09Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Station Master",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-21T17:59:59Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Cleaning schedule corrected for this bus",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-21T17:59:59Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Station Master",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Cleaning schedule corrected for this bus",
+      "at": "2026-09-21T17:59:59Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000019",
+    "createdAt": "2026-09-15T13:44:00Z",
+    "incidentAt": "2026-09-15T12:19:00Z",
+    "busNo": "KL-99-Z-1087",
+    "routeNo": "TSR-CKY-FP",
+    "category": "CONCESSION_DENIAL",
+    "location": {
+      "stopName": "Amballur",
+      "areaBucket": "Thrissur"
+    },
+    "description": "Student was asked to stand and pay full fare despite the pass.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000019"
+    },
+    "depotId": "TSR",
+    "status": "AWAITING_INFO",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-15T17:44:00Z",
+    "resolveDeadline": "2026-09-17T13:44:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-15T13:44:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-15T13:44:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thrissur depot using route TSR-CKY-FP"
+      },
+      {
+        "at": "2026-09-15T13:44:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-15T14:40:12Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-15T16:23:12Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Station Master",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-15T17:23:12Z",
+        "actor": "DEPOT",
+        "type": "INFO_REQUEST",
+        "message": "Requested more details from passenger (SLA paused)",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Station Master",
+    "slaPausedAt": "2026-09-15T17:23:12Z"
+  },
+  {
+    "id": "GRV-2026-000020",
+    "createdAt": "2026-08-28T16:49:00Z",
+    "incidentAt": "2026-08-28T15:30:00Z",
+    "busNo": "KL-99-Z-7443",
+    "routeNo": "TVM-CIR-BLU",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "Vellayambalam",
+      "areaBucket": "Thiruvananthapuram City"
+    },
+    "description": "Seat covers torn and stained; bus did not look cleaned for days.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml",
+      "phone": "9000000020"
+    },
+    "depotId": "TVM-CTY",
+    "status": "AWAITING_INFO",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-08-29T04:49:00Z",
+    "resolveDeadline": "2026-08-31T16:49:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-08-28T16:49:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-08-28T16:49:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thiruvananthapuram City depot using route TVM-CIR-BLU"
+      },
+      {
+        "at": "2026-08-28T16:49:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-08-29T02:33:28Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-29T02:56:28Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector A",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-29T03:56:28Z",
+        "actor": "DEPOT",
+        "type": "INFO_REQUEST",
+        "message": "Requested more details from passenger (SLA paused)",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Inspector A",
+    "slaPausedAt": "2026-08-29T03:56:28Z"
+  },
+  {
+    "id": "GRV-2026-000021",
+    "createdAt": "2026-09-12T06:20:00Z",
+    "incidentAt": "2026-09-12T05:00:00Z",
+    "busNo": "KL-99-Z-5799",
+    "routeNo": "ALV-CIA-ORD",
+    "category": "OVERCROWDING",
+    "location": {
+      "stopName": "Athani",
+      "areaBucket": "Aluva"
+    },
+    "description": "Only one bus came in an hour, so it was badly overcrowded.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000021"
+    },
+    "depotId": "ALV",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-12T14:20:00Z",
+    "resolveDeadline": "2026-09-15T06:20:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-09-12T06:20:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-12T06:20:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Aluva depot using route ALV-CIA-ORD"
+      },
+      {
+        "at": "2026-09-12T06:20:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-12T10:38:32Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-12T12:08:32Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector A",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-14T19:34:39Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Schedule revised to reduce gap between trips",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-14T19:34:39Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Inspector A",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Schedule revised to reduce gap between trips",
+      "at": "2026-09-14T19:34:39Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000022",
+    "createdAt": "2026-09-19T20:22:00Z",
+    "incidentAt": "2026-09-19T19:37:00Z",
+    "busNo": "KL-99-Z-2911",
+    "routeNo": "KKD-VDK-FP",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "Payyoli",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Seats were dirty and there was litter on the floor.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000022"
+    },
+    "depotId": "KKD",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-20T08:22:00Z",
+    "resolveDeadline": "2026-09-22T20:22:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-09-19T20:22:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-19T20:22:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-VDK-FP"
+      },
+      {
+        "at": "2026-09-19T20:22:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-20T01:47:54Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-20T03:13:54Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Duty Officer",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-21T00:28:13Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Cleaning schedule corrected for this bus",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-21T00:28:13Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Duty Officer",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Cleaning schedule corrected for this bus",
+      "at": "2026-09-21T00:28:13Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000023",
+    "createdAt": "2026-09-22T17:26:00Z",
+    "incidentAt": "2026-09-22T17:06:00Z",
+    "routeNo": "TVM-KVL-ORD",
+    "category": "OVERCROWDING",
+    "location": {
+      "stopName": "Thampanoor",
+      "areaBucket": "Thiruvananthapuram City"
+    },
+    "description": "Too many passengers standing; could not breathe properly.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000023"
+    },
+    "depotId": "TVM-CTY",
+    "status": "IN_PROGRESS",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-23T01:26:00Z",
+    "resolveDeadline": "2026-09-25T17:26:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-22T17:26:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-22T17:26:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thiruvananthapuram City depot using route TVM-KVL-ORD"
+      },
+      {
+        "at": "2026-09-22T17:26:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-22T22:16:50Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-22T22:36:50Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector A",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Inspector A"
+  },
+  {
+    "id": "GRV-2026-000024",
+    "createdAt": "2026-09-21T15:39:00Z",
+    "incidentAt": "2026-09-21T15:13:00Z",
+    "busNo": "KL-99-Z-6434",
+    "routeNo": "TSR-WDK-ORD",
+    "category": "UNSAFE_DRIVING",
+    "location": {
+      "stopName": "Mulloorkara",
+      "areaBucket": "Thrissur"
+    },
+    "description": "Bus overtook dangerously near a curve.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml",
+      "phone": "9000000024"
+    },
+    "depotId": "TSR",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-21T17:39:00Z",
+    "resolveDeadline": "2026-09-22T15:39:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-09-21T15:39:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-21T15:39:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thrissur depot using route TSR-WDK-ORD"
+      },
+      {
+        "at": "2026-09-21T15:39:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-21T16:20:34Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-21T18:20:34Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Station Master",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-22T05:59:31Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Speed governor checked; driver counselled",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-22T05:59:31Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Station Master",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Speed governor checked; driver counselled",
+      "at": "2026-09-22T05:59:31Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000025",
+    "createdAt": "2026-09-09T00:01:00Z",
+    "incidentAt": "2026-09-08T23:14:00Z",
+    "busNo": "KL-99-Z-8281",
+    "routeNo": "KKD-FRK-ORD",
+    "category": "CONCESSION_DENIAL",
+    "location": {
+      "stopName": "Cheruvannur",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Senior citizen concession was denied and full fare was charged.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml"
+    },
+    "depotId": "KKD",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-09T04:01:00Z",
+    "resolveDeadline": "2026-09-11T00:01:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-09-09T00:01:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-09T00:01:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-FRK-ORD"
+      },
+      {
+        "at": "2026-09-09T00:01:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "Depot notified"
+      },
+      {
+        "at": "2026-09-09T01:33:13Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-09T02:54:13Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector A",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-10T13:51:06Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Concession rules re-circulated to all crew",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Inspector A",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Concession rules re-circulated to all crew",
+      "at": "2026-09-10T13:51:06Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000026",
+    "createdAt": "2026-09-18T01:56:00Z",
+    "incidentAt": "2026-09-18T00:48:00Z",
+    "routeNo": "ALV-ANG-ORD",
+    "category": "CONCESSION_DENIAL",
+    "location": {
+      "stopName": "Angamaly",
+      "areaBucket": "Aluva"
+    },
+    "description": "Senior citizen concession was denied and full fare was charged.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml"
+    },
+    "depotId": "ALV",
+    "status": "AWAITING_INFO",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-18T05:56:00Z",
+    "resolveDeadline": "2026-09-20T01:56:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-18T01:56:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-18T01:56:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Aluva depot using route ALV-ANG-ORD"
+      },
+      {
+        "at": "2026-09-18T01:56:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "Depot notified"
+      },
+      {
+        "at": "2026-09-18T03:51:18Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-18T05:33:18Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector B",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-18T06:33:18Z",
+        "actor": "DEPOT",
+        "type": "INFO_REQUEST",
+        "message": "Requested more details from passenger (SLA paused)",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Inspector B",
+    "slaPausedAt": "2026-09-18T06:33:18Z"
+  },
+  {
+    "id": "GRV-2026-000027",
+    "createdAt": "2026-09-22T15:07:00Z",
+    "incidentAt": "2026-09-22T13:40:00Z",
+    "routeNo": "KKD-VDK-FP",
+    "category": "CONCESSION_DENIAL",
+    "location": {
+      "stopName": "Koyilandy",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Student was asked to stand and pay full fare despite the pass.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000027"
+    },
+    "depotId": "KKD",
+    "status": "IN_PROGRESS",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-22T19:07:00Z",
+    "resolveDeadline": "2026-09-24T15:07:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-22T15:07:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-22T15:07:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-VDK-FP"
+      },
+      {
+        "at": "2026-09-22T15:07:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-22T18:44:44Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-22T20:18:44Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Station Master",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Station Master"
+  },
+  {
+    "id": "GRV-2026-000028",
+    "createdAt": "2026-09-21T17:56:00Z",
+    "incidentAt": "2026-09-21T17:41:00Z",
+    "busNo": "KL-99-Z-1186",
+    "routeNo": "TSR-IJK-ORD",
+    "category": "MISSED_STOP",
+    "location": {
+      "stopName": "Thrissur",
+      "areaBucket": "Thrissur"
+    },
+    "description": "Bus skipped the stop and dropped us 500 m away.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000028"
+    },
+    "depotId": "TSR",
+    "status": "ESCALATED",
+    "escalationLevel": 1,
+    "ackDeadline": "2026-09-22T01:56:00Z",
+    "resolveDeadline": "2026-09-24T17:56:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-21T17:56:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-21T17:56:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thrissur depot using route TSR-IJK-ORD"
+      },
+      {
+        "at": "2026-09-21T17:56:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-22T01:56:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Acknowledgement deadline missed. Escalated to Regional Officer (Level 1)"
+      },
+      {
+        "at": "2026-09-22T01:56:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint escalated"
+      }
+    ]
+  },
+  {
+    "id": "GRV-2026-000029",
+    "createdAt": "2026-09-01T14:19:00Z",
+    "incidentAt": "2026-09-01T14:04:00Z",
+    "routeNo": "KLM-TVM-SF",
+    "category": "CONCESSION_DENIAL",
+    "location": {
+      "stopName": "Thampanoor",
+      "areaBucket": "Kollam"
+    },
+    "description": "Senior citizen concession was denied and full fare was charged.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000029"
+    },
+    "depotId": "KLM",
+    "status": "RESOLVED",
+    "escalationLevel": 1,
+    "ackDeadline": "2026-09-01T18:19:00Z",
+    "resolveDeadline": "2026-09-03T14:19:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-01T14:19:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-01T14:19:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kollam depot using route KLM-TVM-SF"
+      },
+      {
+        "at": "2026-09-01T14:19:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-01T18:19:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Acknowledgement deadline missed. Escalated to Regional Officer (Level 1)"
+      },
+      {
+        "at": "2026-09-02T07:07:13Z",
+        "actor": "REGIONAL",
+        "type": "RESOLVED",
+        "message": "Resolved by Regional Officer: Conductor instructed on concession rules; refund arranged",
+        "actorName": "Regional Transport Officer"
+      },
+      {
+        "at": "2026-09-02T07:07:13Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "resolution": {
+      "note": "Handled at regional level after depot missed the deadline.",
+      "action": "Conductor instructed on concession rules; refund arranged",
+      "at": "2026-09-02T07:07:13Z",
+      "by": "Regional Transport Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000030",
+    "createdAt": "2026-09-11T08:52:00Z",
+    "incidentAt": "2026-09-11T08:07:00Z",
+    "busNo": "KL-99-Z-6358",
+    "routeNo": "TSR-CKY-FP",
+    "category": "CONCESSION_DENIAL",
+    "location": {
+      "stopName": "Amballur",
+      "areaBucket": "Thrissur"
+    },
+    "description": "Student concession card was refused by the conductor.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ta",
+      "phone": "9000000030"
+    },
+    "depotId": "TSR",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-11T12:52:00Z",
+    "resolveDeadline": "2026-09-13T08:52:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-09-11T08:52:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-11T08:52:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thrissur depot using route TSR-CKY-FP"
+      },
+      {
+        "at": "2026-09-11T08:52:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-11T09:33:13Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-11T10:15:13Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Vehicle Supervisor",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-12T10:25:51Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Concession rules re-circulated to all crew",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-12T10:25:51Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Vehicle Supervisor",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Concession rules re-circulated to all crew",
+      "at": "2026-09-12T10:25:51Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000031",
+    "createdAt": "2026-09-03T05:14:00Z",
+    "incidentAt": "2026-09-03T04:04:00Z",
+    "routeNo": "TSR-GVR-ORD",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "Puzhakkal",
+      "areaBucket": "Thrissur"
+    },
+    "description": "Floor was wet and slippery near the rear door.",
+    "evidence": [],
+    "complainant": {
+      "lang": "hi",
+      "phone": "9000000031"
+    },
+    "depotId": "TSR",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-03T17:14:00Z",
+    "resolveDeadline": "2026-09-06T05:14:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-09-03T05:14:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-03T05:14:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thrissur depot using route TSR-GVR-ORD"
+      },
+      {
+        "at": "2026-09-03T05:14:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-03T13:08:56Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-03T13:59:56Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Vehicle Supervisor",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-04T23:37:02Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Bus cleaned and inspected",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-04T23:37:02Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Vehicle Supervisor",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Bus cleaned and inspected",
+      "at": "2026-09-04T23:37:02Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000032",
+    "createdAt": "2026-08-25T17:05:00Z",
+    "incidentAt": "2026-08-25T15:53:00Z",
+    "busNo": "KL-99-Z-2742",
+    "routeNo": "KLM-PVR-ORD",
+    "category": "UNSAFE_DRIVING",
+    "location": {
+      "stopName": "Paravur",
+      "areaBucket": "Kollam"
+    },
+    "description": "Driver braked suddenly several times; passengers nearly fell.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000032"
+    },
+    "depotId": "KLM",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-08-25T19:05:00Z",
+    "resolveDeadline": "2026-08-26T17:05:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-08-25T17:05:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-08-25T17:05:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kollam depot using route KLM-PVR-ORD"
+      },
+      {
+        "at": "2026-08-25T17:05:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-08-25T17:48:09Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-25T19:05:09Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector B",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-26T16:26:01Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Speed governor checked; driver counselled",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-26T16:26:01Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Inspector B",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Speed governor checked; driver counselled",
+      "at": "2026-08-26T16:26:01Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000033",
+    "createdAt": "2026-08-28T12:17:00Z",
+    "incidentAt": "2026-08-28T11:26:00Z",
+    "busNo": "KL-99-Z-9832",
+    "routeNo": "KLM-KNP-ORD",
+    "category": "MISSED_STOP",
+    "location": {
+      "stopName": "Kavanad",
+      "areaBucket": "Kollam"
+    },
+    "description": "Bus skipped the stop and dropped us 500 m away.",
+    "evidence": [],
+    "complainant": {
+      "lang": "hi"
+    },
+    "depotId": "KLM",
+    "status": "ESCALATED",
+    "escalationLevel": 2,
+    "ackDeadline": "2026-08-28T20:17:00Z",
+    "resolveDeadline": "2026-08-31T12:17:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-08-28T12:17:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-08-28T12:17:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kollam depot using route KLM-KNP-ORD"
+      },
+      {
+        "at": "2026-08-28T12:17:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "Depot notified"
+      },
+      {
+        "at": "2026-08-28T20:17:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Acknowledgement deadline missed. Escalated to Regional Officer (Level 1)"
+      },
+      {
+        "at": "2026-09-02T12:17:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Still unresolved. Escalated to Head Office (Level 2)"
+      }
+    ]
+  },
+  {
+    "id": "GRV-2026-000034",
+    "createdAt": "2026-08-29T23:53:00Z",
+    "incidentAt": "2026-08-29T23:44:00Z",
+    "busNo": "KL-99-Z-3932",
+    "routeNo": "KLM-KNP-ORD",
+    "category": "CONCESSION_DENIAL",
+    "location": {
+      "stopName": "Kavanad",
+      "areaBucket": "Kollam"
+    },
+    "description": "Conductor refused concession for a disabled passenger with a valid card.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml",
+      "phone": "9000000034"
+    },
+    "depotId": "KLM",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-08-30T03:53:00Z",
+    "resolveDeadline": "2026-08-31T23:53:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-08-29T23:53:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-08-29T23:53:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kollam depot using route KLM-KNP-ORD"
+      },
+      {
+        "at": "2026-08-29T23:53:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-08-30T00:59:43Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-30T02:37:43Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector A",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-31T18:01:27Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Concession rules re-circulated to all crew",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-31T18:01:27Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Inspector A",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Concession rules re-circulated to all crew",
+      "at": "2026-08-31T18:01:27Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000035",
+    "createdAt": "2026-09-22T02:12:00Z",
+    "incidentAt": "2026-09-22T00:58:00Z",
+    "routeNo": "KKD-VDK-FP",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "Koyilandy",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Windows were covered in dust and the bus smelled bad.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000035"
+    },
+    "depotId": "KKD",
+    "status": "IN_PROGRESS",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-22T14:12:00Z",
+    "resolveDeadline": "2026-09-25T02:12:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-22T02:12:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-22T02:12:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-VDK-FP"
+      },
+      {
+        "at": "2026-09-22T02:12:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-22T10:05:55Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-22T10:22:55Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector A",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Inspector A"
+  },
+  {
+    "id": "GRV-2026-000036",
+    "createdAt": "2026-09-16T05:21:00Z",
+    "incidentAt": "2026-09-16T04:52:00Z",
+    "busNo": "KL-99-Z-8096",
+    "routeNo": "EKM-FKC-ORD",
+    "category": "OVERCROWDING",
+    "location": {
+      "stopName": "MG Road",
+      "areaBucket": "Ernakulam"
+    },
+    "description": "Too many passengers standing; could not breathe properly.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en"
+    },
+    "depotId": "EKM",
+    "status": "RESOLVED",
+    "escalationLevel": 1,
+    "ackDeadline": "2026-09-16T13:21:00Z",
+    "resolveDeadline": "2026-09-19T05:21:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-16T05:21:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-16T05:21:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Ernakulam depot using route EKM-FKC-ORD"
+      },
+      {
+        "at": "2026-09-16T05:21:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "Depot notified"
+      },
+      {
+        "at": "2026-09-16T13:21:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Acknowledgement deadline missed. Escalated to Regional Officer (Level 1)"
+      },
+      {
+        "at": "2026-09-16T19:53:10Z",
+        "actor": "REGIONAL",
+        "type": "RESOLVED",
+        "message": "Resolved by Regional Officer: Schedule revised to reduce gap between trips",
+        "actorName": "Regional Transport Officer"
+      }
+    ],
+    "resolution": {
+      "note": "Handled at regional level after depot missed the deadline.",
+      "action": "Schedule revised to reduce gap between trips",
+      "at": "2026-09-16T19:53:10Z",
+      "by": "Regional Transport Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000037",
+    "createdAt": "2026-08-25T11:57:00Z",
+    "incidentAt": "2026-08-25T10:32:00Z",
+    "routeNo": "TSR-IJK-ORD",
+    "category": "OVERCROWDING",
+    "location": {
+      "stopName": "Irinjalakuda",
+      "areaBucket": "Thrissur"
+    },
+    "description": "Crowd was so heavy that elderly passengers could not board.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000037"
+    },
+    "depotId": "TSR",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-08-25T19:57:00Z",
+    "resolveDeadline": "2026-08-28T11:57:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-08-25T11:57:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-08-25T11:57:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thrissur depot using route TSR-IJK-ORD"
+      },
+      {
+        "at": "2026-08-25T11:57:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-08-25T14:50:18Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-25T16:36:18Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector A",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-28T03:06:22Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Extra trip added in peak hours",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-28T03:06:22Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Inspector A",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Extra trip added in peak hours",
+      "at": "2026-08-28T03:06:22Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000038",
+    "createdAt": "2026-08-25T13:39:00Z",
+    "incidentAt": "2026-08-25T12:40:00Z",
+    "routeNo": "TSR-GVR-ORD",
+    "category": "UNSAFE_DRIVING",
+    "location": {
+      "stopName": "Puzhakkal",
+      "areaBucket": "Thrissur"
+    },
+    "description": "Driver was using a mobile phone while driving.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000038"
+    },
+    "depotId": "TSR",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-08-25T15:39:00Z",
+    "resolveDeadline": "2026-08-26T13:39:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-08-25T13:39:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-08-25T13:39:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thrissur depot using route TSR-GVR-ORD"
+      },
+      {
+        "at": "2026-08-25T13:39:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-08-25T14:54:11Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-25T15:38:11Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Station Master",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-25T23:39:50Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Driver counselled and warned",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-25T23:39:50Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Station Master",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Driver counselled and warned",
+      "at": "2026-08-25T23:39:50Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000039",
+    "createdAt": "2026-09-04T15:12:00Z",
+    "incidentAt": "2026-09-04T13:42:00Z",
+    "routeNo": "TSR-IJK-ORD",
+    "category": "OVERCROWDING",
+    "location": {
+      "stopName": "Thrissur",
+      "areaBucket": "Thrissur"
+    },
+    "description": "Crowd was so heavy that elderly passengers could not board.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml",
+      "phone": "9000000039"
+    },
+    "depotId": "TSR",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-04T23:12:00Z",
+    "resolveDeadline": "2026-09-07T15:12:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-09-04T15:12:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-04T15:12:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thrissur depot using route TSR-IJK-ORD"
+      },
+      {
+        "at": "2026-09-04T15:12:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-04T23:00:27Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-05T00:17:27Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector A",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-06T06:57:41Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Extra trip added in peak hours",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-06T06:57:41Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Inspector A",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Extra trip added in peak hours",
+      "at": "2026-09-06T06:57:41Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000040",
+    "createdAt": "2026-09-21T05:51:00Z",
+    "incidentAt": "2026-09-21T04:33:00Z",
+    "routeNo": "TSR-GVR-ORD",
+    "category": "MISSED_STOP",
+    "location": {
+      "stopName": "Guruvayur",
+      "areaBucket": "Thrissur"
+    },
+    "description": "Bus did not stop at the designated stop even though I signalled.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en"
+    },
+    "depotId": "TSR",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-21T13:51:00Z",
+    "resolveDeadline": "2026-09-24T05:51:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-21T05:51:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-21T05:51:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thrissur depot using route TSR-GVR-ORD"
+      },
+      {
+        "at": "2026-09-21T05:51:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "Depot notified"
+      },
+      {
+        "at": "2026-09-21T08:07:28Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-21T08:28:28Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector B",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-22T19:03:10Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Crew instructed to stop at all designated stops",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Inspector B",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Crew instructed to stop at all designated stops",
+      "at": "2026-09-22T19:03:10Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000041",
+    "createdAt": "2026-09-20T18:04:00Z",
+    "incidentAt": "2026-09-20T17:17:00Z",
+    "busNo": "KL-99-Z-8713",
+    "routeNo": "KKD-KNR-SF",
+    "category": "MISSED_STOP",
+    "location": {
+      "stopName": "Koyilandy",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Conductor said the bus would not stop there although it is on the route.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml",
+      "phone": "9000000041"
+    },
+    "depotId": "KKD",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-21T02:04:00Z",
+    "resolveDeadline": "2026-09-23T18:04:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-09-20T18:04:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-20T18:04:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-KNR-SF"
+      },
+      {
+        "at": "2026-09-20T18:04:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-20T22:28:01Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-21T00:26:01Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Station Master",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-22T21:35:26Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Crew instructed to stop at all designated stops",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-22T21:35:26Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Station Master",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Crew instructed to stop at all designated stops",
+      "at": "2026-09-22T21:35:26Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000042",
+    "createdAt": "2026-09-07T14:37:00Z",
+    "incidentAt": "2026-09-07T14:30:00Z",
+    "busNo": "KL-99-Z-1557",
+    "routeNo": "KKD-TMS-ORD",
+    "category": "MISSED_STOP",
+    "location": {
+      "stopName": "Thamarassery",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Bus skipped the stop and dropped us 500 m away.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000042"
+    },
+    "depotId": "KKD",
+    "status": "AWAITING_INFO",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-07T22:37:00Z",
+    "resolveDeadline": "2026-09-10T14:37:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-07T14:37:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-07T14:37:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-TMS-ORD"
+      },
+      {
+        "at": "2026-09-07T14:37:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-07T19:59:14Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-07T21:04:14Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Duty Officer",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-07T22:04:14Z",
+        "actor": "DEPOT",
+        "type": "INFO_REQUEST",
+        "message": "Requested more details from passenger (SLA paused)",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Duty Officer",
+    "slaPausedAt": "2026-09-07T22:04:14Z"
+  },
+  {
+    "id": "GRV-2026-000043",
+    "createdAt": "2026-09-22T01:04:00Z",
+    "incidentAt": "2026-09-21T23:47:00Z",
+    "busNo": "KL-99-Z-2244",
+    "routeNo": "KKD-KNR-SF",
+    "category": "MISSED_STOP",
+    "location": {
+      "stopName": "Kannur",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Bus skipped the stop and dropped us 500 m away.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml",
+      "phone": "9000000043"
+    },
+    "depotId": "KKD",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-22T09:04:00Z",
+    "resolveDeadline": "2026-09-25T01:04:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-09-22T01:04:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-22T01:04:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-KNR-SF"
+      },
+      {
+        "at": "2026-09-22T01:04:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-22T03:09:18Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-22T04:12:18Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Vehicle Supervisor",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-23T13:37:07Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Crew instructed to stop at all designated stops",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-23T13:37:07Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Vehicle Supervisor",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Crew instructed to stop at all designated stops",
+      "at": "2026-09-23T13:37:07Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000044",
+    "createdAt": "2026-09-18T08:42:00Z",
+    "incidentAt": "2026-09-18T08:16:00Z",
+    "busNo": "KL-99-Z-2895",
+    "routeNo": "KKD-MCH-ORD",
+    "category": "UNSAFE_DRIVING",
+    "location": {
+      "stopName": "Medical College",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Bus started moving before passengers had fully got down.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ta"
+    },
+    "depotId": "KKD",
+    "status": "ESCALATED",
+    "escalationLevel": 2,
+    "ackDeadline": "2026-09-18T10:42:00Z",
+    "resolveDeadline": "2026-09-19T08:42:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-18T08:42:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-18T08:42:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-MCH-ORD"
+      },
+      {
+        "at": "2026-09-18T08:42:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "Depot notified"
+      },
+      {
+        "at": "2026-09-18T10:42:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Acknowledgement deadline missed. Escalated to Regional Officer (Level 1)"
+      },
+      {
+        "at": "2026-09-20T08:42:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Still unresolved. Escalated to Head Office (Level 2)"
+      }
+    ]
+  },
+  {
+    "id": "GRV-2026-000045",
+    "createdAt": "2026-09-19T17:02:00Z",
+    "incidentAt": "2026-09-19T16:33:00Z",
+    "routeNo": "TSR-IJK-ORD",
+    "category": "MISSED_STOP",
+    "location": {
+      "stopName": "Thrissur",
+      "areaBucket": "Thrissur"
+    },
+    "description": "Conductor said the bus would not stop there although it is on the route.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000045"
+    },
+    "depotId": "TSR",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-20T01:02:00Z",
+    "resolveDeadline": "2026-09-22T17:02:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-09-19T17:02:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-19T17:02:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thrissur depot using route TSR-IJK-ORD"
+      },
+      {
+        "at": "2026-09-19T17:02:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-19T18:45:26Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-19T19:31:26Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Duty Officer",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-21T19:28:55Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Stop added to crew briefing",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-21T19:28:55Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Duty Officer",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Stop added to crew briefing",
+      "at": "2026-09-21T19:28:55Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000046",
+    "createdAt": "2026-09-06T16:40:00Z",
+    "incidentAt": "2026-09-06T15:26:00Z",
+    "routeNo": "KKD-VDK-FP",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "Payyoli",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Rain water was leaking through the roof onto the seats.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000046"
+    },
+    "depotId": "KKD",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-07T04:40:00Z",
+    "resolveDeadline": "2026-09-09T16:40:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-09-06T16:40:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-06T16:40:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-VDK-FP"
+      },
+      {
+        "at": "2026-09-06T16:40:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-07T00:02:05Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-07T00:13:05Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Vehicle Supervisor",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-07T19:44:10Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Bus cleaned and inspected",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-07T19:44:10Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Vehicle Supervisor",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Bus cleaned and inspected",
+      "at": "2026-09-07T19:44:10Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000047",
+    "createdAt": "2026-09-09T20:24:00Z",
+    "incidentAt": "2026-09-09T18:57:00Z",
+    "busNo": "KL-99-Z-1310",
+    "routeNo": "KLM-PNL-FP",
+    "category": "MISSED_STOP",
+    "location": {
+      "stopName": "Kottarakkara",
+      "areaBucket": "Kollam"
+    },
+    "description": "Bus did not stop at the designated stop even though I signalled.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000047"
+    },
+    "depotId": "KLM",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-10T04:24:00Z",
+    "resolveDeadline": "2026-09-12T20:24:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-09-09T20:24:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-09T20:24:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kollam depot using route KLM-PNL-FP"
+      },
+      {
+        "at": "2026-09-09T20:24:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-10T02:08:06Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-10T02:49:06Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Vehicle Supervisor",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-11T03:07:04Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Stop added to crew briefing",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-11T03:07:04Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Vehicle Supervisor",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Stop added to crew briefing",
+      "at": "2026-09-11T03:07:04Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000048",
+    "createdAt": "2026-09-18T05:26:00Z",
+    "incidentAt": "2026-09-18T04:18:00Z",
+    "routeNo": "KLM-KNP-ORD",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "Neendakara",
+      "areaBucket": "Kollam"
+    },
+    "description": "Seat covers torn and stained; bus did not look cleaned for days.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000048"
+    },
+    "depotId": "KLM",
+    "status": "REJECTED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-18T17:26:00Z",
+    "resolveDeadline": "2026-09-21T05:26:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-18T05:26:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-18T05:26:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kollam depot using route KLM-KNP-ORD"
+      },
+      {
+        "at": "2026-09-18T05:26:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-18T15:24:47Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-18T18:33:18Z",
+        "actor": "DEPOT",
+        "type": "REJECTED",
+        "message": "Rejected: Private bus, not a KSRTC service.",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-18T18:33:18Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint rejected"
+      }
+    ],
+    "rejection": {
+      "reason": "OUT_OF_SCOPE",
+      "note": "Private bus, not a KSRTC service."
+    }
+  },
+  {
+    "id": "GRV-2026-000049",
+    "createdAt": "2026-09-04T14:09:00Z",
+    "incidentAt": "2026-09-04T12:51:00Z",
+    "busNo": "KL-99-Z-6027",
+    "routeNo": "ALV-CIA-ORD",
+    "category": "UNSAFE_DRIVING",
+    "location": {
+      "stopName": "Aluva",
+      "areaBucket": "Aluva"
+    },
+    "description": "The bus was overspeeding on a crowded road.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000049"
+    },
+    "depotId": "ALV",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-04T16:09:00Z",
+    "resolveDeadline": "2026-09-05T14:09:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-04T14:09:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-04T14:09:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Aluva depot using route ALV-CIA-ORD"
+      },
+      {
+        "at": "2026-09-04T14:09:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-04T14:48:03Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-04T15:10:03Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector B",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-05T12:39:36Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Driver counselled and warned",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-05T12:39:36Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Inspector B",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Driver counselled and warned",
+      "at": "2026-09-05T12:39:36Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000050",
+    "createdAt": "2026-09-23T14:42:00Z",
+    "incidentAt": "2026-09-23T13:30:00Z",
+    "busNo": "KL-99-Z-5129",
+    "routeNo": "TSR-CKY-FP",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "Thrissur",
+      "areaBucket": "Thrissur"
+    },
+    "description": "Floor was wet and slippery near the rear door.",
+    "evidence": [],
+    "complainant": {
+      "lang": "hi",
+      "phone": "9000000050"
+    },
+    "depotId": "TSR",
+    "status": "ASSIGNED_TO_DEPOT",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-24T02:42:00Z",
+    "resolveDeadline": "2026-09-26T14:42:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-23T14:42:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-23T14:42:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thrissur depot using route TSR-CKY-FP"
+      },
+      {
+        "at": "2026-09-23T14:42:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      }
+    ]
+  },
+  {
+    "id": "GRV-2026-000051",
+    "createdAt": "2026-09-18T01:08:00Z",
+    "incidentAt": "2026-09-18T00:22:00Z",
+    "busNo": "KL-99-Z-7311",
+    "routeNo": "TVM-KZK-ORD",
+    "category": "OVERCROWDING",
+    "location": {
+      "stopName": "Kesavadasapuram",
+      "areaBucket": "Thiruvananthapuram City"
+    },
+    "description": "Crowd was so heavy that elderly passengers could not board.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml",
+      "phone": "9000000051"
+    },
+    "depotId": "TVM-CTY",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-18T09:08:00Z",
+    "resolveDeadline": "2026-09-21T01:08:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-18T01:08:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-18T01:08:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thiruvananthapuram City depot using route TVM-KZK-ORD"
+      },
+      {
+        "at": "2026-09-18T01:08:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-18T08:58:48Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-18T10:42:48Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Duty Officer",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-19T16:52:32Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Schedule revised to reduce gap between trips",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-19T16:52:32Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Duty Officer",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Schedule revised to reduce gap between trips",
+      "at": "2026-09-19T16:52:32Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000052",
+    "createdAt": "2026-09-20T16:17:00Z",
+    "incidentAt": "2026-09-20T15:35:00Z",
+    "routeNo": "KKD-VDK-FP",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "Koyilandy",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Windows were covered in dust and the bus smelled bad.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ta",
+      "phone": "9000000052"
+    },
+    "depotId": "KKD",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-21T04:17:00Z",
+    "resolveDeadline": "2026-09-23T16:17:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-20T16:17:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-20T16:17:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-VDK-FP"
+      },
+      {
+        "at": "2026-09-20T16:17:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-21T03:41:04Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-21T04:07:04Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Duty Officer",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-22T22:43:01Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Bus cleaned and inspected",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-22T22:43:01Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Duty Officer",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Bus cleaned and inspected",
+      "at": "2026-09-22T22:43:01Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000053",
+    "createdAt": "2026-09-01T22:02:00Z",
+    "incidentAt": "2026-09-01T21:13:00Z",
+    "busNo": "KL-99-Z-3877",
+    "routeNo": "KKD-VDK-FP",
+    "category": "MISSED_STOP",
+    "location": {
+      "stopName": "Payyoli",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Conductor said the bus would not stop there although it is on the route.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en"
+    },
+    "depotId": "KKD",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-02T06:02:00Z",
+    "resolveDeadline": "2026-09-04T22:02:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-01T22:02:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-01T22:02:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-VDK-FP"
+      },
+      {
+        "at": "2026-09-01T22:02:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "Depot notified"
+      },
+      {
+        "at": "2026-09-02T05:49:53Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-02T07:47:53Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Vehicle Supervisor",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-03T03:17:07Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Stop added to crew briefing",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Vehicle Supervisor",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Stop added to crew briefing",
+      "at": "2026-09-03T03:17:07Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000054",
+    "createdAt": "2026-09-21T20:20:00Z",
+    "incidentAt": "2026-09-21T19:32:00Z",
+    "routeNo": "EKM-VPN-ORD",
+    "category": "OTHER",
+    "location": {
+      "stopName": "Goshree Bridge",
+      "areaBucket": "Ernakulam"
+    },
+    "description": "Display board showed the wrong destination.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ta",
+      "phone": "9000000054"
+    },
+    "depotId": "EKM",
+    "status": "ESCALATED",
+    "escalationLevel": 1,
+    "ackDeadline": "2026-09-22T08:20:00Z",
+    "resolveDeadline": "2026-09-24T20:20:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-21T20:20:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-21T20:20:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Ernakulam depot using route EKM-VPN-ORD"
+      },
+      {
+        "at": "2026-09-21T20:20:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-22T08:20:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Acknowledgement deadline missed. Escalated to Regional Officer (Level 1)"
+      },
+      {
+        "at": "2026-09-22T08:20:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint escalated"
+      }
+    ]
+  },
+  {
+    "id": "GRV-2026-000055",
+    "createdAt": "2026-08-29T04:58:00Z",
+    "incidentAt": "2026-08-29T03:35:00Z",
+    "routeNo": "TSR-EKM-SF",
+    "category": "UNSAFE_DRIVING",
+    "location": {
+      "stopName": "Angamaly",
+      "areaBucket": "Thrissur"
+    },
+    "description": "Bus overtook dangerously near a curve.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml",
+      "phone": "9000000055"
+    },
+    "depotId": "TSR",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-08-29T06:58:00Z",
+    "resolveDeadline": "2026-08-30T04:58:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-08-29T04:58:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-08-29T04:58:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thrissur depot using route TSR-EKM-SF"
+      },
+      {
+        "at": "2026-08-29T04:58:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-08-29T06:06:33Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-29T07:35:33Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Station Master",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-30T04:29:37Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Speed governor checked; driver counselled",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-30T04:29:37Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Station Master",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Speed governor checked; driver counselled",
+      "at": "2026-08-30T04:29:37Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000056",
+    "createdAt": "2026-09-23T02:30:00Z",
+    "incidentAt": "2026-09-23T01:06:00Z",
+    "routeNo": "TVM-KZK-ORD",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "Palayam",
+      "areaBucket": "Thiruvananthapuram City"
+    },
+    "description": "Floor was wet and slippery near the rear door.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml",
+      "phone": "9000000056"
+    },
+    "depotId": "TVM-CTY",
+    "status": "IN_PROGRESS",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-23T14:30:00Z",
+    "resolveDeadline": "2026-09-26T02:30:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-23T02:30:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-23T02:30:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thiruvananthapuram City depot using route TVM-KZK-ORD"
+      },
+      {
+        "at": "2026-09-23T02:30:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-23T04:40:22Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-23T05:02:22Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector A",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Inspector A"
+  },
+  {
+    "id": "GRV-2026-000057",
+    "createdAt": "2026-08-24T19:40:00Z",
+    "incidentAt": "2026-08-24T18:15:00Z",
+    "busNo": "KL-99-Z-6088",
+    "routeNo": "KKD-KNR-SF",
+    "category": "OVERCROWDING",
+    "location": {
+      "stopName": "Kozhikode",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Bus was extremely overcrowded; people hanging at the door.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000057"
+    },
+    "depotId": "KKD",
+    "status": "RESOLVED",
+    "escalationLevel": 1,
+    "ackDeadline": "2026-08-25T03:40:00Z",
+    "resolveDeadline": "2026-08-27T19:40:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-08-24T19:40:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-08-24T19:40:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-KNR-SF"
+      },
+      {
+        "at": "2026-08-24T19:40:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-08-25T02:08:15Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-25T03:10:15Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector A",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-27T19:40:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Resolution deadline missed. Escalated to Regional Officer (Level 1)"
+      },
+      {
+        "at": "2026-08-27T19:51:45Z",
+        "actor": "REGIONAL",
+        "type": "RESOLVED",
+        "message": "Resolved: Extra trip added in peak hours",
+        "actorName": "Regional Transport Officer"
+      },
+      {
+        "at": "2026-08-27T19:51:45Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Inspector A",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Extra trip added in peak hours",
+      "at": "2026-08-27T19:51:45Z",
+      "by": "Regional Transport Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000058",
+    "createdAt": "2026-09-17T06:44:00Z",
+    "incidentAt": "2026-09-17T05:55:00Z",
+    "busNo": "KL-99-Z-2631",
+    "routeNo": "TSR-WDK-ORD",
+    "category": "OVERCROWDING",
+    "location": {
+      "stopName": "Wadakkanchery",
+      "areaBucket": "Thrissur"
+    },
+    "description": "Too many passengers standing; could not breathe properly.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000058"
+    },
+    "depotId": "TSR",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-17T14:44:00Z",
+    "resolveDeadline": "2026-09-20T06:44:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-17T06:44:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-17T06:44:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thrissur depot using route TSR-WDK-ORD"
+      },
+      {
+        "at": "2026-09-17T06:44:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-17T11:38:36Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-17T11:56:36Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Vehicle Supervisor",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-19T07:48:04Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Schedule revised to reduce gap between trips",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-19T07:48:04Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Vehicle Supervisor",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Schedule revised to reduce gap between trips",
+      "at": "2026-09-19T07:48:04Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000059",
+    "createdAt": "2026-09-18T18:59:00Z",
+    "incidentAt": "2026-09-18T17:45:00Z",
+    "busNo": "KL-99-Z-6735",
+    "routeNo": "TSR-GVR-ORD",
+    "category": "UNSAFE_DRIVING",
+    "location": {
+      "stopName": "Ayyanthole",
+      "areaBucket": "Thrissur"
+    },
+    "description": "The bus was overspeeding on a crowded road.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000059"
+    },
+    "depotId": "TSR",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-18T20:59:00Z",
+    "resolveDeadline": "2026-09-19T18:59:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-18T18:59:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-18T18:59:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thrissur depot using route TSR-GVR-ORD"
+      },
+      {
+        "at": "2026-09-18T18:59:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-18T20:51:56Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-18T22:43:56Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Vehicle Supervisor",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-19T16:21:30Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Speed governor checked; driver counselled",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-19T16:21:30Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Vehicle Supervisor",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Speed governor checked; driver counselled",
+      "at": "2026-09-19T16:21:30Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000060",
+    "createdAt": "2026-09-13T12:17:00Z",
+    "incidentAt": "2026-09-13T11:18:00Z",
+    "routeNo": "TVM-MCH-ORD",
+    "category": "MISSED_STOP",
+    "location": {
+      "stopName": "Palayam",
+      "areaBucket": "Thiruvananthapuram City"
+    },
+    "description": "Bus skipped the stop and dropped us 500 m away.",
+    "evidence": [],
+    "complainant": {
+      "lang": "hi"
+    },
+    "depotId": "TVM-CTY",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-13T20:17:00Z",
+    "resolveDeadline": "2026-09-16T12:17:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-13T12:17:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-13T12:17:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thiruvananthapuram City depot using route TVM-MCH-ORD"
+      },
+      {
+        "at": "2026-09-13T12:17:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "Depot notified"
+      },
+      {
+        "at": "2026-09-13T17:42:13Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-13T19:03:13Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Duty Officer",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-15T14:02:27Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Stop added to crew briefing",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Duty Officer",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Stop added to crew briefing",
+      "at": "2026-09-15T14:02:27Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000061",
+    "createdAt": "2026-08-31T23:52:00Z",
+    "incidentAt": "2026-08-31T22:51:00Z",
+    "routeNo": "KLM-TVM-SF",
+    "category": "OTHER",
+    "location": {
+      "stopName": "Chathannoor",
+      "areaBucket": "Kollam"
+    },
+    "description": "Conductor did not return the balance change.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000061"
+    },
+    "depotId": "KLM",
+    "status": "REJECTED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-01T11:52:00Z",
+    "resolveDeadline": "2026-09-03T23:52:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-08-31T23:52:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-08-31T23:52:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kollam depot using route KLM-TVM-SF"
+      },
+      {
+        "at": "2026-08-31T23:52:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-01T08:56:36Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-01T15:21:05Z",
+        "actor": "DEPOT",
+        "type": "REJECTED",
+        "message": "Rejected: No reply to request for details.",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-01T15:21:05Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint rejected"
+      }
+    ],
+    "rejection": {
+      "reason": "INSUFFICIENT_INFO",
+      "note": "No reply to request for details."
+    }
+  },
+  {
+    "id": "GRV-2026-000062",
+    "createdAt": "2026-09-20T21:08:00Z",
+    "incidentAt": "2026-09-20T19:42:00Z",
+    "busNo": "KL-99-Z-7951",
+    "routeNo": "ALV-ANG-ORD",
+    "category": "CONCESSION_DENIAL",
+    "location": {
+      "stopName": "Angamaly",
+      "areaBucket": "Aluva"
+    },
+    "description": "Student was asked to stand and pay full fare despite the pass.",
+    "evidence": [],
+    "complainant": {
+      "lang": "hi",
+      "phone": "9000000062"
+    },
+    "depotId": "ALV",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-21T01:08:00Z",
+    "resolveDeadline": "2026-09-22T21:08:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-09-20T21:08:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-20T21:08:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Aluva depot using route ALV-ANG-ORD"
+      },
+      {
+        "at": "2026-09-20T21:08:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-20T22:09:33Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-21T00:04:33Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Vehicle Supervisor",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-22T06:00:40Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Concession rules re-circulated to all crew",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-22T06:00:40Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Vehicle Supervisor",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Concession rules re-circulated to all crew",
+      "at": "2026-09-22T06:00:40Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000063",
+    "createdAt": "2026-08-30T06:03:00Z",
+    "incidentAt": "2026-08-30T04:57:00Z",
+    "busNo": "KL-99-Z-1721",
+    "routeNo": "ALV-PBR-ORD",
+    "category": "OVERCROWDING",
+    "location": {
+      "stopName": "Perumbavoor",
+      "areaBucket": "Aluva"
+    },
+    "description": "Bus was extremely overcrowded; people hanging at the door.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000063"
+    },
+    "depotId": "ALV",
+    "status": "REJECTED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-08-30T14:03:00Z",
+    "resolveDeadline": "2026-09-02T06:03:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-08-30T06:03:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-08-30T06:03:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Aluva depot using route ALV-PBR-ORD"
+      },
+      {
+        "at": "2026-08-30T06:03:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-08-30T11:36:27Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-30T16:29:36Z",
+        "actor": "DEPOT",
+        "type": "REJECTED",
+        "message": "Rejected: Private bus, not a KSRTC service.",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-30T16:29:36Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint rejected"
+      }
+    ],
+    "rejection": {
+      "reason": "OUT_OF_SCOPE",
+      "note": "Private bus, not a KSRTC service."
+    }
+  },
+  {
+    "id": "GRV-2026-000064",
+    "createdAt": "2026-08-25T22:15:00Z",
+    "incidentAt": "2026-08-25T21:38:00Z",
+    "busNo": "KL-99-Z-2276",
+    "routeNo": "ALV-CIA-ORD",
+    "category": "UNSAFE_DRIVING",
+    "location": {
+      "stopName": "Desom",
+      "areaBucket": "Aluva"
+    },
+    "description": "Driver braked suddenly several times; passengers nearly fell.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000064"
+    },
+    "depotId": "ALV",
+    "status": "ESCALATED",
+    "escalationLevel": 2,
+    "ackDeadline": "2026-08-26T00:15:00Z",
+    "resolveDeadline": "2026-08-26T22:15:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-08-25T22:15:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-08-25T22:15:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Aluva depot using route ALV-CIA-ORD"
+      },
+      {
+        "at": "2026-08-25T22:15:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-08-26T00:15:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Acknowledgement deadline missed. Escalated to Regional Officer (Level 1)"
+      },
+      {
+        "at": "2026-08-27T22:15:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Still unresolved. Escalated to Head Office (Level 2)"
+      },
+      {
+        "at": "2026-08-27T22:15:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint escalated"
+      }
+    ]
+  },
+  {
+    "id": "GRV-2026-000065",
+    "createdAt": "2026-09-21T19:12:00Z",
+    "incidentAt": "2026-09-21T18:01:00Z",
+    "busNo": "KL-99-Z-3079",
+    "routeNo": "KKD-VDK-FP",
+    "category": "OVERCROWDING",
+    "location": {
+      "stopName": "Kozhikode",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Crowd was so heavy that elderly passengers could not board.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000065"
+    },
+    "depotId": "KKD",
+    "status": "ESCALATED",
+    "escalationLevel": 1,
+    "ackDeadline": "2026-09-22T03:12:00Z",
+    "resolveDeadline": "2026-09-24T19:12:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-21T19:12:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-21T19:12:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-VDK-FP"
+      },
+      {
+        "at": "2026-09-21T19:12:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-22T03:12:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Acknowledgement deadline missed. Escalated to Regional Officer (Level 1)"
+      },
+      {
+        "at": "2026-09-22T03:12:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint escalated"
+      }
+    ]
+  },
+  {
+    "id": "GRV-2026-000066",
+    "createdAt": "2026-08-28T00:53:00Z",
+    "incidentAt": "2026-08-27T23:59:00Z",
+    "busNo": "KL-99-Z-1392",
+    "routeNo": "TVM-CIR-BLU",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "East Fort",
+      "areaBucket": "Thiruvananthapuram City"
+    },
+    "description": "Rain water was leaking through the roof onto the seats.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml",
+      "phone": "9000000066"
+    },
+    "depotId": "TVM-CTY",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-08-28T12:53:00Z",
+    "resolveDeadline": "2026-08-31T00:53:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-08-28T00:53:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-08-28T00:53:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thiruvananthapuram City depot using route TVM-CIR-BLU"
+      },
+      {
+        "at": "2026-08-28T00:53:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-08-28T09:21:51Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-28T10:27:51Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector B",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-29T23:51:36Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Bus cleaned and inspected",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-29T23:51:36Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Inspector B",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Bus cleaned and inspected",
+      "at": "2026-08-29T23:51:36Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000067",
+    "createdAt": "2026-09-01T07:36:00Z",
+    "incidentAt": "2026-09-01T07:23:00Z",
+    "busNo": "KL-99-Z-8831",
+    "routeNo": "KKD-VDK-FP",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "Koyilandy",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Windows were covered in dust and the bus smelled bad.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000067"
+    },
+    "depotId": "KKD",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-01T19:36:00Z",
+    "resolveDeadline": "2026-09-04T07:36:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-09-01T07:36:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-01T07:36:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-VDK-FP"
+      },
+      {
+        "at": "2026-09-01T07:36:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-01T18:46:15Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-01T19:51:15Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector B",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-04T02:30:37Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Bus cleaned and inspected",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-04T02:30:37Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Inspector B",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Bus cleaned and inspected",
+      "at": "2026-09-04T02:30:37Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000068",
+    "createdAt": "2026-09-15T10:13:00Z",
+    "incidentAt": "2026-09-15T09:19:00Z",
+    "busNo": "KL-99-Z-2223",
+    "routeNo": "EKM-TPR-ORD",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "Ernakulam South",
+      "areaBucket": "Ernakulam"
+    },
+    "description": "Rain water was leaking through the roof onto the seats.",
+    "evidence": [],
+    "complainant": {
+      "lang": "hi",
+      "phone": "9000000068"
+    },
+    "depotId": "EKM",
+    "status": "AWAITING_INFO",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-15T22:13:00Z",
+    "resolveDeadline": "2026-09-18T10:13:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-15T10:13:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-15T10:13:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Ernakulam depot using route EKM-TPR-ORD"
+      },
+      {
+        "at": "2026-09-15T10:13:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-15T15:20:02Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-15T16:13:02Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Station Master",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-15T17:13:02Z",
+        "actor": "DEPOT",
+        "type": "INFO_REQUEST",
+        "message": "Requested more details from passenger (SLA paused)",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Station Master",
+    "slaPausedAt": "2026-09-15T17:13:02Z"
+  },
+  {
+    "id": "GRV-2026-000069",
+    "createdAt": "2026-09-22T00:08:00Z",
+    "incidentAt": "2026-09-21T23:35:00Z",
+    "busNo": "KL-99-Z-3255",
+    "routeNo": "KKD-VDK-FP",
+    "category": "MISSED_STOP",
+    "location": {
+      "stopName": "West Hill",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Bus skipped the stop and dropped us 500 m away.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000069"
+    },
+    "depotId": "KKD",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-22T08:08:00Z",
+    "resolveDeadline": "2026-09-25T00:08:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-22T00:08:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-22T00:08:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-VDK-FP"
+      },
+      {
+        "at": "2026-09-22T00:08:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-22T06:47:53Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-22T08:12:53Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Vehicle Supervisor",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-23T09:13:06Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Crew instructed to stop at all designated stops",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-23T09:13:06Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Vehicle Supervisor",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Crew instructed to stop at all designated stops",
+      "at": "2026-09-23T09:13:06Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000070",
+    "createdAt": "2026-09-12T21:31:00Z",
+    "incidentAt": "2026-09-12T20:18:00Z",
+    "busNo": "KL-99-Z-4708",
+    "routeNo": "KKD-KNR-SF",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "Vadakara",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Floor was wet and slippery near the rear door.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ta",
+      "phone": "9000000070"
+    },
+    "depotId": "KKD",
+    "status": "RESOLVED",
+    "escalationLevel": 1,
+    "ackDeadline": "2026-09-13T09:31:00Z",
+    "resolveDeadline": "2026-09-15T21:31:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-09-12T21:31:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-12T21:31:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-KNR-SF"
+      },
+      {
+        "at": "2026-09-12T21:31:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-13T09:31:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Acknowledgement deadline missed. Escalated to Regional Officer (Level 1)"
+      },
+      {
+        "at": "2026-09-13T20:47:06Z",
+        "actor": "REGIONAL",
+        "type": "RESOLVED",
+        "message": "Resolved by Regional Officer: Bus cleaned and inspected",
+        "actorName": "Regional Transport Officer"
+      },
+      {
+        "at": "2026-09-13T20:47:06Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "resolution": {
+      "note": "Handled at regional level after depot missed the deadline.",
+      "action": "Bus cleaned and inspected",
+      "at": "2026-09-13T20:47:06Z",
+      "by": "Regional Transport Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000071",
+    "createdAt": "2026-08-29T10:46:00Z",
+    "incidentAt": "2026-08-29T10:32:00Z",
+    "busNo": "KL-99-Z-3145",
+    "routeNo": "TVM-NYK-ORD",
+    "category": "UNSAFE_DRIVING",
+    "location": {
+      "stopName": "Thampanoor",
+      "areaBucket": "Thiruvananthapuram City"
+    },
+    "description": "The bus was overspeeding on a crowded road.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000071"
+    },
+    "depotId": "TVM-CTY",
+    "status": "AWAITING_INFO",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-08-29T12:46:00Z",
+    "resolveDeadline": "2026-08-30T10:46:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-08-29T10:46:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-08-29T10:46:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thiruvananthapuram City depot using route TVM-NYK-ORD"
+      },
+      {
+        "at": "2026-08-29T10:46:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-08-29T11:14:48Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-29T11:49:48Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Duty Officer",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-08-29T12:49:48Z",
+        "actor": "DEPOT",
+        "type": "INFO_REQUEST",
+        "message": "Requested more details from passenger (SLA paused)",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Duty Officer",
+    "slaPausedAt": "2026-08-29T12:49:48Z"
+  },
+  {
+    "id": "GRV-2026-000072",
+    "createdAt": "2026-09-21T02:52:00Z",
+    "incidentAt": "2026-09-21T02:35:00Z",
+    "routeNo": "EKM-KTM-FP",
+    "category": "UNSAFE_DRIVING",
+    "location": {
+      "stopName": "Piravom",
+      "areaBucket": "Ernakulam"
+    },
+    "description": "Driver was using a mobile phone while driving.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml",
+      "phone": "9000000072"
+    },
+    "depotId": "EKM",
+    "status": "RESOLVED",
+    "escalationLevel": 1,
+    "ackDeadline": "2026-09-21T04:52:00Z",
+    "resolveDeadline": "2026-09-22T02:52:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-21T02:52:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-21T02:52:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Ernakulam depot using route EKM-KTM-FP"
+      },
+      {
+        "at": "2026-09-21T02:52:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-21T03:36:15Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-21T05:12:15Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Duty Officer",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-22T02:52:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Resolution deadline missed. Escalated to Regional Officer (Level 1)"
+      },
+      {
+        "at": "2026-09-22T05:10:15Z",
+        "actor": "REGIONAL",
+        "type": "RESOLVED",
+        "message": "Resolved: Speed governor checked; driver counselled",
+        "actorName": "Regional Transport Officer"
+      },
+      {
+        "at": "2026-09-22T05:10:15Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Duty Officer",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Speed governor checked; driver counselled",
+      "at": "2026-09-22T05:10:15Z",
+      "by": "Regional Transport Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000073",
+    "createdAt": "2026-09-20T19:57:00Z",
+    "incidentAt": "2026-09-20T18:41:00Z",
+    "busNo": "KL-99-Z-7595",
+    "routeNo": "ALV-ANG-ORD",
+    "category": "OVERCROWDING",
+    "location": {
+      "stopName": "Angamaly",
+      "areaBucket": "Aluva"
+    },
+    "description": "Bus was extremely overcrowded; people hanging at the door.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ta",
+      "phone": "9000000073"
+    },
+    "depotId": "ALV",
+    "status": "REJECTED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-21T03:57:00Z",
+    "resolveDeadline": "2026-09-23T19:57:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-20T19:57:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-20T19:57:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Aluva depot using route ALV-ANG-ORD"
+      },
+      {
+        "at": "2026-09-20T19:57:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-21T03:12:49Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-21T12:36:49Z",
+        "actor": "DEPOT",
+        "type": "REJECTED",
+        "message": "Rejected: Route could not be identified.",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-21T12:36:49Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint rejected"
+      }
+    ],
+    "rejection": {
+      "reason": "WRONG_ROUTE",
+      "note": "Route could not be identified."
+    }
+  },
+  {
+    "id": "GRV-2026-000074",
+    "createdAt": "2026-09-07T21:22:00Z",
+    "incidentAt": "2026-09-07T19:53:00Z",
+    "busNo": "KL-99-Z-6831",
+    "routeNo": "TVM-KZK-ORD",
+    "category": "CONCESSION_DENIAL",
+    "location": {
+      "stopName": "Statue",
+      "areaBucket": "Thiruvananthapuram City"
+    },
+    "description": "Conductor refused concession for a disabled passenger with a valid card.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000074"
+    },
+    "depotId": "TVM-CTY",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-08T01:22:00Z",
+    "resolveDeadline": "2026-09-09T21:22:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-07T21:22:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-07T21:22:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thiruvananthapuram City depot using route TVM-KZK-ORD"
+      },
+      {
+        "at": "2026-09-07T21:22:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-07T22:52:08Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-07T23:29:08Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Vehicle Supervisor",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-08T12:07:55Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Conductor instructed on concession rules; refund arranged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-08T12:07:55Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Vehicle Supervisor",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Conductor instructed on concession rules; refund arranged",
+      "at": "2026-09-08T12:07:55Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000075",
+    "createdAt": "2026-09-21T05:36:00Z",
+    "incidentAt": "2026-09-21T04:09:00Z",
+    "busNo": "KL-99-Z-5940",
+    "routeNo": "ALV-PBR-ORD",
+    "category": "UNSAFE_DRIVING",
+    "location": {
+      "stopName": "Thottumugham",
+      "areaBucket": "Aluva"
+    },
+    "description": "Driver was using a mobile phone while driving.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml",
+      "phone": "9000000075"
+    },
+    "depotId": "ALV",
+    "status": "RESOLVED",
+    "escalationLevel": 1,
+    "ackDeadline": "2026-09-21T07:36:00Z",
+    "resolveDeadline": "2026-09-22T05:36:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-21T05:36:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-21T05:36:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Aluva depot using route ALV-PBR-ORD"
+      },
+      {
+        "at": "2026-09-21T05:36:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-21T07:32:32Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-21T08:07:32Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector A",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-22T05:36:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Resolution deadline missed. Escalated to Regional Officer (Level 1)"
+      },
+      {
+        "at": "2026-09-22T06:07:35Z",
+        "actor": "REGIONAL",
+        "type": "RESOLVED",
+        "message": "Resolved: Driver counselled and warned",
+        "actorName": "Regional Transport Officer"
+      },
+      {
+        "at": "2026-09-22T06:07:35Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Inspector A",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Driver counselled and warned",
+      "at": "2026-09-22T06:07:35Z",
+      "by": "Regional Transport Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000076",
+    "createdAt": "2026-09-13T13:51:00Z",
+    "incidentAt": "2026-09-13T13:06:00Z",
+    "busNo": "KL-99-Z-6418",
+    "routeNo": "KKD-FRK-ORD",
+    "category": "OTHER",
+    "location": {
+      "stopName": "Kozhikode",
+      "areaBucket": "Kozhikode"
+    },
+    "description": "Bus was very late and no information was given.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en"
+    },
+    "depotId": "KKD",
+    "status": "REOPENED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-14T01:51:00Z",
+    "resolveDeadline": "2026-09-16T13:51:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-13T13:51:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-13T13:51:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Kozhikode depot using route KKD-FRK-ORD"
+      },
+      {
+        "at": "2026-09-13T13:51:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "Depot notified"
+      },
+      {
+        "at": "2026-09-13T21:10:11Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-13T22:59:11Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector B",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-16T01:31:53Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Passenger contacted and issue explained",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-17T01:31:53Z",
+        "actor": "PASSENGER",
+        "type": "REOPENED",
+        "message": "Passenger reopened: issue happened again"
+      }
+    ],
+    "assignedTo": "Inspector B"
+  },
+  {
+    "id": "GRV-2026-000077",
+    "createdAt": "2026-09-12T19:28:00Z",
+    "incidentAt": "2026-09-12T19:12:00Z",
+    "busNo": "KL-99-Z-8608",
+    "routeNo": "EKM-KKD-ORD",
+    "category": "OTHER",
+    "location": {
+      "stopName": "Edappally Toll",
+      "areaBucket": "Ernakulam"
+    },
+    "description": "Display board showed the wrong destination.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000077"
+    },
+    "depotId": "EKM",
+    "status": "RESOLVED",
+    "escalationLevel": 1,
+    "ackDeadline": "2026-09-13T07:28:00Z",
+    "resolveDeadline": "2026-09-15T19:28:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-09-12T19:28:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-12T19:28:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Ernakulam depot using route EKM-KKD-ORD"
+      },
+      {
+        "at": "2026-09-12T19:28:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-13T07:28:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Acknowledgement deadline missed. Escalated to Regional Officer (Level 1)"
+      },
+      {
+        "at": "2026-09-13T23:22:57Z",
+        "actor": "REGIONAL",
+        "type": "RESOLVED",
+        "message": "Resolved by Regional Officer: Passenger contacted and issue explained",
+        "actorName": "Regional Transport Officer"
+      },
+      {
+        "at": "2026-09-13T23:22:57Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "resolution": {
+      "note": "Handled at regional level after depot missed the deadline.",
+      "action": "Passenger contacted and issue explained",
+      "at": "2026-09-13T23:22:57Z",
+      "by": "Regional Transport Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000078",
+    "createdAt": "2026-09-06T13:31:00Z",
+    "incidentAt": "2026-09-06T13:10:00Z",
+    "busNo": "KL-99-Z-6203",
+    "routeNo": "EKM-KKD-ORD",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "Palarivattom",
+      "areaBucket": "Ernakulam"
+    },
+    "description": "Rain water was leaking through the roof onto the seats.",
+    "evidence": [],
+    "complainant": {
+      "lang": "hi",
+      "phone": "9000000078"
+    },
+    "depotId": "EKM",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-07T01:31:00Z",
+    "resolveDeadline": "2026-09-09T13:31:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-09-06T13:31:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-06T13:31:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Ernakulam depot using route EKM-KKD-ORD"
+      },
+      {
+        "at": "2026-09-06T13:31:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-06T15:28:44Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-06T15:59:44Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Duty Officer",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-09T10:37:16Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Cleaning schedule corrected for this bus",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-09T10:37:16Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Duty Officer",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Cleaning schedule corrected for this bus",
+      "at": "2026-09-09T10:37:16Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000079",
+    "createdAt": "2026-09-21T05:30:00Z",
+    "incidentAt": "2026-09-21T04:35:00Z",
+    "busNo": "KL-99-Z-2521",
+    "routeNo": "TVM-KVL-ORD",
+    "category": "MISSED_STOP",
+    "location": {
+      "stopName": "Vazhamuttom",
+      "areaBucket": "Thiruvananthapuram City"
+    },
+    "description": "Conductor said the bus would not stop there although it is on the route.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml",
+      "phone": "9000000079"
+    },
+    "depotId": "TVM-CTY",
+    "status": "AWAITING_INFO",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-21T13:30:00Z",
+    "resolveDeadline": "2026-09-24T05:30:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-21T05:30:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-21T05:30:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thiruvananthapuram City depot using route TVM-KVL-ORD"
+      },
+      {
+        "at": "2026-09-21T05:30:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-21T12:13:18Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-21T12:23:18Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector A",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-21T13:23:18Z",
+        "actor": "DEPOT",
+        "type": "INFO_REQUEST",
+        "message": "Requested more details from passenger (SLA paused)",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Inspector A",
+    "slaPausedAt": "2026-09-21T13:23:18Z"
+  },
+  {
+    "id": "GRV-2026-000080",
+    "createdAt": "2026-09-22T16:35:00Z",
+    "incidentAt": "2026-09-22T16:14:00Z",
+    "busNo": "KL-99-Z-1289",
+    "routeNo": "TVM-KZK-ORD",
+    "category": "OTHER",
+    "location": {
+      "stopName": "Statue",
+      "areaBucket": "Thiruvananthapuram City"
+    },
+    "description": "Conductor did not return the balance change.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000080"
+    },
+    "depotId": "TVM-CTY",
+    "status": "AWAITING_INFO",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-23T04:35:00Z",
+    "resolveDeadline": "2026-09-25T16:35:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-22T16:35:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-22T16:35:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thiruvananthapuram City depot using route TVM-KZK-ORD"
+      },
+      {
+        "at": "2026-09-22T16:35:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-23T04:01:34Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-23T04:36:34Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector B",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-23T05:36:34Z",
+        "actor": "DEPOT",
+        "type": "INFO_REQUEST",
+        "message": "Requested more details from passenger (SLA paused)",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Inspector B",
+    "slaPausedAt": "2026-09-23T05:36:34Z"
+  },
+  {
+    "id": "GRV-2026-000081",
+    "createdAt": "2026-09-22T16:42:00Z",
+    "incidentAt": "2026-09-22T15:33:00Z",
+    "routeNo": "TSR-GVR-ORD",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "Thrissur",
+      "areaBucket": "Thrissur"
+    },
+    "description": "Floor was wet and slippery near the rear door.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml",
+      "phone": "9000000081"
+    },
+    "depotId": "TSR",
+    "status": "ESCALATED",
+    "escalationLevel": 1,
+    "ackDeadline": "2026-09-23T04:42:00Z",
+    "resolveDeadline": "2026-09-25T16:42:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-22T16:42:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-22T16:42:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thrissur depot using route TSR-GVR-ORD"
+      },
+      {
+        "at": "2026-09-22T16:42:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-23T04:42:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Acknowledgement deadline missed. Escalated to Regional Officer (Level 1)"
+      },
+      {
+        "at": "2026-09-23T04:42:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint escalated"
+      }
+    ]
+  },
+  {
+    "id": "GRV-2026-000082",
+    "createdAt": "2026-09-23T09:01:00Z",
+    "incidentAt": "2026-09-23T08:56:00Z",
+    "busNo": "KL-99-Z-4936",
+    "routeNo": "EKM-VPN-ORD",
+    "category": "OVERCROWDING",
+    "location": {
+      "stopName": "High Court",
+      "areaBucket": "Ernakulam"
+    },
+    "description": "Bus was extremely overcrowded; people hanging at the door.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000082"
+    },
+    "depotId": "EKM",
+    "status": "IN_PROGRESS",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-23T17:01:00Z",
+    "resolveDeadline": "2026-09-26T09:01:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-23T09:01:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-23T09:01:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Ernakulam depot using route EKM-VPN-ORD"
+      },
+      {
+        "at": "2026-09-23T09:01:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-23T11:51:57Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-23T12:40:57Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector B",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Inspector B"
+  },
+  {
+    "id": "GRV-2026-000083",
+    "createdAt": "2026-09-21T03:22:00Z",
+    "incidentAt": "2026-09-21T02:34:00Z",
+    "busNo": "KL-99-Z-5011",
+    "routeNo": "TVM-KZK-ORD",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "East Fort",
+      "areaBucket": "Thiruvananthapuram City"
+    },
+    "description": "Seats were dirty and there was litter on the floor.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en"
+    },
+    "depotId": "TVM-CTY",
+    "status": "IN_PROGRESS",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-21T15:22:00Z",
+    "resolveDeadline": "2026-09-24T03:22:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-21T03:22:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-21T03:22:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thiruvananthapuram City depot using route TVM-KZK-ORD"
+      },
+      {
+        "at": "2026-09-21T03:22:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "Depot notified"
+      },
+      {
+        "at": "2026-09-21T05:40:25Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-21T07:30:25Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector B",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Inspector B"
+  },
+  {
+    "id": "GRV-2026-000084",
+    "createdAt": "2026-09-23T11:05:00Z",
+    "incidentAt": "2026-09-23T10:17:00Z",
+    "routeNo": "TVM-KZK-ORD",
+    "category": "OVERCROWDING",
+    "location": {
+      "stopName": "Palayam",
+      "areaBucket": "Thiruvananthapuram City"
+    },
+    "description": "Too many passengers standing; could not breathe properly.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en"
+    },
+    "depotId": "TVM-CTY",
+    "status": "ASSIGNED_TO_DEPOT",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-23T19:05:00Z",
+    "resolveDeadline": "2026-09-26T11:05:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-23T11:05:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-23T11:05:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thiruvananthapuram City depot using route TVM-KZK-ORD"
+      },
+      {
+        "at": "2026-09-23T11:05:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "Depot notified"
+      }
+    ]
+  },
+  {
+    "id": "GRV-2026-000085",
+    "createdAt": "2026-09-21T03:31:00Z",
+    "incidentAt": "2026-09-21T03:10:00Z",
+    "routeNo": "TVM-KZK-ORD",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "Statue",
+      "areaBucket": "Thiruvananthapuram City"
+    },
+    "description": "Seat covers torn and stained; bus did not look cleaned for days.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml"
+    },
+    "depotId": "TVM-CTY",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-21T15:31:00Z",
+    "resolveDeadline": "2026-09-24T03:31:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-21T03:31:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-21T03:31:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thiruvananthapuram City depot using route TVM-KZK-ORD"
+      },
+      {
+        "at": "2026-09-21T03:31:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "Depot notified"
+      },
+      {
+        "at": "2026-09-21T12:00:47Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-21T13:54:47Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Duty Officer",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-23T13:29:33Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Bus cleaned and inspected",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Duty Officer",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Bus cleaned and inspected",
+      "at": "2026-09-23T13:29:33Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000086",
+    "createdAt": "2026-09-21T13:59:00Z",
+    "incidentAt": "2026-09-21T13:11:00Z",
+    "busNo": "KL-99-Z-6145",
+    "routeNo": "TVM-KZK-ORD",
+    "category": "OVERCROWDING",
+    "location": {
+      "stopName": "East Fort",
+      "areaBucket": "Thiruvananthapuram City"
+    },
+    "description": "Crowd was so heavy that elderly passengers could not board.",
+    "evidence": [],
+    "complainant": {
+      "lang": "ml",
+      "phone": "9000000086"
+    },
+    "depotId": "TVM-CTY",
+    "status": "IN_PROGRESS",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-21T21:59:00Z",
+    "resolveDeadline": "2026-09-24T13:59:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-21T13:59:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-21T13:59:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thiruvananthapuram City depot using route TVM-KZK-ORD"
+      },
+      {
+        "at": "2026-09-21T13:59:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-21T17:01:18Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-21T18:01:18Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Vehicle Supervisor",
+        "actorName": "Depot Officer"
+      }
+    ],
+    "assignedTo": "Vehicle Supervisor"
+  },
+  {
+    "id": "GRV-2026-000087",
+    "createdAt": "2026-09-20T16:51:00Z",
+    "incidentAt": "2026-09-20T16:21:00Z",
+    "routeNo": "TVM-KZK-ORD",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "Palayam",
+      "areaBucket": "Thiruvananthapuram City"
+    },
+    "description": "Rain water was leaking through the roof onto the seats.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000087"
+    },
+    "depotId": "TVM-CTY",
+    "status": "ESCALATED",
+    "escalationLevel": 1,
+    "ackDeadline": "2026-09-21T04:51:00Z",
+    "resolveDeadline": "2026-09-23T16:51:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-20T16:51:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-20T16:51:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thiruvananthapuram City depot using route TVM-KZK-ORD"
+      },
+      {
+        "at": "2026-09-20T16:51:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-21T04:51:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Acknowledgement deadline missed. Escalated to Regional Officer (Level 1)"
+      },
+      {
+        "at": "2026-09-21T04:51:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint escalated"
+      }
+    ]
+  },
+  {
+    "id": "GRV-2026-000088",
+    "createdAt": "2026-09-22T06:09:00Z",
+    "incidentAt": "2026-09-22T05:12:00Z",
+    "busNo": "KL-99-Z-3784",
+    "routeNo": "TVM-KZK-ORD",
+    "category": "OVERCROWDING",
+    "location": {
+      "stopName": "East Fort",
+      "areaBucket": "Thiruvananthapuram City"
+    },
+    "description": "Too many passengers standing; could not breathe properly.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000088"
+    },
+    "depotId": "TVM-CTY",
+    "status": "ESCALATED",
+    "escalationLevel": 1,
+    "ackDeadline": "2026-09-22T14:09:00Z",
+    "resolveDeadline": "2026-09-25T06:09:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-22T06:09:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-22T06:09:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thiruvananthapuram City depot using route TVM-KZK-ORD"
+      },
+      {
+        "at": "2026-09-22T06:09:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-22T14:09:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Acknowledgement deadline missed. Escalated to Regional Officer (Level 1)"
+      },
+      {
+        "at": "2026-09-22T14:09:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint escalated"
+      }
+    ]
+  },
+  {
+    "id": "GRV-2026-000089",
+    "createdAt": "2026-09-20T00:25:00Z",
+    "incidentAt": "2026-09-20T00:01:00Z",
+    "busNo": "KL-99-Z-5818",
+    "routeNo": "TVM-KZK-ORD",
+    "category": "CLEANLINESS",
+    "location": {
+      "stopName": "Palayam",
+      "areaBucket": "Thiruvananthapuram City"
+    },
+    "description": "Floor was wet and slippery near the rear door.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000089"
+    },
+    "depotId": "TVM-CTY",
+    "status": "ESCALATED",
+    "escalationLevel": 1,
+    "ackDeadline": "2026-09-20T12:25:00Z",
+    "resolveDeadline": "2026-09-23T00:25:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-20T00:25:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-20T00:25:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thiruvananthapuram City depot using route TVM-KZK-ORD"
+      },
+      {
+        "at": "2026-09-20T00:25:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-20T12:25:00Z",
+        "actor": "SYSTEM",
+        "type": "ESCALATED",
+        "message": "Acknowledgement deadline missed. Escalated to Regional Officer (Level 1)"
+      },
+      {
+        "at": "2026-09-20T12:25:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint escalated"
+      }
+    ]
+  },
+  {
+    "id": "GRV-2026-000090",
+    "createdAt": "2026-09-19T15:24:00Z",
+    "incidentAt": "2026-09-19T13:58:00Z",
+    "busNo": "KL-99-Z-1986",
+    "routeNo": "TVM-KZK-ORD",
+    "category": "OVERCROWDING",
+    "location": {
+      "stopName": "Statue",
+      "areaBucket": "Thiruvananthapuram City"
+    },
+    "description": "Crowd was so heavy that elderly passengers could not board.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en",
+      "phone": "9000000090"
+    },
+    "depotId": "TVM-CTY",
+    "status": "RESOLVED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-19T23:24:00Z",
+    "resolveDeadline": "2026-09-22T15:24:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": true,
+    "timeline": [
+      {
+        "at": "2026-09-19T15:24:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-19T15:24:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Routed to Thiruvananthapuram City depot using route TVM-KZK-ORD"
+      },
+      {
+        "at": "2026-09-19T15:24:00Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint received"
+      },
+      {
+        "at": "2026-09-19T19:06:08Z",
+        "actor": "DEPOT",
+        "type": "ACK",
+        "message": "Complaint acknowledged",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-19T20:24:08Z",
+        "actor": "DEPOT",
+        "type": "ASSIGNED",
+        "message": "Assigned to Inspector A",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-21T03:16:46Z",
+        "actor": "DEPOT",
+        "type": "RESOLVED",
+        "message": "Resolved: Extra trip added in peak hours",
+        "actorName": "Depot Officer"
+      },
+      {
+        "at": "2026-09-21T03:16:46Z",
+        "actor": "SYSTEM",
+        "type": "NOTIFIED",
+        "message": "SMS: complaint resolved"
+      }
+    ],
+    "assignedTo": "Inspector A",
+    "resolution": {
+      "note": "Action taken and recorded.",
+      "action": "Extra trip added in peak hours",
+      "at": "2026-09-21T03:16:46Z",
+      "by": "Depot Officer"
+    }
+  },
+  {
+    "id": "GRV-2026-000091",
+    "createdAt": "2026-09-23T12:30:00Z",
+    "incidentAt": "2026-09-23T12:00:00Z",
+    "routeNo": "PVT-001",
+    "category": "MISSED_STOP",
+    "location": {
+      "stopName": "Unknown stop",
+      "areaBucket": "Unknown"
+    },
+    "description": "Bus did not stop at the designated stop.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en"
+    },
+    "depotId": null,
+    "status": "UNROUTED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-23T20:30:00Z",
+    "resolveDeadline": "2026-09-26T12:30:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-23T12:30:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-23T12:30:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Route PVT-001 not found in mapping file. Sent to unrouted queue"
+      }
+    ]
+  },
+  {
+    "id": "GRV-2026-000092",
+    "createdAt": "2026-09-23T07:30:00Z",
+    "incidentAt": "2026-09-23T07:00:00Z",
+    "routeNo": "XYZ-999",
+    "category": "MISSED_STOP",
+    "location": {
+      "stopName": "Unknown stop",
+      "areaBucket": "Unknown"
+    },
+    "description": "Bus did not stop at the designated stop.",
+    "evidence": [],
+    "complainant": {
+      "lang": "en"
+    },
+    "depotId": null,
+    "status": "UNROUTED",
+    "escalationLevel": 0,
+    "ackDeadline": "2026-09-23T15:30:00Z",
+    "resolveDeadline": "2026-09-26T07:30:00Z",
+    "slaPausedTotalMs": 0,
+    "verified": false,
+    "timeline": [
+      {
+        "at": "2026-09-23T07:30:00Z",
+        "actor": "PASSENGER",
+        "type": "CREATED",
+        "message": "Complaint submitted"
+      },
+      {
+        "at": "2026-09-23T07:30:00Z",
+        "actor": "SYSTEM",
+        "type": "ROUTED",
+        "message": "Route XYZ-999 not found in mapping file. Sent to unrouted queue"
+      }
+    ]
+  }
+]

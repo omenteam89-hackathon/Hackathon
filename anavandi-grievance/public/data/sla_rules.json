@@ -1,0 +1,107 @@
+{
+  "_note": "PLACEHOLDER values until the organisers' SLA rules are provided.",
+  "rules": [
+    {
+      "category": "CLEANLINESS",
+      "ackWithinHours": 12,
+      "resolveWithinHours": 72,
+      "escalateTo": [
+        {
+          "level": 1,
+          "role": "Regional Officer",
+          "afterHours": 0
+        },
+        {
+          "level": 2,
+          "role": "Head Office",
+          "afterHours": 48
+        }
+      ]
+    },
+    {
+      "category": "UNSAFE_DRIVING",
+      "ackWithinHours": 2,
+      "resolveWithinHours": 24,
+      "escalateTo": [
+        {
+          "level": 1,
+          "role": "Regional Officer",
+          "afterHours": 0
+        },
+        {
+          "level": 2,
+          "role": "Head Office",
+          "afterHours": 24
+        }
+      ]
+    },
+    {
+      "category": "OVERCROWDING",
+      "ackWithinHours": 8,
+      "resolveWithinHours": 72,
+      "escalateTo": [
+        {
+          "level": 1,
+          "role": "Regional Officer",
+          "afterHours": 0
+        },
+        {
+          "level": 2,
+          "role": "Head Office",
+          "afterHours": 48
+        }
+      ]
+    },
+    {
+      "category": "MISSED_STOP",
+      "ackWithinHours": 8,
+      "resolveWithinHours": 72,
+      "escalateTo": [
+        {
+          "level": 1,
+          "role": "Regional Officer",
+          "afterHours": 0
+        },
+        {
+          "level": 2,
+          "role": "Head Office",
+          "afterHours": 48
+        }
+      ]
+    },
+    {
+      "category": "CONCESSION_DENIAL",
+      "ackWithinHours": 4,
+      "resolveWithinHours": 48,
+      "escalateTo": [
+        {
+          "level": 1,
+          "role": "Regional Officer",
+          "afterHours": 0
+        },
+        {
+          "level": 2,
+          "role": "Head Office",
+          "afterHours": 48
+        }
+      ]
+    },
+    {
+      "category": "OTHER",
+      "ackWithinHours": 12,
+      "resolveWithinHours": 72,
+      "escalateTo": [
+        {
+          "level": 1,
+          "role": "Regional Officer",
+          "afterHours": 0
+        },
+        {
+          "level": 2,
+          "role": "Head Office",
+          "afterHours": 48
+        }
+      ]
+    }
+  ]
+}

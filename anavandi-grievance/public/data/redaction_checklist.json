@@ -1,0 +1,33 @@
+{
+  "_note": "Sample checklist. Replace with the organisers' privacy & redaction checklist.",
+  "items": [
+    {
+      "id": "R1",
+      "text": "No complainant names on the public dashboard"
+    },
+    {
+      "id": "R2",
+      "text": "No phone numbers (full or partial) on the public dashboard"
+    },
+    {
+      "id": "R3",
+      "text": "No exact home or GPS location; area / depot level only"
+    },
+    {
+      "id": "R4",
+      "text": "No complaint description text on the public dashboard"
+    },
+    {
+      "id": "R5",
+      "text": "No staff names or bus numbers linked to unverified allegations"
+    },
+    {
+      "id": "R6",
+      "text": "Groups with fewer than 3 complaints are suppressed"
+    },
+    {
+      "id": "R7",
+      "text": "Depot staff see phone numbers masked (e.g. 90XXXXXX21)"
+    }
+  ]
+}

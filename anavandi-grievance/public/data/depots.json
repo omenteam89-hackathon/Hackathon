@@ -1,0 +1,50 @@
+[
+  {
+    "id": "TVM-CTY",
+    "name": "Thiruvananthapuram City",
+    "region": "South",
+    "officerName": "Depot Officer (TVM City)",
+    "email": "tvm-city@depot.example",
+    "phone": "0000000101"
+  },
+  {
+    "id": "KLM",
+    "name": "Kollam",
+    "region": "South",
+    "officerName": "Depot Officer (Kollam)",
+    "email": "kollam@depot.example",
+    "phone": "0000000102"
+  },
+  {
+    "id": "EKM",
+    "name": "Ernakulam",
+    "region": "Central",
+    "officerName": "Depot Officer (Ernakulam)",
+    "email": "ernakulam@depot.example",
+    "phone": "0000000103"
+  },
+  {
+    "id": "ALV",
+    "name": "Aluva",
+    "region": "Central",
+    "officerName": "Depot Officer (Aluva)",
+    "email": "aluva@depot.example",
+    "phone": "0000000104"
+  },
+  {
+    "id": "TSR",
+    "name": "Thrissur",
+    "region": "North",
+    "officerName": "Depot Officer (Thrissur)",
+    "email": "thrissur@depot.example",
+    "phone": "0000000105"
+  },
+  {
+    "id": "KKD",
+    "name": "Kozhikode",
+    "region": "North",
+    "officerName": "Depot Officer (Kozhikode)",
+    "email": "kozhikode@depot.example",
+    "phone": "0000000106"
+  }
+]

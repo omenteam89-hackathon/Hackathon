@@ -1,0 +1,68 @@
+[
+  {
+    "id": "CLEANLINESS",
+    "label": {
+      "en": "Cleanliness",
+      "ml": "ശുചിത്വം",
+      "hi": "सफ़ाई",
+      "ta": "சுத்தம்"
+    },
+    "severity": "LOW",
+    "icon": "sparkles"
+  },
+  {
+    "id": "UNSAFE_DRIVING",
+    "label": {
+      "en": "Unsafe driving",
+      "ml": "അപകടകരമായ ഡ്രൈവിംഗ്",
+      "hi": "असुरक्षित ड्राइविंग",
+      "ta": "பாதுகாப்பற்ற ஓட்டுதல்"
+    },
+    "severity": "CRITICAL",
+    "icon": "alert-triangle"
+  },
+  {
+    "id": "OVERCROWDING",
+    "label": {
+      "en": "Overcrowding",
+      "ml": "തിരക്ക്",
+      "hi": "भीड़",
+      "ta": "நெரிசல்"
+    },
+    "severity": "MEDIUM",
+    "icon": "users"
+  },
+  {
+    "id": "MISSED_STOP",
+    "label": {
+      "en": "Missed stop",
+      "ml": "സ്റ്റോപ്പ് ഒഴിവാക്കി",
+      "hi": "स्टॉप छोड़ा",
+      "ta": "நிறுத்தம் தவறியது"
+    },
+    "severity": "MEDIUM",
+    "icon": "map-pin-off"
+  },
+  {
+    "id": "CONCESSION_DENIAL",
+    "label": {
+      "en": "Concession denied",
+      "ml": "ഇളവ് നിഷേധിച്ചു",
+      "hi": "रियायत से इनकार",
+      "ta": "சலுகை மறுப்பு"
+    },
+    "severity": "HIGH",
+    "icon": "ticket-x"
+  },
+  {
+    "id": "OTHER",
+    "label": {
+      "en": "Other",
+      "ml": "മറ്റുള്ളവ",
+      "hi": "अन्य",
+      "ta": "மற்றவை"
+    },
+    "severity": "LOW",
+    "icon": "more-horizontal"
+  }
+]

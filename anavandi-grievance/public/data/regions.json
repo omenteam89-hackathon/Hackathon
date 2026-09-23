@@ -1,0 +1,20 @@
+[
+  {
+    "id": "South",
+    "name": "South Region",
+    "officerName": "Regional Transport Officer (South)",
+    "email": "rto-south@region.example"
+  },
+  {
+    "id": "Central",
+    "name": "Central Region",
+    "officerName": "Regional Transport Officer (Central)",
+    "email": "rto-central@region.example"
+  },
+  {
+    "id": "North",
+    "name": "North Region",
+    "officerName": "Regional Transport Officer (North)",
+    "email": "rto-north@region.example"
+  }
+]

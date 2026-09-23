@@ -1,0 +1,31 @@
+route_no,route_name,service_type,depot_id
+TVM-KZK-ORD,East Fort - Kazhakuttam,Ordinary,TVM-CTY
+TVM-KVL-ORD,Thampanoor - Kovalam,Ordinary,TVM-CTY
+TVM-MCH-ORD,East Fort - Medical College,Ordinary,TVM-CTY
+TVM-CIR-BLU,City Circular (Blue),City Circular,TVM-CTY
+TVM-NYK-ORD,Thampanoor - Neyyattinkara,Ordinary,TVM-CTY
+KLM-KNP-ORD,Kollam - Karunagappally,Ordinary,KLM
+KLM-KTR-FP,Kollam - Kottarakkara,Fast Passenger,KLM
+KLM-PVR-ORD,Kollam - Paravur,Ordinary,KLM
+KLM-PNL-FP,Kollam - Punalur,Fast Passenger,KLM
+KLM-TVM-SF,Kollam - Thiruvananthapuram,Super Fast,KLM
+EKM-FKC-ORD,Vyttila Hub - Fort Kochi,Ordinary,EKM
+EKM-KKD-ORD,Vyttila Hub - Kakkanad,Ordinary,EKM
+EKM-TPR-ORD,Ernakulam South - Tripunithura,Ordinary,EKM
+EKM-VPN-ORD,High Court - Vypin,Ordinary,EKM
+EKM-KTM-FP,Vyttila Hub - Kottayam,Fast Passenger,EKM
+ALV-ANG-ORD,Aluva - Angamaly,Ordinary,ALV
+ALV-PBR-ORD,Aluva - Perumbavoor,Ordinary,ALV
+ALV-KLM-ORD,Aluva - Kalamassery,Ordinary,ALV
+ALV-CIA-ORD,Aluva - Airport,Ordinary,ALV
+ALV-NPV-ORD,Aluva - North Paravur,Ordinary,ALV
+TSR-GVR-ORD,Thrissur - Guruvayur,Ordinary,TSR
+TSR-IJK-ORD,Thrissur - Irinjalakuda,Ordinary,TSR
+TSR-CKY-FP,Thrissur - Chalakudy,Fast Passenger,TSR
+TSR-WDK-ORD,Thrissur - Wadakkanchery,Ordinary,TSR
+TSR-EKM-SF,Thrissur - Ernakulam,Super Fast,TSR
+KKD-MCH-ORD,Kozhikode - Medical College,Ordinary,KKD
+KKD-VDK-FP,Kozhikode - Vadakara,Fast Passenger,KKD
+KKD-FRK-ORD,Kozhikode - Feroke,Ordinary,KKD
+KKD-TMS-ORD,Kozhikode - Thamarassery,Ordinary,KKD
+KKD-KNR-SF,Kozhikode - Kannur,Super Fast,KKD

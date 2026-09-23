@@ -1,0 +1,855 @@
+ANAVANDI – FutureBuild 2026 · PS-03
+Passenger Grievance Reporting & Depot Escalation Frontend build specification for Google
+Antigravity
+A complete, phase-by-phase blueprint for the frontend: the tech stack, design system, every
+screen for every role, data types, SLA/escalation and routing logic, the mock notification layer,
+privacy rules and demo controls. It ends with copy-paste prompts, one per build phase, for
+Antigravity's agent.
+Item Value
+Problem statement PS-03 · Track 1 – Public Transport · Category: Software
+Mandatory flow Submit complaint → assigned to depot → status tracked → escalated if overdue
+Must also have Anonymised management dashboard populated with the organiser's sample
+data
+Hard boundary No complainant identity, phone, exact home location or unverified allegations
+on the public dashboard
+Document date 23 September 2026 PS-03 · Grievance Reporting & Depot Escalation ·
+Frontend spec
+Contents
+1. How to use this document in Antigravity 4 1.1 Recommended workflow . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .4 1.2 Rules to give the agent at every step . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+.4
+2. Product overview 5 2.1 What we are building . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 2.2
+The end-to-end flow (the judges' must-see) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 2.3 Complaint
+lifecycle (state machine) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+3. Tech stack & project setup 7 3.1 Stack . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .7 3.2
+Setup commands . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7 3.3 Folder structure . . . . . . . . . .
+..................................8
+4. Design system 9 4.1 Visual direction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9 4.2 Color
+tokens (put in tailwind.config / CSS variables) . . . . . . . . . . . . . . . . . . . . . . . . .9 4.3 Typography &
+spacing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .9 4.4 Shared components . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . 10
+5. Data model (TypeScript types) 11
+6. Data layer, routing & SLA engine 13 6.1 Loading the organiser's resource pack . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . 13 6.2 Routing (routing.ts) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13 6.3
+
+SLA & escalation engine (sla.ts) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13 6.4 Simulated clock
+(useClockStore) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14 6.5 Mock notifications (notifier.ts) . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+7. Routes & navigation 15
+8. Passenger screens 16 8.1 Landing ( / ) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16 8.2
+Report form ( /report ): the 60-second flow . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16 8.3
+Confirmation ( /report/success/:id ) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16 8.4 Track ( /track
+and /track/:id ) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+9. Depot console 18 9.1 Console shell . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18 9.2
+Overview ( /console/depot ) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18 9.3 Inbox (
+/console/depot/inbox ) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18 9.4 Case detail (
+/console/depot/case/:id ) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18 9.5 Escalated tab (
+/console/depot/escalated ) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19 9.6 Depot analytics (
+/console/depot/analytics ) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+2
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+10. Regional console & public dashboard 20 10.1 Regional inbox ( /console/regional ) . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . 20 10.2 Depot comparison ( /console/regional/depots ) . . . . . . . . . . . . . . .
+. . . . . . . . . . . . 20 10.3 Public / management dashboard ( /dashboard ) . . . . . . . . . . . . . . . . . . . . . . . . .
+. 20
+11. Demo control panel ( /demo ) 22
+12. Stretch goals (bonus points) 23 12.1 Multilingual reporting . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . 23 12.2 Duplicate detection . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23 12.3 Trend
+alerts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+13. Demo script & acceptance checklist 24 13.1 Five-minute demo script . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . 24 13.2 Acceptance checklist . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+14. Copy-paste prompts for Antigravity 25 14.1 Master context prompt (paste first) . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . 25 14.2 Phase prompts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25 14.3
+Useful fix-up prompts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+Appendix A. Sample seed data shapes 29
+
+3
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+
+1. How to use this document in Antigravity Antigravity's agent works best when it gets the
+whole context once, then builds in small, verifiable phases. Don't paste the entire PDF as
+a single "build everything" prompt: the agent will skim and produce a shallow app.
+1.1 Recommended workflow
+1. Create an empty folder (e.g. anavandi-grievance) and open it as a workspace in
+Antigravity.
+2. Upload or drop this PDF into the workspace (or copy Sections 2–13 into a file called
+SPEC.md at the project root). This becomes the agent's reference for every phase.
+3. Paste the Master Context Prompt (Section 14.1) first. Ask the agent to produce an
+implementation plan only and review it.
+4. Run the phase prompts (Section 14.2) one at a time. After each phase, open the browser
+preview, click through, and fix issues before moving on.
+5. When the organiser's resource pack arrives, drop the CSV/JSON files into /public/data
+and run the "Swap in real data" prompt (Phase 9).
+6. Finish with the demo-hardening prompt and rehearse the demo script in Section 13.
+1.2 Rules to give the agent at every step • Follow SPEC.md exactly; if something is ambiguous,
+pick the simplest option and leave a // TODO(spec) comment. • Never hard-code organiser
+data inside components. All data comes through the data layer (Section 6) so it can be
+swapped. • Every screen must work at 360 px wide (phone) and at 1440 px (laptop / projector).
+• Run npm run build and npm run lint at the end of each phase and fix all errors before
+stopping. • Use the browser tool to open each new route and take a screenshot to verify it
+visually.
+Scope: This is a frontend-first build. All "backend" behaviour (routing, SLA
+timers, escalation,
+notifications) runs in the browser against a mock data layer with localStorage
+persistence. That is
+enough for a hackathon demo and is designed so a real API can be plugged in
+later by replacing one
+file (the repository layer).
+
+4
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+
+2. Product overview 2.1 What we are building A web app with four faces sharing one data
+model:
+Role / surface Who Purpose Sees personal data?
+Passenger app Any bus passenger File a complaint in <60 s, get a reference Only their own, by
+ref (no login) no., track its status no. + phone OTP (mock)
+Depot console Depot officer / Work their depot's queue: acknowledge, Masked only (e.g.
+supervisor assign, act, resolve 98XXXXXX21)
+Regional console Regional Transport Handle escalated cases across depots, Masked only
+Officer compare depot performance
+Public / Anyone / Aggregated, anonymised statistics Never management management
+dashboard
+Demo control panel Your team during Simulated clock, notification outbox, N/A (dev tool)
+judging data import, reset
+2.2 The end-to-end flow (the judges' must-see) Passenger System Depot Regional --------- ---------- -------- Fill form (<60s) ──────► Create GRV-2026-000123 Look up route → depot (CSV)
+Set SLA deadline (rules) ────► Appears in inbox SMS: "Received" ◄────── Mock
+notification Acknowledge / Assign In Progress ... Clock passes deadline? no → Resolved by
+depot ────► SMS: "Resolved" yes → ESCALATE L1
+─────────────────────────────────► Regional inbox SMS: "Escalated"
+◄────── Mock notification Act / Resolve / L2
+
+5
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+2.3 Complaint lifecycle (state machine) Status Meaning Set by Allowed next
+SUBMITTED Created, not yet routed System ASSIGNED_TO_DEPOT, (transient, ms)
+UNROUTED
+UNROUTED Route not in mapping CSV System ASSIGNED_TO_DEPOT (manual)
+ASSIGNED_TO_DEPOT Routed, waiting for depot System ACKNOWLEDGED, ESCALATED
+ACKNOWLEDGED Depot has seen it Depot IN_PROGRESS, AWAITING_INFO, REJECTED,
+ESCALATED
+
+IN_PROGRESS Staff assigned, action under way Depot RESOLVED, AWAITING_INFO,
+ESCALATED
+AWAITING_INFO Waiting on passenger (SLA Depot IN_PROGRESS paused)
+ESCALATED SLA breached, moved up a level System IN_PROGRESS (by higher level),
+RESOLVED, ESCALATED (next level)
+RESOLVED Closed with a resolution note Depot / REOPENED (passenger, within Regional 7
+days)
+REJECTED Invalid / duplicate / out of scope, Depot — (terminal) with reason
+REOPENED Passenger not satisfied Passenger IN_PROGRESS
+Note: If the organiser's rule pack uses different status names, keep this
+internal enum and add a
+display-label map. Don't rename the enum mid-build.
+
+6
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+3. Tech stack & project setup 3.1 Stack Concern Choice Why
+Build tool Vite + React 18 + TypeScript Fast dev server; Antigravity handles it well
+Styling Tailwind CSS Quick, consistent, responsive utilities
+UI components shadcn/ui (Radix) + lucide-react icons Accessible dialogs, selects, tabs, toasts
+out of the box
+Routing react-router-dom v6 Separate route trees per role
+State Zustand (with persist middleware) Tiny global store, persists to localStorage
+Forms react-hook-form + zod Fast validation, typed schemas
+Charts Recharts Simple bar/line/pie for dashboards
+CSV parsing papaparse Loads the organiser's depot-mapping CSV
+Dates date-fns SLA arithmetic against the simulated clock
+
+i18n (stretch) react-i18next English / Malayalam / Hindi / Tamil
+Fuzzy match fuse.js Duplicate detection on descriptions (stretch)
+IDs Custom generator GRV-YYYY-NNNNNN sequential format
+3.2 Setup commands npm create vite@latest anavandi-grievance -- --template react-ts cd
+anavandi-grievance npm i react-router-dom zustand react-hook-form zod
+@hookform/resolvers recharts
+papaparse date-fns lucide-react clsx tailwind-merge fuse.js i18next react-i18next npm i -D
+tailwindcss postcss autoprefixer @types/papaparse npx tailwindcss init -p npx shadcn@latest
+init npx shadcn@latest add button card input textarea select badge tabs dialog sheet
+table dropdown-menu toast sonner progress separator avatar tooltip command
+radio-group label skeleton alert
+
+7
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+3.3 Folder structure src/ app/ router.tsx # all routes, role guards providers.tsx # i18n, toasts,
+theme data/ seed/ # fallback JSON if organiser files missing loaders.ts # load CSV/JSON from
+/public/data repository.ts # ONLY place that reads/writes complaints (swap for API later)
+domain/ types.ts # all TypeScript types (Section 5) status.ts # state machine + allowed
+transitions routing.ts # route → depot lookup sla.ts # deadline + breach + escalation engine
+ids.ts # GRV-2026-000123 generator redact.ts # privacy helpers (mask phone, strip PII, bucket
+location) duplicates.ts # stretch trends.ts # stretch store/ useComplaintStore.ts
+useClockStore.ts # simulated clock useNotificationStore.ts # mock SMS/email outbox
+useSessionStore.ts # current role + depot (mock login) features/ passenger/ (ReportPage,
+ConfirmationPage, TrackPage, components/) depot/ (OverviewPage, InboxPage,
+CaseDetailPage, EscalatedPage, AnalyticsPage) regional/ (RegionalInboxPage,
+DepotComparePage) public/ (PublicDashboardPage) demo/ (DemoPanel, ClockControls,
+NotificationOutbox, DataImport) components/ layout/ (PassengerShell, ConsoleShell, TopBar,
+SideNav) shared/ (StatusBadge, CategoryIcon, SlaTimer, EmptyState, KpiCard, ...) i18n/
+(en.json, ml.json, hi.json, ta.json) public/data/ depots.json route_depot_map.csv categories.json
+sla_rules.json sample_complaints.json redaction_checklist.json
+
+8
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+
+4. Design system 4.1 Visual direction Civic, trustworthy, fast. The passenger side is a bigtap-target mobile form. The console side is a dense, scannable work tool. Red is used for
+the brand and for danger (overdue); pick a separate blue for primary actions so "Submit"
+never reads as an error.
+4.2 Color tokens (put in tailwind.config / CSS variables) Token Hex Use
+--brand
+
+#B4232A Header bar, logo, key accents
+
+--primary
+--ink
+
+#1D4ED8 Primary buttons, links, focus ring
+
+#1B2430 Body text
+
+--muted
+
+#5B6573 Secondary text, labels
+
+--surface / --bg
+
+#FFFFFF /
+
+#F6F7F9 Cards / page background
+
+--border
+
+#D9DEE5 Dividers, inputs
+
+--sla-ok
+
+#15803D On track (> 50% time left)
+
+--sla-warn
+--sla-breach
+--info
+
+#B45309 Near breach (≤ 25% time left or < 2 h)
+#B91C1C Overdue / escalated
+
+#0369A1 Awaiting info, informational toasts
+
+4.3 Typography & spacing • Font: Inter for Latin; add Noto Sans Malayalam / Devanagari /
+Tamil for i18n (Google Fonts). • Scale: 12 / 14 / 16 (body) / 18 / 24 / 30. Passenger form body at 16
+px minimum (prevents iOS zoom on focus). • Spacing on a 4 px grid; cards use p-4 on mobile
+and p-6 on desktop; radius 12 px (rounded-xl). • Touch targets ≥ 44×44 px on all passenger
+screens.
+
+9
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+4.4 Shared components Component Props Behaviour
+StatusBadge status Colored pill with icon and translated label
+CategoryIcon category Icon + color per category (broom, alert-triangle, users, map-pin-off,
+ticket-x)
+SlaTimer deadline, pausedAt? Live countdown driven by the simulated clock;
+green/amber/red; shows "Overdue 3h 12m"
+
+EscalationLevelChip level: 0|1|2 L0 Depot · L1 Regional · L2 Head office
+KpiCard label, value, delta?, tone Big number card for dashboards
+MaskedPhone phone Always renders 98XXXXXX21; never exposes the raw value in the DOM
+Timeline events[] Vertical audit trail with actor, time, remark
+EmptyState icon, title, hint, action? Friendly empty lists
+EvidenceThumb file Image/video/audio preview with lightbox
+RoleSwitcher — Top-bar dropdown for demo: Passenger / Depot (pick depot) / Regional /
+Public
+SimClockBadge — Always-visible chip in console headers: "Sim time: 23 Sep 21:40 (×60)"
+
+10
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+5. Data model (TypeScript types) Put these in src/domain/types.ts. When the organiser's
+files arrive, adapt the loaders to map their column names into these types. Don't change
+the types.
+export type CategoryId = | 'CLEANLINESS' | 'UNSAFE_DRIVING' | 'OVERCROWDING' |
+'MISSED_STOP' | 'CONCESSION_DENIAL' | 'OTHER';
+export type Status = | 'SUBMITTED' | 'UNROUTED' | 'ASSIGNED_TO_DEPOT' |
+'ACKNOWLEDGED' | 'IN_PROGRESS' | 'AWAITING_INFO' | 'ESCALATED' | 'RESOLVED' |
+'REJECTED' | 'REOPENED';
+export type EscalationLevel = 0 | 1 | 2; // 0 depot, 1 regional, 2 head office
+export interface Category { id: CategoryId; label: Record<Lang, string>; severity: 'LOW' |
+'MEDIUM' | 'HIGH' | 'CRITICAL'; icon: string; // lucide icon name }
+export interface SlaRule { category: CategoryId; ackWithinHours: number; // depot must
+acknowledge within resolveWithinHours: number; // depot must resolve within escalateTo: {
+level: EscalationLevel; role: string; afterHours: number }[]; }
+export interface Depot { id: string; // e.g. 'TVM-CTY' name: string; // 'Thiruvananthapuram
+City' region: string; // 'South' officerName: string; // shown to console users only email: string;
+phone: string; // used only by mock notifier }
+export interface RouteDepotMap { routeNo: string; routeName?: string; depotId: string; }
+
+export interface Evidence { id: string; kind: 'image' | 'video' | 'audio'; name: string; sizeKb:
+number; dataUrl: string; // object URL / base64 for demo }
+export interface Complainant { // PRIVATE: never leaves console/passenger name?: string;
+phone?: string; // optional, for SMS updates lang: Lang; }
+export interface TimelineEvent { at: string; // ISO, simulated clock actor: 'SYSTEM' |
+'PASSENGER' | 'DEPOT' | 'REGIONAL' | 'HQ'; actorName?: string;
+
+11
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+type: 'CREATED' | 'ROUTED' | 'ACK' | 'ASSIGNED' | 'STATUS' | 'NOTE'
+| 'INFO_REQUEST' | 'ESCALATED' | 'RESOLVED' | 'REJECTED' | 'REOPENED'
+| 'TRANSFERRED' | 'NOTIFIED' | 'MERGED';
+message: string;
+internal?: boolean;
+// true = staff-only note
+
+}
+export interface Complaint { id: string; // 'GRV-2026-000123' createdAt: string; // ISO
+(simulated clock) incidentAt: string; busNo?: string; // 'KL-15-A-1234' routeNo: string; // '45A'
+category: CategoryId; location: { stopName?: string; lat?: number; lng?: number; areaBucket?:
+string }; description: string; evidence: Evidence[]; complainant: Complainant; depotId: string |
+null; status: Status; escalationLevel: EscalationLevel; assignedTo?: string; ackDeadline: string;
+resolveDeadline: string; slaPausedAt?: string; slaPausedTotalMs: number; resolution?: { note:
+string; action: string; at: string; by: string }; rejection?: { reason: 'DUPLICATE' |
+'INSUFFICIENT_INFO' | 'OUT_OF_SCOPE' | 'WRONG_ROUTE'; note: string; }; duplicateOf?:
+string; mergedIds?: string[]; verified: boolean; // allegation verified by depot? (privacy rule)
+timeline: TimelineEvent[]; }
+export interface Notification { id: string; at: string; channel: 'SMS' | 'EMAIL'; to: string; //
+masked when displayed audience: 'PASSENGER' | 'DEPOT' | 'REGIONAL' | 'HQ'; complaintId:
+string; template: string; body: string; }
+export type Lang = 'en' | 'ml' | 'hi' | 'ta';
+
+12
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+6. Data layer, routing & SLA engine 6.1 Loading the organiser's resource pack Organiser file
+Put at Loader output
+Sample complaint records public/data/sample_complaints.(json|csv) Complaint[] (seed the
+store once)
+Depot directory public/data/depots.(json|csv) Depot[]
+Route-to-depot mapping CSV public/data/route_depot_map.csv Map<routeNo, depotId>
+Categories, SLAs, escalation public/data/categories.json, Category[], SlaRule[] rules
+sla_rules.json
+Mock email/SMS interface Adapter in src/data/notifier.ts send(Notification)
+Privacy & redaction checklist public/data/redaction_checklist.json Rendered on /demo + unit
+tests
+• loaders.ts fetches each file, parses it (papaparse for CSV), maps columns into the Section 5
+types, and falls back to src/data/seed/ if a file is missing. • Normalise route numbers before
+lookup: trim, uppercase, remove spaces and leading zeros (" 045a " → "45A"). • Show a visible
+warning banner in the Demo panel if any organiser file failed to load or had unmapped
+columns.
+6.2 Routing (routing.ts) export function routeToDepot(routeNo: string, map:
+Map<string,string>): string | null { const key = normaliseRoute(routeNo); return map.get(key)
+?? null; // null → status UNROUTED, goes to 'Unrouted' queue } // If busNo is given but routeNo
+isn't, optionally look up a bus→route table if provided.
+6.3 SLA & escalation engine (sla.ts) All time comes from useClockStore.now(), never
+Date.now(). This is what lets you fast-forward in the demo.
+1. On create: ackDeadline = createdAt + rule.ackWithinHours, resolveDeadline = createdAt
++ rule.resolveWithinHours.
+2. Effective deadline = deadline + slaPausedTotalMs (+ time since slaPausedAt if currently
+AWAITING_INFO).
+3. A tick() function runs every time the simulated clock changes. For each open complaint it
+checks: – Not acknowledged and now > ackDeadline → escalate to next level. – Not
+resolved and now > resolveDeadline → escalate to next level. – Already at L1 and now > L1
+deadline (rule.escalateTo[1].afterHours) → escalate to L2.
+4. Escalation = set status ESCALATED, increment escalationLevel, add timeline event, fire
+notifications to passenger + new owner + depot.
+5. Tick must be idempotent: running it twice at the same time must not double-escalate.
+
+6. SLA state for UI: ok (> 25% left and > 2 h), warn (otherwise), breach (past deadline).
+13
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+Placeholder SLAs: Until the organiser's rules arrive, use placeholder rules:
+UNSAFE_DRIVING ack 2 h
+/ resolve 24 h; CONCESSION_DENIAL 4 h / 48 h; OVERCROWDING and MISSED_STOP 8 h /
+72 h;
+CLEANLINESS 12 h / 72 h; escalate to Regional on breach, then HQ after +24 h.
+Label these clearly as
+placeholders in sla_rules.json.
+
+6.4 Simulated clock (useClockStore) • State: simNow (ISO), speed (1×, 60×, 600×, 3600×),
+running (bool). • Actions: play/pause, set speed, jump(+1h / +6h / +24h / +3d), jump to a
+specific datetime, reset to real time. • A single setInterval(1000) advances simNow by speed
+seconds and calls sla.tick(). • Always visible as SimClockBadge in the console header so judges
+know the time is simulated.
+6.5 Mock notifications (notifier.ts) Event Passenger SMS (template) Staff email
+Created "KSRTC Grievance: complaint {id} received for route Depot: new case {id}, {route}.
+Track: {link}" category, SLA deadline
+Acknowledged / In "Your complaint {id} is now being handled by {depot} — progress depot."
+Awaiting info "{depot} needs more details on {id}. Reply via: — {link}"
+Escalated "Complaint {id} has been escalated to the Regional Regional: escalated case; Officer."
+Depot: breach notice
+Resolved "Complaint {id} resolved: {action}. Not satisfied? — Reopen: {link}"
+Rejected "Complaint {id} closed: {reason}." —
+• Notifications go into useNotificationStore and appear in the Demo panel's Outbox (phoneshaped SMS view + email list). • Also fire a small toast in the corner: "SMS sent to
+98XXXXXX21". • Write the adapter so it could call the organiser's mock interface if they
+provide an endpoint; otherwise log locally.
+
+14
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+7. Routes & navigation Path Screen Role guard
+/ Landing: "Report a problem" + "Track complaint" + public small links to Console / Dashboard
+/report Complaint form (single page, 60-second flow) public
+/report/success/:id Confirmation with reference number public
+/track Enter ref no. (+ phone last 4 digits) public
+/track/:id Passenger status view + reopen / add info public (verified)
+/dashboard Public anonymised management dashboard public
+/console/login Mock login: pick role + depot public
+/console/depot Depot overview depot
+/console/depot/inbox Complaint queue depot
+/console/depot/case/:id Case detail + actions depot (own depot only)
+/console/depot/escalated This depot's escalated cases depot
+/console/depot/analytics Depot analytics depot
+/console/regional Regional inbox (L1 cases, all depots in region) regional
+/console/regional/case/:id Case detail (regional actions) regional
+/console/regional/depots Depot performance comparison regional
+/console/unrouted Cases whose route wasn't in the CSV regional / admin
+/demo Demo control panel (clock, outbox, data, reset, always visible in dev checklist)
+Note: Role guards are mock: read the role from useSessionStore. A depot user
+opening another
+depot's case URL must see a "Not your depot" page, not the data. Judges often
+test this.
+
+15
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+8. Passenger screens 8.1 Landing ( / ) • Brand header (red bar, bus icon, "KSRTC Grievance"
+placeholder name; confirm naming with organisers), language switcher top-right. • Two
+large cards: Report a problem (primary) and Track my complaint. • One-line trust
+message: "Your identity is never shown publicly." • Footer links: Public dashboard · Staff
+console.
+8.2 Report form ( /report ): the 60-second flow One scrollable page (not a multi-step wizard;
+wizards add clicks). Fields in this order, with required fields marked:
+
+Field Control Speed trick
+1 Category * 6 large icon tiles in a 2×3 grid (single tap) First thing; one tap
+2 Route no. * Combobox with type-ahead from Shows route name; "Recent routes"
+route_depot_map.csv chips from localStorage
+3 Bus no. Text input, auto-uppercase, pattern Optional; placeholder shows the KL-XX-X-XXXX
+format
+4 Location * "Use my location" button (GPS) OR GPS fills lat/lng + nearest stop label stopname combobox
+5 When * Defaults to "Just now"; chips: 15 min ago / Zero taps if now 1 h ago / Earlier (picker)
+6 Description * Textarea, 10–500 chars, counter Category-specific quick phrases as chips that
+insert text
+7 Evidence Photo / video / audio buttons (camera Max 3 files, 10 MB each; thumbnails capture
+on mobile)
+8 Phone for updates Optional tel input + consent checkbox Explains: "Only used to SMS you
+status updates"
+9 Submit Full-width sticky button at bottom Disabled until required fields valid
+• Timer (demo feature): a small unobtrusive stopwatch shows elapsed time since the first tap,
+e.g. "0:34". On success show "Filed in 38 seconds". It proves the <60 s requirement to judges. •
+Quick-phrase chips per category, e.g. Unsafe driving: "Overspeeding", "Using phone while
+driving", "Sudden braking"; Concession: "Student pass refused", "Senior citizen concession
+refused". • Validation errors inline under each field, in the selected language. • Offline-tolerant:
+if submit fails, keep the draft in localStorage and show "Retry". • Accessibility: labels on every
+input, visible focus, errors announced with aria-live.
+8.3 Confirmation ( /report/success/:id ) • Big check icon, reference number in monospace with
+a Copy button and QR code of the tracking link. • "Assigned to: Thiruvananthapuram City
+
+depot" (routing result) and "Expected response by: 24 Sep, 10:30". • If route was unmapped:
+"We're finding the right depot. You'll get an SMS once it's assigned." • Buttons: Track this
+complaint · Report another · Share (Web Share API).
+
+16
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+8.4 Track ( /track and /track/:id ) • Entry: reference number + last 4 digits of phone (if phone
+was given). Otherwise the ref no. alone shows a limited view. • Status view: horizontal stepper
+(Submitted → With depot → In progress → Resolved) with Escalated shown as a red branch. •
+Public timeline: only passenger-safe events (no internal notes, no staff names; show "Depot
+officer"). • Actions: Add more info (when AWAITING_INFO), Reopen (within 7 days of
+RESOLVED), Rate resolution (1–5 stars, optional).
+
+17
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+9. Depot console 9.1 Console shell • Left sidebar (collapses to bottom tab bar on mobile):
+Overview · Inbox (badge count) · Escalated · Analytics. • Top bar: depot name,
+SimClockBadge, notifications bell (staff notifications), RoleSwitcher, user menu. • Global
+search: ref no., bus no. or route.
+9.2 Overview ( /console/depot ) • KPI row: New · Acknowledged · In progress · Awaiting info ·
+Escalated · Resolved today. • SLA alerts panel: list of near-breach (amber) and breached (red)
+cases with SlaTimer; click opens the case. • Today: received vs resolved mini bar chart. •
+Category breakdown (horizontal bar) and Top 5 routes by complaints for this depot.
+9.3 Inbox ( /console/depot/inbox ) Column Content
+Ref no. GRV-2026-000123 (monospace, link)
+Category CategoryIcon + label
+Route / Bus 45A · KL-15-A-1234
+Received Relative time ("2 h ago"), exact on hover
+SLA SlaTimer (countdown / overdue)
+Status StatusBadge
+
+Level EscalationLevelChip
+Assigned to Staff name or "Unassigned"
+• Default sort: SLA urgency (breached first, then least time left), then severity. • Filters (chips
++ drawer on mobile): status, category, route, bus, date range, SLA state, assigned/unassigned. •
+Bulk actions: Acknowledge selected, Assign selected to… • Mobile: table becomes stacked
+cards with the same information. • Saved views as tabs: Needs action · Mine · All open · Closed.
+9.4 Case detail ( /console/depot/case/:id ) Two-column on desktop (left: case, right: actions +
+SLA), single column on mobile with a sticky action bar.
+Left column • Header: ref no., StatusBadge, EscalationLevelChip, severity. • Case facts:
+category, route, bus no., incident time, location (stop name + small static map pin if GPS). •
+Description (full text; staff can see it). • Evidence gallery with lightbox; audio player; video
+player.
+
+18
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+• Complainant card: name hidden ("Passenger"), MaskedPhone, preferred language, "Contact
+via system" button (opens a message dialog that sends through the mock notifier). • Timeline /
+audit trail including internal notes (marked with a lock icon).
+Right column • SLA panel: ack deadline and resolve deadline with SlaTimer each; plain text
+"Will escalate to Regional Officer in 3h 20m". • Action buttons depend on status (see table
+below). • Internal note box (staff-only). • Linked / possible duplicates (stretch).
+Actions by status Action Visible when Requires Effect
+Acknowledge ASSIGNED_TO_DEPOT — → ACKNOWLEDGED; stops ack SLA; SMS
+Assign to staff ACKNOWLEDGED / Staff picker Sets assignedTo; → IN_PROGRESS
+IN_PROGRESS
+Request info ACKNOWLEDGED / Question text → AWAITING_INFO; pauses SLA;
+IN_PROGRESS SMS
+Mark verified Any open Confirm dialog verified = true (affects public data rules)
+Resolve IN_PROGRESS / Action taken (select) + note → RESOLVED; SMS ESCALATED (min
+20 chars)
+Reject Any open Reason (select) + note → REJECTED; SMS
+
+Transfer depot Any open Depot picker + reason Changes depotId; SLA unchanged; timeline
+Mark duplicate Any open Pick existing case → REJECTED(DUPLICATE); link both
+Add internal note Always Text Timeline event, internal=true
+Note: There is no Delete button anywhere. Every closure needs a reason, which
+keeps the process
+accountable.
+
+9.5 Escalated tab ( /console/depot/escalated ) • List of this depot's cases at L1/L2: who it was
+escalated to, when, why ("Resolve SLA breached by 4h"). • Depot can still add responses/notes;
+resolution may require regional sign-off (show the badge "Regional oversight").
+9.6 Depot analytics ( /console/depot/analytics ) • Complaints over time (line, daily/weekly
+toggle). • Category mix (bar). Routes and buses with repeated complaints (table, with trend
+alert flags). • Average resolution time vs SLA target per category (bar with target line). • SLA
+compliance % and resolution rate (KPI cards). • Date-range picker; export CSV of this depot's
+anonymised stats.
+
+19
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+10. Regional console & public dashboard 10.1 Regional inbox ( /console/regional ) • Same
+inbox component, filtered to escalationLevel ≥ 1 across all depots in the officer's region;
+extra Depot column. • Actions: take ownership, direct depot ("Instruct depot" note that
+notifies depot), resolve, escalate to HQ, reassign depot. • Unrouted queue link with count
+badge.
+10.2 Depot comparison ( /console/regional/depots ) • Table + bar chart per depot: open cases,
+breached, SLA compliance %, avg resolution time, escalation rate. • Sort by worst compliance.
+Click a depot to see its (masked) queue.
+10.3 Public / management dashboard ( /dashboard ) This is the privacy-critical screen. It must
+be built only from an aggregation function, never from raw complaint objects.
+What it shows • KPI cards: total complaints, % resolved, % within SLA, average resolution
+time, currently escalated. • By category (bar), by depot (bar), by resolution status (donut),
+trend over time (line). • Heat table: depot × category counts. • Filters: date range, depot,
+category. Language switcher. • "Last updated" timestamp (simulated clock) and a note:
+"Figures are aggregated. No personal data is shown."
+
+What it must never show (from PS-03) • Complainant identity or name. • Phone numbers. •
+Exact home location (no GPS coordinates; area buckets only). • Unverified allegations: no
+description text, no staff names, no bus-number-level accusations for unverified cases.
+Implementation rules // src/domain/redact.ts export type PublicStat = { key: string; count:
+number }; // aggregates only
+export function buildPublicDataset(all: Complaint[]): PublicDashboardData { // 1. Drop:
+complainant, description, evidence, timeline, assignedTo, lat/lng // 2. Location → areaBucket
+(depot/city level) only // 3. Bus-level breakdowns only for verified === true cases // 4. Suppress
+any group with count < 3 (k-anonymity) -> show "<3" // 5. Return counts, rates and averages
+only }
+• Dashboard components receive PublicDashboardData only; the type makes it impossible to
+pass raw complaints. • Add a unit test that serialises the dashboard data and asserts no phone
+pattern, name, lat/lng or description text appears.
+
+20
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+• Render the organiser's redaction checklist on /demo with a tick next to each item and the test
+that proves it.
+
+21
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+11. Demo control panel ( /demo ) This panel wins demos. It lets you show the whole lifecycle,
+including escalation, in two minutes instead of 24 hours.
+Section Controls
+Simulated clock Current sim time · Play/Pause · speed 1× / 60× / 600× / 3600× · Jump +1h / +6h /
++24h / +3d · Reset to now
+Scenario buttons "Create unsafe-driving complaint on route 45A" · "Create 5 random
+complaints" · "Breach all ack SLAs"
+Notification outbox Phone mock showing SMS thread per number (masked) + email list; filter
+by complaint
+
+Data Status of each organiser file (loaded / fallback / errors) · Re-import · Reset store to sample
+data
+Role quick-switch Open as Passenger / Depot (pick) / Regional / Public in new tab
+Privacy checklist Organiser's checklist items with pass/fail from the redaction tests
+Engine log Last 50 SLA tick results ("GRV-…123 escalated L0→L1 at 24 Sep 10:31")
+Note: Hide the /demo link behind a small "Demo" chip in the footer; judges
+should see it's a
+deliberate simulation tool, not part of the product.
+
+22
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+12. Stretch goals (bonus points) 12.1 Multilingual reporting • react-i18next with en, ml, hi, ta
+JSON files; language picker on landing + form header; remember choice. • Translate: all
+UI labels, category names, quick-phrase chips, validation messages, SMS templates. •
+Store complainant.lang so SMS updates go out in their language. • Load Noto Sans
+Malayalam / Devanagari / Tamil; test long Malayalam labels don't break the category
+tiles. • Have a native speaker check translations; mark machine-translated strings in a
+comment.
+12.2 Duplicate detection • On submit (and in the depot view), find open complaints with: same
+route AND same category AND incident within ±2 h AND (same bus no. OR fuse.js description
+score < 0.4). • Passenger side: "A similar complaint was already reported. Add yours to it?"
+(merge increases the report count, still gives a ref no.). • Depot side: "Possible duplicates (3)"
+panel with Merge button; merged cases share a resolution.
+12.3 Trend alerts • Rule: ≥ N complaints (default 3) of the same category on the same route
+within 7 days → alert. • Show as amber banner on depot overview and a flag icon in the
+analytics table; regional sees cross-depot alerts. • Trend alerts on the public dashboard only as
+aggregates ("Route 45A: 5 cleanliness reports this week"), only if ≥ 3 and not naming staff.
+
+23
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+13. Demo script & acceptance checklist 13.1 Five-minute demo script
+14. Problem (20 s): informal complaints, no tracking, no accountability.
+15. Passenger (60 s): on a phone-sized window, file an unsafe-driving complaint on route
+45A with a photo. Timer shows "Filed in 35 s". Show the reference number and SMS in
+the outbox.
+16. Routing (15 s): point out "Assigned to X depot", which came from the organiser's CSV.
+17. Depot (60 s): switch role to that depot. Case is on top of the inbox with a 2 h ack timer.
+Acknowledge → assign → SMS appears.
+18. Escalation (45 s): open /demo, jump clock +24 h. Case turns red, moves to ESCALATED
+L1, regional inbox shows it, three notifications fire.
+19. Regional (30 s): regional officer resolves with a note. Passenger SMS "Resolved". Track
+page shows full stepper.
+20. Dashboard (45 s): public dashboard with organiser's sample data; show the privacy
+checklist all green.
+21. Bonus (30 s): switch to Malayalam; file a duplicate and show the merge prompt; show a
+trend alert.
+
+✓
+
+13.2 Acceptance checklist Requirement (from PS-03) How to verify
+☐ Complaint submitted in under 60 seconds Built-in stopwatch; rehearse on a phone
+☐ Captures bus/route, category, location, description, Form fields present, validation works
+
+optional evidence
+
+☐ Generates a reference number GRV-2026-NNNNNN shown and copyable
+☐ Routes to depot using organiser CSV Change CSV row → routing changes
+☐ Status tracking Passenger track page + depot inbox reflect every change
+☐ Time-based escalation in a simulated workflow Clock jump escalates; tick is idempotent
+☐ Mock email/SMS notifications Outbox shows each event
+☐ Anonymised dashboard by category, depot, resolution Charts render from organiser sample
+
+data status
+
+☐ No identity, phone, exact location, unverified Redaction unit test passes; manual inspect
+
+allegations on dashboard
+
+☐ Depot cannot see other depots' cases Open foreign case URL → blocked
+☐ Responsive 360 px → 1440 px Browser device toolbar
+
+☐ Stretch: multilingual / duplicates / trend alerts Demo steps 8
+
+24
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+14. Copy-paste prompts for Antigravity Paste these in order into the Antigravity agent panel.
+Wait for each phase to finish, check the preview, then continue. Each prompt assumes
+SPEC.md (this document) is in the workspace.
+14.1 Master context prompt (paste first) MASTER CONTEXT
+You are building the frontend for a hackathon project: "Passenger Grievance Reporting and
+Depot Escalation" (ANAVANDI FutureBuild 2026, PS-03). The full specification is in SPEC.md
+in this workspace. Read ALL of it before doing anything.
+Hard requirements:
+End-to-end flow: submit complaint -> auto-assign depot (from route_depot_map.csv) ->
+status tracking -> time-based escalation when overdue (simulated clock).
+Complaint filing must take under 60 seconds on a phone.
+Anonymised public dashboard; it must NEVER show complainant identity, phone
+numbers, exact home location or unverified allegations.
+Mock SMS/email notifications for every status change.
+Tech: Vite + React 18 + TypeScript + Tailwind + shadcn/ui + react-router-dom + Zustand
+(persist) + react-hook-form + zod + Recharts + papaparse + date-fns + lucide-react. No
+backend: all logic runs client-side behind src/data/repository.ts.
+Rules for every phase:
+1. Follow SPEC.md exactly. If ambiguous, choose the simplest option and add a //
+TODO(spec) comment.
+2. Never hard-code organiser data in components; always go through the data layer.
+3. All time comes from the simulated clock store, never Date.now() in domain code.
+4. Mobile-first: every page must work at 360px and 1440px.
+5. At the end of each phase run npm run build and npm run lint , fix all errors, open
+each new route in the browser and take a screenshot to verify.
+Do NOT write code yet. Produce an implementation plan (phases 1-10 from SPEC.md Section
+14.2) with the files you'll create in each phase, and wait for my approval.
+
+14.2 Phase prompts PHASE 1 – Scaffold, design system, layout shells
+Phase 1. Scaffold the project per SPEC.md Section 3 (setup commands, folder structure).
+Configure Tailwind with the color tokens from Section 4.2 as CSS variables; Inter font.
+Install and init shadcn/ui with the listed components.
+Create the router (Section 7) with placeholder pages for every route.
+Build PassengerShell (red brand header, language switcher placeholder, footer links) and
+ConsoleShell (sidebar that becomes bottom tabs on mobile, top bar with depot name,
+SimClockBadge placeholder, RoleSwitcher, bell icon).
+Build shared components from Section 4.4 with Storybook-free demo usage on a hidden
+/__components route: StatusBadge, CategoryIcon, EscalationLevelChip, KpiCard,
+MaskedPhone, Timeline, EmptyState, SlaTimer (static for now). Verify: build + lint pass;
+screenshot /, /report, /console/depot, /dashboard at 360px and 1440px.
+25
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+PHASE 2 – Domain types, data loaders, seed data, stores
+Phase 2. Implement SPEC.md Sections 5 and 6.1.
+src/domain/types.ts exactly as specified.
+src/data/loaders.ts: fetch files from /public/data (JSON or CSV via papaparse), map
+columns into our types, fall back to src/data/seed/* when missing, and return a report of
+which files loaded / fell back / had unmapped columns.
+Create realistic seed files: 6 depots across 3 regions (Kerala city names), 40 routes in
+route_depot_map.csv, categories.json, sla_rules.json with the PLACEHOLDER values
+from Section 6.3 (label them placeholder), and 120 sample complaints spread over the
+last 30 days across all statuses.
+src/domain/ids.ts: GRV-YYYY-NNNNNN sequential generator (persist counter).
+src/data/repository.ts: the ONLY module that reads/writes complaints (list, get, create,
+update, addTimelineEvent), backed by Zustand persist.
+Stores: useComplaintStore, useClockStore (simNow, speed, running, jump, reset),
+useNotificationStore, useSessionStore (role, depotId, region). Verify: a temporary
+/__debug page lists counts per depot and status.
+PHASE 3 – Routing, SLA engine, simulated clock, notifier
+Phase 3. Implement SPEC.md Sections 2.3, 6.2-6.5.
+
+domain/status.ts: state machine with allowed transitions; throw on illegal ones.
+domain/routing.ts: normaliseRoute + routeToDepot; unmapped -> UNROUTED.
+domain/sla.ts: compute deadlines from sla_rules, pause/resume for AWAITING_INFO,
+getSlaState(ok|warn|breach), and an idempotent tick(now) that escalates L0->L1->L2,
+writes timeline events and calls the notifier.
+useClockStore drives a 1s interval that advances simNow by speed seconds and calls
+tick(). Make SlaTimer live and SimClockBadge show sim time + speed.
+data/notifier.ts with the templates from Section 6.5; pushes to useNotificationStore and
+shows a toast "SMS sent to 98XXXXXX21".
+Unit tests (vitest) for routing, deadlines, pause, escalation idempotency. Verify: tests
+pass; on /__debug, jumping +24h escalates overdue seed cases.
+PHASE 4 – Passenger report form (the 60-second flow)
+Phase 4. Build /report exactly per SPEC.md Section 8.2, then /report/success/:id (8.3).
+Single scrolling page; category tiles first; route combobox with type-ahead from the
+mapping CSV and "recent routes" chips; bus no. auto-uppercase; GPS button + stop
+combobox; "When" defaults to Just now; description with category quick-phrase chips;
+evidence upload (max 3, 10MB, thumbnails, camera capture on mobile); optional phone +
+consent; sticky full-width Submit.
+react-hook-form + zod validation, inline errors, aria-live.
+Stopwatch from first interaction; success page shows "Filed in N seconds".
+On submit: repository.create -> routing -> SLA deadlines -> notifier "Created".
+Success page: ref no. with copy button, QR code of /track/:id, assigned depot, expected
+response time, unrouted message variant. Verify: at 360px, complete a complaint in
+under 60s; screenshot both pages.
+PHASE 5 – Passenger tracking
+Phase 5. Build /track and /track/:id per SPEC.md Section 8.4.
+Lookup by ref no. + last 4 digits of phone (if phone was provided).
+Horizontal stepper with a red Escalated branch; passenger-safe timeline only (filter out
+internal notes and staff names -> "Depot officer").
+Actions: Add more info (when AWAITING_INFO -> resumes SLA), Reopen within 7 days
+of RESOLVED, optional 1-5 star rating. Verify: walk a seed complaint through statuses
+from /__debug and watch the track page.
+26
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+PHASE 6 – Depot console
+Phase 6. Build the depot console per SPEC.md Section 9 (9.1-9.6).
+/console/login mock: choose role (Depot/Regional) and depot; store in session.
+Guard: depot users can only open their own depot's cases; otherwise show a "Not your
+depot" page.
+Overview: KPI row, SLA alerts panel (warn + breach), today chart, category and toproutes breakdown.
+Inbox: table (cards on mobile) with columns from 9.3, default sort by SLA urgency, filters,
+saved-view tabs (Needs action / Mine / All open / Closed), bulk acknowledge and assign.
+Case detail: two-column layout, all facts, evidence lightbox, complainant card with
+MaskedPhone and "Contact via system" dialog, SLA panel with plain-language next
+escalation, timeline incl. internal notes, and every action in the 9.4 table with the required
+inputs. No delete button anywhere.
+Escalated tab and Analytics page (Recharts) per 9.5 and 9.6. Verify: acknowledge ->
+assign -> resolve a case; each step updates timeline, inbox, passenger track page and
+outbox.
+PHASE 7 – Regional console + public dashboard (privacy)
+Phase 7. Build SPEC.md Section 10.
+Regional inbox (level >= 1 in region, Depot column), regional case actions (take
+ownership, instruct depot, resolve, escalate to HQ, reassign depot), unrouted queue,
+depot comparison page.
+domain/redact.ts: buildPublicDataset() returning aggregates ONLY, following the 5 rules
+in 10.3 (drop PII, area buckets, bus-level only if verified, suppress groups < 3,
+counts/rates/averages only). Type the dashboard so it cannot receive raw Complaint
+objects.
+/dashboard: KPI cards, by category, by depot, by status (donut), trend line, depot x
+category heat table, filters, language switcher, "last updated" and the privacy note.
+Vitest: serialize dashboard data and assert no phone pattern, names, lat/lng or
+description text appear. Verify: tests pass; screenshot dashboard at 360px and 1440px.
+PHASE 8 – Demo control panel
+Phase 8. Build /demo per SPEC.md Section 11: clock controls (play/pause, speeds, jumps, reset),
+scenario buttons, notification outbox with a phone-style SMS thread view and an email list,
+data file status + re-import + reset to sample data, role quick-switch links (open in new tab),
+
+privacy checklist with pass/fail from the redaction tests, and an engine log of the last 50 tick
+results. Verify: run the full demo script in SPEC.md 13.1 steps 2-7 without reloading.
+PHASE 9 – Swap in organiser's real data
+Phase 9. I have placed the organiser's resource pack files in /public/data. Inspect each file's
+actual columns and formats. Update ONLY src/data/loaders.ts (and sla_rules/category
+mappers if needed) to map them into our types. Do not change domain types or components.
+Replace placeholder SLA rules with theirs. Load their redaction checklist into the /demo
+privacy section. Report any columns you could not map and any routes in sample complaints
+missing from the mapping CSV. Verify: dashboard is populated from their sample data; routing
+uses their CSV.
+PHASE 10 – Stretch goals + polish
+Phase 10. Implement SPEC.md Section 12 in this order, verifying each before the next:
+1. i18n with react-i18next (en, ml, hi, ta) for all UI, categories, quick phrases, validation and
+SMS templates; Noto Sans fonts; complainant.lang used for SMS.
+2. Duplicate detection (domain/duplicates.ts with fuse.js) on submit and in depot case
+detail, with merge.
+3. Trend alerts (domain/trends.ts) on depot overview, analytics, regional, and as aggregateonly items on the public dashboard. Then polish: loading skeletons, empty states, error
+boundaries, focus states, Lighthouse accessibility >= 90 on /report and /dashboard, no
+console errors. Finally re-run the full acceptance checklist in SPEC.md 13.2 and report
+pass/fail.
+27
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+14.3 Useful fix-up prompts WHEN SOMETHING BREAKS
+"The build fails. Run npm run build, read the full error, fix the root cause (not by disabling
+types or lint rules), and re-run until clean."
+"Open /report at 360px width in the browser, screenshot it, and list every layout problem
+you see. Then fix them."
+"Audit the whole app for any place that uses Date.now() or new Date() for business logic
+instead of the simulated clock and fix it."
+"Search the /dashboard render tree for any field that comes from a raw Complaint. There
+must be none. Prove it with the redaction test."
+"Time how many taps/fields it takes to submit a complaint and suggest how to cut it."
+
+28
+
+PS-03 · Grievance Reporting & Depot Escalation · Frontend spec
+Appendix A. Sample seed data shapes route_depot_map.csv route_no,route_name,depot_id
+45A,East Fort - Kazhakuttam,TVM-CTY 101,Thampanoor - Kovalam,TVM-CTY
+210,Ernakulam - Aluva,EKM-CTY 311,Kozhikode - Kannur,KKD-CTY
+depots.json [ { "id": "TVM-CTY", "name": "Thiruvananthapuram City", "region": "South",
+"officerName": "Depot Officer TVM", "email": "tvm@example.org", "phone": "0000000001" } ]
+sla_rules.json (PLACEHOLDER until organiser rules arrive) [ { "category":
+"UNSAFE_DRIVING", "ackWithinHours": 2, "resolveWithinHours": 24, "escalateTo": [ { "level":
+1, "role": "Regional Officer", "afterHours": 0 }, { "level": 2, "role": "Head Office", "afterHours": 24 }
+] }, { "category": "CLEANLINESS", "ackWithinHours": 12, "resolveWithinHours": 72,
+"escalateTo": [ { "level": 1, "role": "Regional Officer", "afterHours": 0 }, { "level": 2, "role": "Head
+Office", "afterHours": 48 } ] } ]
+Complaint (sample) { "id": "GRV-2026-000123", "createdAt": "2026-09-23T13:05:00Z",
+"incidentAt": "2026-09-23T12:50:00Z", "busNo": "KL-15-A-1234", "routeNo": "45A", "category":
+"UNSAFE_DRIVING", "location": { "stopName": "Pattom", "areaBucket":
+"Thiruvananthapuram" }, "description": "Driver overspeeding and using phone.", "evidence": [],
+"complainant": { "phone": "9876543221", "lang": "ml" }, "depotId": "TVM-CTY", "status":
+"ASSIGNED_TO_DEPOT", "escalationLevel": 0, "ackDeadline": "2026-09-23T15:05:00Z",
+"resolveDeadline": "2026-09-24T13:05:00Z", "slaPausedTotalMs": 0, "verified": false, "timeline":
+[] }
+Depot names, IDs, emails and phone numbers above are invented placeholders. Replace them
+with the organiser's directory.
+
+29
+
+
