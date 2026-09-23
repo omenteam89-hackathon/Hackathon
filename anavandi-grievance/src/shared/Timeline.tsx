@@ -1,5 +1,6 @@
 import { Lock } from 'lucide-react';
 import { cn } from '../lib/utils';
+import { useFormatters } from '../lib/formatters';
 
 export interface TimelineEvent {
   at: string;
@@ -16,6 +17,8 @@ interface TimelineProps {
 }
 
 export default function Timeline({ events, className }: TimelineProps) {
+  const { formatDate } = useFormatters();
+  
   return (
     <div className={cn("space-y-4", className)}>
       {events.map((event, idx) => (
@@ -27,7 +30,7 @@ export default function Timeline({ events, className }: TimelineProps) {
           <div className={cn("flex-1 pb-4", event.internal && "bg-amber-50 p-3 rounded-lg border border-amber-100")}>
             <div className="flex items-center gap-2 mb-1">
               <span className="font-semibold text-sm text-ink">{event.actorName || event.actor}</span>
-              <span className="text-xs text-muted">{new Date(event.at).toLocaleString()}</span>
+              <span className="text-xs text-muted">{formatDate(event.at)}</span>
               {event.internal && <Lock className="w-3 h-3 text-amber-600" />}
             </div>
             <p className="text-sm text-ink">{event.message}</p>

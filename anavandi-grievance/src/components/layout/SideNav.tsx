@@ -7,6 +7,7 @@ import { useSessionStore } from '../../store/useSessionStore';
 
 export default function SideNav() {
   const depotId = useSessionStore(s => s.depotId);
+  const role = useSessionStore(s => s.role);
   const complaintsMap = useComplaintStore(state => state.complaints);
   
   const openCount = useMemo(() => {
@@ -15,11 +16,15 @@ export default function SideNav() {
     ).length;
   }, [complaintsMap, depotId]);
 
-  const navItems = [
+  const navItems = role === 'DEPOT' ? [
     { icon: LayoutDashboard, label: 'Overview', to: '/console/depot', end: true },
     { icon: Inbox, label: 'Inbox', to: '/console/depot/inbox', badge: openCount },
     { icon: AlertTriangle, label: 'Escalated', to: '/console/depot/escalated' },
     { icon: BarChart3, label: 'Analytics', to: '/console/depot/analytics' },
+  ] : [
+    { icon: AlertTriangle, label: 'Escalated inbox', to: '/console/regional', end: true },
+    { icon: Inbox, label: 'Unrouted', to: '/console/unrouted' },
+    { icon: BarChart3, label: 'Depot comparison', to: '/console/regional/depots' },
   ];
 
   return (

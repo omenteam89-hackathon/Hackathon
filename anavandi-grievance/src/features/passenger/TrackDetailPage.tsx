@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import { repository } from '../../data/repository';
 import { useClockStore } from '../../store/useClockStore';
 import { useComplaintStore } from '../../store/useComplaintStore';
+import { useNotificationStore } from '../../store/useNotificationStore';
+import { useDataStore } from '../../store/useDataStore';
 import Timeline from '../../shared/Timeline';
 import StatusBadge from '../../shared/StatusBadge';
 import CategoryIcon from '../../shared/CategoryIcon';
@@ -15,6 +17,8 @@ export default function TrackDetailPage() {
   const { id } = useParams<{ id: string }>();
   const simNow = useClockStore(s => s.simNow);
   const complaint = useComplaintStore(s => id ? s.complaints[id] : null);
+  const depots = useDataStore(s => s.depots);
+  const addNotification = useNotificationStore(s => s.addNotification);
   const { categoryLabel, routeName, actorLabel, formatDate } = useFormatters();
   const [infoReply, setInfoReply] = useState('');
   
@@ -60,7 +64,12 @@ export default function TrackDetailPage() {
   const passengerTimeline = complaint.timeline
     .filter(t => !t.internal)
     .map(t => {
-      return { ...t, actorName: actorLabel(t.actor) } as TimelineEvent;
+      let actorNameDisplay = actorLabel(t.actor);
+      if (t.actor === 'DEPOT') actorNameDisplay = 'Assigned to a depot officer';
+      else if (t.actor === 'REGIONAL') actorNameDisplay = 'Assigned to a regional officer';
+      else if (t.actor === 'HQ') actorNameDisplay = 'Assigned to head office';
+      
+      return { ...t, actorName: actorNameDisplay } as TimelineEvent;
     });
 
   const handleSubmitInfo = () => {
@@ -86,6 +95,19 @@ export default function TrackDetailPage() {
       message: 'Passenger reopened the complaint'
     });
     repository.update(id, { status: 'REOPENED' });
+    
+    if (complaint.depotId) {
+      addNotification({
+        id: Math.random().toString(36).substring(7),
+        at: simNow,
+        channel: 'EMAIL',
+        to: depots.find(d => d.id === complaint.depotId)?.email || '',
+        audience: 'DEPOT',
+        complaintId: id,
+        template: 'CUSTOM',
+        body: `Passenger has reopened complaint ${id}.`
+      });
+    }
   };
 
   const isResolvedWithin7Days = () => {

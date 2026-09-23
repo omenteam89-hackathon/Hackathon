@@ -118,7 +118,7 @@ export default function ReportPage() {
           at: simNow,
           actor: 'SYSTEM' as const,
           type: 'ROUTED' as const,
-          message: `Routed to ${depots.find(d => d.id === depotId)?.name || depotId} depot using route ${data.routeNo}`
+          message: `Routed to ${depots.find(d => d.id === depotId)?.name || depotId} depot using route ${matchedRoute?.routeName || data.routeNo}`
         }] : [])
       ]
     });

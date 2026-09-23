@@ -113,25 +113,27 @@ export default function CaseDetailPage() {
     resetForms();
   };
 
+  const getDepotName = (dId?: string | null) => depots.find(d => d.id === dId)?.name || 'Depot';
+
   const resetForms = () => {
     setAssignee(''); setInfoQuestion(''); setResolveAction(''); setResolveNote(''); setRejectReason(''); setRejectNote(''); setTransferDepotId(''); setTransferReason(''); setInternalNote(''); setContactMessage('');
   };
 
   const onAcknowledge = () => {
-    handleAction({ status: 'ACKNOWLEDGED' }, { type: 'ACK', message: 'Case acknowledged by depot' }, 'Your complaint has been acknowledged by the depot.');
+    handleAction({ status: 'ACKNOWLEDGED' }, { type: 'ACK', message: 'Case acknowledged by depot' }, `Your complaint ${id} has been received by ${getDepotName(complaint.depotId)} depot.`);
   };
 
   const onAssign = () => {
     if (!assignee) return toast.error('Select a staff member');
-    handleAction({ status: 'IN_PROGRESS', assignedTo: assignee }, { type: 'ASSIGNED', message: `Assigned to ${assignee}` });
+    handleAction({ status: 'IN_PROGRESS', assignedTo: assignee }, { type: 'ASSIGNED', message: `Assigned to ${assignee}` }, `Your complaint ${id} is being looked into.`);
   };
 
   const onRequestInfo = () => {
-    handleAction({ status: 'AWAITING_INFO', slaPausedTotalMs: complaint.slaPausedTotalMs }, { type: 'INFO_REQUEST', message: `Requested info: ${infoQuestion}` }, `Additional information required for your complaint: ${infoQuestion}`);
+    handleAction({ status: 'AWAITING_INFO', slaPausedTotalMs: complaint.slaPausedTotalMs }, { type: 'INFO_REQUEST', message: `Requested info: ${infoQuestion}` }, `${getDepotName(complaint.depotId)} needs more details on ${id}.`);
   };
 
   const onResolve = () => {
-    handleAction({ status: 'RESOLVED' }, { type: 'RESOLVED', message: `Resolved (${resolveAction}): ${resolveNote}` }, `Your complaint has been resolved. Action: ${resolveAction}`);
+    handleAction({ status: 'RESOLVED' }, { type: 'RESOLVED', message: `Resolved (${resolveAction}): ${resolveNote}` }, `Your complaint ${id} has been resolved: ${resolveAction}. Not satisfied? Reopen within 7 days.`);
     
     if (role === 'REGIONAL' || role === 'HQ') {
       if (complaint.depotId) {
@@ -164,7 +166,7 @@ export default function CaseDetailPage() {
   };
 
   const onReject = () => {
-    handleAction({ status: 'REJECTED' }, { type: 'REJECTED', message: `Rejected (${rejectReason}): ${rejectNote}` }, `Your complaint was closed. Reason: ${rejectReason}`);
+    handleAction({ status: 'REJECTED' }, { type: 'REJECTED', message: `Rejected (${rejectReason}): ${rejectNote}` }, `Your complaint ${id} was closed: ${rejectReason}.`);
   };
 
   const onTransfer = () => {
@@ -394,10 +396,34 @@ export default function CaseDetailPage() {
                 <h3 className="font-semibold text-lg mb-4">Resolve Complaint</h3>
                 <select className={`w-full border rounded px-3 py-2 text-sm mb-1 ${!resolveAction ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-border focus:ring-brand'}`} value={resolveAction} onChange={e => setResolveAction(e.target.value)}>
                   <option value="">Select action taken...</option>
-                  <option value="Staff Warned">Staff Warned</option>
-                  <option value="Penalty Imposed">Penalty Imposed</option>
-                  <option value="Bus Repaired">Bus Repaired</option>
-                  <option value="Other">Other</option>
+                  {complaint.category === 'OVERCROWDING' ? (
+                    <>
+                      <option value="Extra trip added">Extra trip added</option>
+                      <option value="Schedule revised">Schedule revised</option>
+                    </>
+                  ) : complaint.category === 'CLEANLINESS' ? (
+                    <>
+                      <option value="Bus cleaned and inspected">Bus cleaned and inspected</option>
+                    </>
+                  ) : complaint.category === 'UNSAFE_DRIVING' ? (
+                    <>
+                      <option value="Driver counselled">Driver counselled</option>
+                      <option value="Disciplinary action">Disciplinary action</option>
+                    </>
+                  ) : complaint.category === 'MISSED_STOP' ? (
+                    <>
+                      <option value="Crew instructed to stop at all stops">Crew instructed to stop at all stops</option>
+                    </>
+                  ) : complaint.category === 'CONCESSION_DENIAL' ? (
+                    <>
+                      <option value="Refund arranged">Refund arranged</option>
+                      <option value="Conductor instructed on concession rules">Conductor instructed on concession rules</option>
+                    </>
+                  ) : (
+                    <>
+                      <option value="Issue addressed">Issue addressed</option>
+                    </>
+                  )}
                 </select>
                 {!resolveAction && <p className="text-red-500 text-xs mb-3">Choose the action taken</p>}
                 
