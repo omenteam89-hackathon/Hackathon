@@ -10,6 +10,7 @@ import { loadAppData } from '../../data/loaders';
 import { repository } from '../../data/repository';
 import { useClockStore } from '../../store/useClockStore';
 import { generateComplaintId } from '../../domain/ids';
+import { useNotificationStore } from '../../store/useNotificationStore';
 import type { Category, RouteDepotMap, CategoryId, SlaRule, Depot } from '../../domain/types';
 
 const formSchema = z.object({
@@ -18,6 +19,7 @@ const formSchema = z.object({
   busNo: z.string().optional(),
   location: z.string().min(1, 'Stop / location is required'),
   description: z.string().min(10, 'Description must be at least 10 characters'),
+  phone: z.string().trim().regex(/^([6-9]\d{9})?$/, 'Enter a 10-digit mobile number or leave it empty').optional(),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -43,6 +45,7 @@ export default function ReportPage() {
       busNo: '',
       location: '',
       description: '',
+      phone: '',
     }
   });
 
@@ -99,7 +102,7 @@ export default function ReportPage() {
       location: { stopName: data.location },
       description: data.description,
       evidence: [],
-      complainant: { lang: 'en' }, // Defaulting to en for now
+      complainant: data.phone ? { lang: 'en', phone: data.phone.trim() } : { lang: 'en' },
       depotId,
       status,
       escalationLevel: 0,
@@ -123,6 +126,21 @@ export default function ReportPage() {
       ]
     });
 
+    if (data.phone) {
+      const depotName = depots.find(d => d.id === depotId)?.name;
+      useNotificationStore.getState().addNotification({
+        id: Math.random().toString(36).substring(2, 9),
+        at: simNow,
+        channel: 'SMS',
+        to: data.phone.trim(),
+        audience: 'PASSENGER',
+        complaintId: id,
+        template: 'CREATED',
+        body: depotName
+          ? `KSRTC Grievance: complaint ${id} received and sent to ${depotName} depot. Track it with this reference number.`
+          : `KSRTC Grievance: complaint ${id} received. We are finding the right depot.`,
+      });
+    }
     navigate(`/report/success/${id}`);
   };
 
@@ -262,6 +280,21 @@ export default function ReportPage() {
             placeholder="Briefly describe what happened..."
           />
           {errors.description && <p className="text-brand text-xs mt-1">{errors.description.message}</p>}
+        </div>
+
+        {/* Phone (optional) */}
+        <div>
+          <label className="block text-sm font-medium mb-1">Mobile number for updates (optional)</label>
+          <input
+            {...register('phone')}
+            type="tel"
+            inputMode="numeric"
+            maxLength={10}
+            className="w-full border border-border rounded px-3 py-2 text-sm focus:outline-none focus:border-primary"
+            placeholder="10-digit mobile number"
+          />
+          <p className="text-muted-foreground text-xs mt-1">Only used to send you SMS updates. Never shown publicly.</p>
+          {errors.phone && <p className="text-brand text-xs mt-1">{errors.phone.message}</p>}
         </div>
 
         <button 

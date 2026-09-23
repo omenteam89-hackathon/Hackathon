@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 import type { Notification } from '../domain/types';
 
 interface NotificationState {
@@ -7,12 +8,16 @@ interface NotificationState {
   clear: () => void;
 }
 
-export const useNotificationStore = create<NotificationState>((set) => ({
-  notifications: [],
-  
-  addNotification: (notification: Notification) => set((state) => ({
-    notifications: [notification, ...state.notifications]
-  })),
-  
-  clear: () => set({ notifications: [] })
-}));
+// Persisted so the outbox survives page reloads during the demo.
+export const useNotificationStore = create<NotificationState>()(
+  persist(
+    (set) => ({
+      notifications: [],
+      addNotification: (notification: Notification) => set((state) => ({
+        notifications: [notification, ...state.notifications].slice(0, 200),
+      })),
+      clear: () => set({ notifications: [] }),
+    }),
+    { name: 'grievance-notifications-v1' }
+  )
+);

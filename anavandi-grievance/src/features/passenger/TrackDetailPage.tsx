@@ -64,12 +64,16 @@ export default function TrackDetailPage() {
   const passengerTimeline = complaint.timeline
     .filter(t => !t.internal)
     .map(t => {
+      // Passengers never see staff names: generic role labels only.
       let actorNameDisplay = actorLabel(t.actor);
-      if (t.actor === 'DEPOT') actorNameDisplay = 'Assigned to a depot officer';
-      else if (t.actor === 'REGIONAL') actorNameDisplay = 'Assigned to a regional officer';
-      else if (t.actor === 'HQ') actorNameDisplay = 'Assigned to head office';
-      
-      return { ...t, actorName: actorNameDisplay } as TimelineEvent;
+      if (t.actor === 'DEPOT') actorNameDisplay = 'Depot officer';
+      else if (t.actor === 'REGIONAL') actorNameDisplay = 'Regional officer';
+      else if (t.actor === 'HQ') actorNameDisplay = 'Head office';
+
+      let message = t.message;
+      if (t.type === 'ASSIGNED') message = 'Assigned to a depot officer for action';
+
+      return { ...t, actorName: actorNameDisplay, message } as TimelineEvent;
     });
 
   const handleSubmitInfo = () => {
