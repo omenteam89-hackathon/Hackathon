@@ -22,6 +22,8 @@ export default function CaseDetailPage() {
   const { id } = useParams<{ id: string }>();
   const simNow = useClockStore(s => s.simNow);
   const sessionDepotId = useSessionStore(s => s.depotId);
+  const sessionRegionId = useSessionStore(s => s.regionId);
+  const role = useSessionStore(s => s.role);
   const addNotification = useNotificationStore(s => s.addNotification);
   
   const complaintsMap = useComplaintStore(state => state.complaints);
@@ -31,7 +33,7 @@ export default function CaseDetailPage() {
   const complaint = id ? complaintsMap[id] : null;
 
   // Dialog states
-  const [activeDialog, setActiveDialog] = useState<null | 'assign' | 'requestInfo' | 'resolve' | 'reject' | 'transfer' | 'note' | 'contact'>(null);
+  const [activeDialog, setActiveDialog] = useState<null | 'assign' | 'requestInfo' | 'resolve' | 'reject' | 'transfer' | 'note' | 'contact' | 'escalateHQ'>(null);
   
   // Form states
   const [assignee, setAssignee] = useState('');
@@ -46,12 +48,27 @@ export default function CaseDetailPage() {
   const [contactMessage, setContactMessage] = useState('');
 
   if (!complaint) return <div className="p-4 sm:p-6 text-muted">Case not found</div>;
-  if (complaint.depotId !== sessionDepotId) {
+
+  let hasAccess = false;
+  if (role === 'HQ') {
+    hasAccess = true;
+  } else if (role === 'REGIONAL') {
+    const regionDepots = depots.filter(d => d.region === sessionRegionId).map(d => d.id);
+    if (complaint.depotId && regionDepots.includes(complaint.depotId)) {
+      hasAccess = true;
+    }
+  } else if (role === 'DEPOT') {
+    if (complaint.depotId === sessionDepotId) {
+      hasAccess = true;
+    }
+  }
+
+  if (!hasAccess) {
     return (
       <div className="p-6">
         <div className="bg-red-50 border border-red-100 text-brand p-4 rounded-lg flex items-center gap-2">
           <AlertCircle className="w-5 h-5" />
-          <span>This complaint belongs to another depot.</span>
+          <span>You do not have access to view this complaint.</span>
         </div>
       </div>
     );
@@ -63,12 +80,18 @@ export default function CaseDetailPage() {
   const handleAction = (statusUpdate: Partial<typeof complaint>, timelineEvent: { type: TimelineEvent['type'], message: string, internal?: boolean }, notificationBody?: string) => {
     if (!id) return;
     
+    const actor = role === 'DEPOT' ? 'DEPOT' : role === 'REGIONAL' ? 'REGIONAL' : 'HQ';
+    let actorName = '';
+    if (role === 'DEPOT') actorName = depots.find(d => d.id === sessionDepotId)?.name || 'Depot';
+    else if (role === 'REGIONAL') actorName = 'Regional Officer';
+    else if (role === 'HQ') actorName = 'Head Office';
+
     // Update repository
     repository.update(id, statusUpdate);
     repository.addTimelineEvent(id, {
       at: simNow,
-      actor: 'DEPOT',
-      actorName: depots.find(d => d.id === sessionDepotId)?.name,
+      actor,
+      actorName,
       ...timelineEvent
     });
 
@@ -109,6 +132,35 @@ export default function CaseDetailPage() {
 
   const onResolve = () => {
     handleAction({ status: 'RESOLVED' }, { type: 'RESOLVED', message: `Resolved (${resolveAction}): ${resolveNote}` }, `Your complaint has been resolved. Action: ${resolveAction}`);
+    
+    if (role === 'REGIONAL' || role === 'HQ') {
+      if (complaint.depotId) {
+         addNotification({
+           id: Math.random().toString(36).substring(7),
+           at: simNow,
+           channel: 'EMAIL',
+           to: depots.find(d => d.id === complaint.depotId)?.email || '',
+           audience: 'DEPOT',
+           complaintId: complaint.id,
+           template: 'CUSTOM',
+           body: `Case ${complaint.id} was resolved by ${role === 'HQ' ? 'Head Office' : 'Regional Officer'}.`
+         });
+      }
+    }
+  };
+
+  const onEscalateHQ = () => {
+    handleAction({ escalationLevel: 2 }, { type: 'ESCALATED', message: 'Escalated to Head Office for further review' });
+    addNotification({
+      id: Math.random().toString(36).substring(7),
+      at: simNow,
+      channel: 'EMAIL',
+      to: 'hq@ksrtc.example.com',
+      audience: 'HQ',
+      complaintId: complaint.id,
+      template: 'CUSTOM',
+      body: `Case ${complaint.id} has been escalated to Head Office.`
+    });
   };
 
   const onReject = () => {
@@ -236,45 +288,67 @@ export default function CaseDetailPage() {
             <h3 className="font-semibold text-ink mb-4">Actions</h3>
             <div className="space-y-2">
               
-              {complaint.status === 'ASSIGNED_TO_DEPOT' && (
-                <button onClick={onAcknowledge} className="w-full py-2 bg-primary text-white text-sm font-medium rounded hover:opacity-90">
-                  Acknowledge
-                </button>
-              )}
-
-              {['ACKNOWLEDGED', 'IN_PROGRESS'].includes(complaint.status) && (
+              {role === 'DEPOT' && (
                 <>
-                  <button onClick={() => setActiveDialog('assign')} className="w-full py-2 bg-surface border border-border text-ink text-sm font-medium rounded hover:bg-muted/5">
-                    Assign to staff
-                  </button>
-                  <button onClick={() => setActiveDialog('requestInfo')} className="w-full py-2 bg-surface border border-border text-ink text-sm font-medium rounded hover:bg-muted/5">
-                    Request info
-                  </button>
+                  {complaint.status === 'ASSIGNED_TO_DEPOT' && (
+                    <button onClick={onAcknowledge} className="w-full py-2 bg-primary text-white text-sm font-medium rounded hover:opacity-90">
+                      Acknowledge
+                    </button>
+                  )}
+
+                  {['ACKNOWLEDGED', 'IN_PROGRESS'].includes(complaint.status) && (
+                    <>
+                      <button onClick={() => setActiveDialog('assign')} className="w-full py-2 bg-surface border border-border text-ink text-sm font-medium rounded hover:bg-muted/5">
+                        Assign to staff
+                      </button>
+                      <button onClick={() => setActiveDialog('requestInfo')} className="w-full py-2 bg-surface border border-border text-ink text-sm font-medium rounded hover:bg-muted/5">
+                        Request info
+                      </button>
+                    </>
+                  )}
+
+                  {['IN_PROGRESS', 'ESCALATED'].includes(complaint.status) && (
+                    <button onClick={() => setActiveDialog('resolve')} className="w-full py-2 bg-green-600 text-white text-sm font-medium rounded hover:opacity-90">
+                      Resolve
+                    </button>
+                  )}
+
+                  {!['RESOLVED', 'REJECTED'].includes(complaint.status) && (
+                    <>
+                      <button onClick={() => setActiveDialog('reject')} className="w-full py-2 bg-surface border border-border text-brand text-sm font-medium rounded hover:bg-muted/5 mt-4">
+                        Reject
+                      </button>
+                      <button onClick={() => setActiveDialog('transfer')} className="w-full py-2 bg-surface border border-border text-ink text-sm font-medium rounded hover:bg-muted/5">
+                        Transfer depot
+                      </button>
+                    </>
+                  )}
+
+                  <div className="pt-4 mt-4 border-t border-border">
+                    <button onClick={() => setActiveDialog('note')} className="w-full py-2 bg-amber-50 border border-amber-200 text-amber-800 text-sm font-medium rounded hover:bg-amber-100 flex justify-center items-center gap-1.5">
+                      <Lock className="w-3.5 h-3.5" /> Add internal note
+                    </button>
+                  </div>
                 </>
               )}
 
-              {['IN_PROGRESS', 'ESCALATED'].includes(complaint.status) && (
-                <button onClick={() => setActiveDialog('resolve')} className="w-full py-2 bg-green-600 text-white text-sm font-medium rounded hover:opacity-90">
-                  Resolve
-                </button>
-              )}
-
-              {!['RESOLVED', 'REJECTED'].includes(complaint.status) && (
+              {(role === 'REGIONAL' || role === 'HQ') && !['RESOLVED', 'REJECTED'].includes(complaint.status) && (
                 <>
-                  <button onClick={() => setActiveDialog('reject')} className="w-full py-2 bg-surface border border-border text-brand text-sm font-medium rounded hover:bg-muted/5 mt-4">
-                    Reject
+                  <button onClick={() => setActiveDialog('resolve')} className="w-full py-2 bg-green-600 text-white text-sm font-medium rounded hover:opacity-90 mb-2">
+                    Resolve
                   </button>
-                  <button onClick={() => setActiveDialog('transfer')} className="w-full py-2 bg-surface border border-border text-ink text-sm font-medium rounded hover:bg-muted/5">
-                    Transfer depot
-                  </button>
+                  {complaint.escalationLevel < 2 && (
+                    <button onClick={() => setActiveDialog('escalateHQ')} className="w-full py-2 bg-brand text-white text-sm font-medium rounded hover:opacity-90">
+                      Escalate to Head Office
+                    </button>
+                  )}
+                  <div className="pt-4 mt-4 border-t border-border">
+                    <button onClick={() => setActiveDialog('note')} className="w-full py-2 bg-amber-50 border border-amber-200 text-amber-800 text-sm font-medium rounded hover:bg-amber-100 flex justify-center items-center gap-1.5">
+                      <Lock className="w-3.5 h-3.5" /> Add internal note
+                    </button>
+                  </div>
                 </>
               )}
-
-              <div className="pt-4 mt-4 border-t border-border">
-                <button onClick={() => setActiveDialog('note')} className="w-full py-2 bg-amber-50 border border-amber-200 text-amber-800 text-sm font-medium rounded hover:bg-amber-100 flex justify-center items-center gap-1.5">
-                  <Lock className="w-3.5 h-3.5" /> Add internal note
-                </button>
-              </div>
 
             </div>
           </div>
@@ -394,6 +468,17 @@ export default function CaseDetailPage() {
                 <div className="flex justify-end gap-2">
                   <button onClick={() => setActiveDialog(null)} className="px-4 py-2 text-sm font-medium bg-surface border border-border rounded">Cancel</button>
                   <button onClick={onContact} className="px-4 py-2 text-sm font-medium bg-primary text-white rounded">Send SMS</button>
+                </div>
+              </>
+            )}
+
+            {activeDialog === 'escalateHQ' && (
+              <>
+                <h3 className="font-semibold text-lg mb-4 text-brand">Escalate to Head Office</h3>
+                <p className="text-sm text-ink mb-4">Are you sure you want to escalate this complaint to Head Office? This will mark it as a Level 2 escalation and notify the central HQ team.</p>
+                <div className="flex justify-end gap-2 mt-4">
+                  <button onClick={() => setActiveDialog(null)} className="px-4 py-2 text-sm font-medium bg-surface border border-border rounded">Cancel</button>
+                  <button onClick={onEscalateHQ} className="px-4 py-2 text-sm font-medium bg-brand text-white rounded">Escalate</button>
                 </div>
               </>
             )}
