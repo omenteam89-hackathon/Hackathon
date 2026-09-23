@@ -57,6 +57,7 @@ const router = createBrowserRouter([
       { path: 'track', element: <TrackPage /> },
       { path: 'track/:id', element: <TrackDetailPage /> },
       { path: 'dashboard', element: <PublicDashboardPage /> },
+      { path: 'demo', element: <DemoPanel /> },
     ],
   },
   {
@@ -92,10 +93,6 @@ const router = createBrowserRouter([
       { path: 'regional/depots', element: <DepotComparePage /> },
       { path: 'unrouted', element: <UnroutedPage /> },
     ],
-  },
-  {
-    path: '/demo',
-    element: <DemoPanel />,
   },
   {
     path: '/__components',

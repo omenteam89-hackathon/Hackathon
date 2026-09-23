@@ -1,5 +1,6 @@
 import { cn } from '../lib/utils';
 import { Clock } from 'lucide-react';
+import { useClockStore } from '../store/useClockStore';
 
 interface SlaTimerProps {
   deadline: string;
@@ -8,10 +9,26 @@ interface SlaTimerProps {
 }
 
 export default function SlaTimer({ deadline, pausedAt, className }: SlaTimerProps) {
-  // Static for now, Phase 3 will make it live
-  let state = 'warn' as 'ok' | 'warn' | 'breach';
-  console.log(deadline, pausedAt); // 'ok' | 'warn' | 'breach'
-  const timeText = '2h 15m left';
+  const simNow = useClockStore(s => s.simNow);
+  
+  const now = pausedAt ? new Date(pausedAt) : new Date(simNow);
+  const target = new Date(deadline);
+  const diffMs = target.getTime() - now.getTime();
+  
+  let state = 'ok' as 'ok' | 'warn' | 'breach';
+  if (diffMs < 0) {
+    state = 'breach';
+  } else if (diffMs < 2 * 60 * 60 * 1000) { // warn if < 2h
+    state = 'warn';
+  }
+  
+  const absDiff = Math.abs(diffMs);
+  const hours = Math.floor(absDiff / (1000 * 60 * 60));
+  const mins = Math.floor((absDiff % (1000 * 60 * 60)) / (1000 * 60));
+  
+  const timeText = diffMs < 0 
+    ? `${hours}h ${mins}m overdue`
+    : `${hours}h ${mins}m left`;
 
   return (
     <div className={cn(
@@ -22,7 +39,7 @@ export default function SlaTimer({ deadline, pausedAt, className }: SlaTimerProp
       className
     )}>
       <Clock className="w-3.5 h-3.5" />
-      {timeText}
+      {pausedAt ? `Paused: ${timeText}` : timeText}
     </div>
   );
 }

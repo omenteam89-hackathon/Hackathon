@@ -4,14 +4,15 @@ import { useComplaintStore } from '../../store/useComplaintStore';
 import { useSessionStore } from '../../store/useSessionStore';
 import { useDataStore } from '../../store/useDataStore';
 import StatusBadge from '../../shared/StatusBadge';
-import EmptyState from '../../shared/EmptyState';
-import { Inbox } from 'lucide-react';
-import { format } from 'date-fns';
+import CategoryIcon from '../../shared/CategoryIcon';
+import EscalationLevelChip from '../../shared/EscalationLevelChip';
+import { formatAppDate } from '../../lib/utils';
 
 export default function InboxPage() {
   const depotId = useSessionStore(s => s.depotId);
   const complaintsMap = useComplaintStore(state => state.complaints);
   const routeMap = useDataStore(state => state.routeMap);
+  const categories = useDataStore(state => state.categories);
   
   const inbox = useMemo(() => {
     return Object.values(complaintsMap)
@@ -19,44 +20,67 @@ export default function InboxPage() {
       .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
   }, [complaintsMap, depotId]);
 
-  if (inbox.length === 0) {
-    return <EmptyState icon={Inbox} title="No complaints yet" hint="There are no open complaints in your inbox." />;
-  }
-
   return (
-    <div className="space-y-4">
-      <h1 className="text-2xl font-semibold text-ink">Inbox</h1>
-      <div className="bg-white border border-border rounded-lg overflow-x-auto shadow-sm">
-        <table className="w-full text-left text-sm border-collapse">
-          <thead>
-            <tr className="bg-muted/5 border-b border-border">
-              <th className="px-3 py-2 font-semibold">ID</th>
-              <th className="px-3 py-2 font-semibold">Created</th>
-              <th className="px-3 py-2 font-semibold">Status</th>
-              <th className="px-3 py-2 font-semibold">Category</th>
-              <th className="px-3 py-2 font-semibold">Route</th>
-              <th className="px-3 py-2 font-semibold">Action</th>
+    <div className="space-y-6">
+      <div className="flex justify-between items-end">
+        <div>
+          <h1 className="text-2xl font-semibold text-ink">Action Inbox</h1>
+          <p className="text-sm text-muted">Complaints requiring depot action</p>
+        </div>
+      </div>
+
+      <div className="bg-white border border-border rounded-lg shadow-sm overflow-hidden">
+        <table className="w-full text-left text-sm whitespace-nowrap">
+          <thead className="bg-surface border-b border-border text-muted">
+            <tr>
+              <th className="px-4 py-3 font-medium">Reference</th>
+              <th className="px-4 py-3 font-medium">Category</th>
+              <th className="px-4 py-3 font-medium">Route</th>
+              <th className="px-4 py-3 font-medium">Status</th>
+              <th className="px-4 py-3 font-medium">Submitted</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="divide-y divide-border">
             {inbox.map(c => {
               const routeInfo = routeMap.find(r => r.routeNo === c.routeNo);
               const displayRoute = routeInfo ? routeInfo.routeName || c.routeNo : c.routeNo;
+              const catInfo = categories.find(cat => cat.id === c.category);
+              const displayCategory = catInfo ? catInfo.label.en : c.category.toLowerCase().replace('_', ' ');
+              
               return (
-                <tr key={c.id} className="border-b border-border hover:bg-muted/5">
-                  <td className="px-3 py-2 font-mono text-xs">{c.id}</td>
-                  <td className="px-3 py-2 whitespace-nowrap">{format(new Date(c.createdAt), 'dd MMM, p')}</td>
-                  <td className="px-3 py-2"><StatusBadge status={c.status} /></td>
-                  <td className="px-3 py-2">{c.category}</td>
-                  <td className="px-3 py-2">{displayRoute}</td>
-                  <td className="px-3 py-2">
-                    <Link to={`/console/depot/case/${c.id}`} className="text-primary hover:underline font-medium">View</Link>
+                <tr key={c.id} className="hover:bg-muted/5 transition-colors group">
+                  <td className="px-4 py-3">
+                    <Link to={`/console/depot/case/${c.id}`} className="font-mono text-primary font-medium group-hover:underline">
+                      {c.id}
+                    </Link>
+                  </td>
+                  <td className="px-4 py-3 flex items-center gap-2">
+                    <CategoryIcon category={c.category} className="w-6 h-6 p-1 rounded" />
+                    <span className="capitalize">{displayCategory}</span>
+                  </td>
+                  <td className="px-4 py-3 text-ink">
+                    {displayRoute}
+                  </td>
+                  <td className="px-4 py-3">
+                    <div className="flex items-center gap-2">
+                      <StatusBadge status={c.status} />
+                      <EscalationLevelChip level={c.escalationLevel} />
+                    </div>
+                  </td>
+                  <td className="px-4 py-3 text-muted">
+                    {formatAppDate(c.createdAt)}
                   </td>
                 </tr>
               );
             })}
           </tbody>
         </table>
+        
+        {inbox.length === 0 && (
+          <div className="p-12 text-center text-muted">
+            No active cases in your inbox.
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,34 +1,33 @@
 import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Check, Copy, Loader2, ArrowRight } from 'lucide-react';
-import { repository } from '../../data/repository';
 import { loadAppData } from '../../data/loaders';
-import type { Complaint, Depot } from '../../domain/types';
+import { useComplaintStore } from '../../store/useComplaintStore';
+import { formatAppDate } from '../../lib/utils';
+import type { Depot } from '../../domain/types';
 
 export default function ConfirmationPage() {
   const { id } = useParams<{ id: string }>();
-  const [complaint, setComplaint] = useState<Complaint | null>(null);
+  const complaint = useComplaintStore(s => id ? s.complaints[id] : null);
   const [depot, setDepot] = useState<Depot | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!id) return;
-    const c = repository.get(id);
-    if (c) {
-      setComplaint(c);
-      if (c.depotId) {
+    if (!complaint) {
+      setLoading(false);
+      return;
+    }
+    
+    if (complaint.depotId) {
         loadAppData().then(res => {
-          const d = res.data.depots.find(d => d.id === c.depotId);
+          const d = res.data.depots.find(d => d.id === complaint.depotId);
           if (d) setDepot(d);
           setLoading(false);
         });
       } else {
         setLoading(false);
       }
-    } else {
-      setLoading(false);
-    }
-  }, [id]);
+  }, [complaint?.depotId]);
 
   const copyId = () => {
     if (id) {
@@ -52,11 +51,6 @@ export default function ConfirmationPage() {
       </div>
     );
   }
-
-  const formatDeadline = (iso: string) => {
-    const d = new Date(iso);
-    return d.toLocaleString('en-US', { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' });
-  };
 
   return (
     <div className="max-w-md mx-auto bg-white p-8 rounded-lg border border-border text-center">
@@ -87,7 +81,7 @@ export default function ConfirmationPage() {
             <>
               <p className="font-medium text-blue-900 mb-1">Assigned to: {depot.name} depot</p>
               <p className="text-sm text-blue-800">
-                Depot must respond by: <span className="font-semibold">{formatDeadline(complaint.ackDeadline)}</span>
+                Depot must respond by: <span className="font-semibold">{formatAppDate(complaint.ackDeadline)}</span>
               </p>
             </>
           ) : (

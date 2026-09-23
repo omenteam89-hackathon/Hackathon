@@ -23,7 +23,7 @@ export default function SideNav() {
   ];
 
   return (
-    <nav className="w-64 bg-white border-r border-border h-[calc(100vh-3.5rem)] sticky top-14 hidden md:flex flex-col">
+    <nav className="w-64 bg-white border-r border-border h-full hidden md:flex flex-col">
       <div className="p-4 space-y-1 flex-1">
         {navItems.map((item) => (
           <NavLink

@@ -10,6 +10,7 @@ export default function DebugPage() {
   const complaintsMap = useComplaintStore(state => state.complaints);
   const setRouteMap = useDataStore(state => state.setRouteMap);
   const setDepots = useDataStore(state => state.setDepots);
+  const setCategories = useDataStore(state => state.setCategories);
   
   const complaints = useMemo(() => Object.values(complaintsMap), [complaintsMap]);
 
@@ -19,6 +20,7 @@ export default function DebugPage() {
       loadAppData().then((res) => {
         setRouteMap(res.data.routeMap);
         setDepots(res.data.depots);
+        setCategories(res.data.categories);
         const currentComplaints = repository.list();
         if (currentComplaints.length === 0) {
           repository.seed(res.data.complaints);

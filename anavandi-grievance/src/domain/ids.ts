@@ -1,24 +1,24 @@
-const COUNTER_KEY = 'anavandi_id_counter';
+import { useComplaintStore } from '../store/useComplaintStore';
 
 export function generateComplaintId(): string {
   const currentYear = new Date().getFullYear();
-  let counter = 1;
+  const complaints = useComplaintStore.getState().complaints;
   
-  const stored = localStorage.getItem(COUNTER_KEY);
-  if (stored) {
-    const parsed = parseInt(stored, 10);
-    if (!isNaN(parsed)) {
-      counter = parsed + 1;
+  let maxSuffix = 0;
+  for (const id of Object.keys(complaints)) {
+    if (id.startsWith(`GRV-${currentYear}-`)) {
+      const suffix = parseInt(id.split('-')[2], 10);
+      if (!isNaN(suffix) && suffix > maxSuffix) {
+        maxSuffix = suffix;
+      }
     }
   }
   
-  localStorage.setItem(COUNTER_KEY, counter.toString());
-  
-  // Format: GRV-YYYY-NNNNNN
+  const counter = maxSuffix + 1;
   const paddedCounter = counter.toString().padStart(6, '0');
   return `GRV-${currentYear}-${paddedCounter}`;
 }
 
 export function resetIdCounter(): void {
-  localStorage.removeItem(COUNTER_KEY);
+  // No longer needed as it calculates dynamically, keeping for compatibility
 }

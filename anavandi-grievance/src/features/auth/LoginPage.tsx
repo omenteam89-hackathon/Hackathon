@@ -1,8 +1,46 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../components/ui/card';
-import { Link } from 'react-router-dom';
-import { Bus } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Bus, Loader2 } from 'lucide-react';
+import { useDataStore } from '../../store/useDataStore';
+import { useSessionStore } from '../../store/useSessionStore';
+import { useComplaintStore } from '../../store/useComplaintStore';
+import { loadAppData } from '../../data/loaders';
+import { repository } from '../../data/repository';
 
 export default function LoginPage() {
+  const navigate = useNavigate();
+  const depots = useDataStore(s => s.depots);
+  const setDepotId = useSessionStore(s => s.setDepotId);
+  const setRole = useSessionStore(s => s.setRole);
+  const isLoaded = useComplaintStore(s => s.isLoaded);
+  
+  const [selectedDepot, setSelectedDepot] = useState('TVM-CTY');
+
+  useEffect(() => {
+    if (!isLoaded) {
+      loadAppData().then((res) => {
+        useDataStore.getState().setRouteMap(res.data.routeMap);
+        useDataStore.getState().setDepots(res.data.depots);
+        useDataStore.getState().setCategories(res.data.categories);
+        const currentComplaints = repository.list();
+        if (currentComplaints.length === 0) {
+          repository.seed(res.data.complaints);
+          console.log(`Loaded ${res.data.complaints.length} complaints`);
+        } else {
+          useComplaintStore.setState({ isLoaded: true });
+        }
+      });
+    }
+  }, [isLoaded]);
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!selectedDepot) return;
+    setDepotId(selectedDepot);
+    setRole('DEPOT');
+    navigate('/console/depot');
+  };
   return (
     <div className="min-h-screen bg-bg flex flex-col font-sans">
       <header className="bg-brand text-white shadow-sm sticky top-0 z-10 border-b border-brand">
@@ -21,15 +59,33 @@ export default function LoginPage() {
             <CardDescription className="text-muted">Enter your credentials to access the console</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="text-center p-6 bg-muted/10 rounded-lg text-muted text-sm border border-dashed border-border">
-              Login Form Placeholder
-            </div>
-            
-            <div className="text-center mt-4">
-              <Link to="/console/depot" className="text-sm text-brand hover:underline font-medium">
-                Skip to Console (Dev) &rarr;
-              </Link>
-            </div>
+            {isLoaded && depots.length > 0 ? (
+              <form onSubmit={handleLogin} className="space-y-4">
+                <div className="space-y-2 text-left">
+                  <label className="text-sm font-medium text-ink">Select Depot</label>
+                  <select 
+                    className="w-full border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-brand"
+                    value={selectedDepot}
+                    onChange={(e) => setSelectedDepot(e.target.value)}
+                    required
+                  >
+                    {depots.map(d => (
+                      <option key={d.id} value={d.id}>{d.name} ({d.id})</option>
+                    ))}
+                  </select>
+                </div>
+                <button 
+                  type="submit" 
+                  className="w-full py-2 bg-brand text-white font-medium rounded hover:opacity-90 transition-opacity"
+                >
+                  Access Console
+                </button>
+              </form>
+            ) : (
+              <div className="py-8 flex justify-center text-muted">
+                <Loader2 className="w-6 h-6 animate-spin" />
+              </div>
+            )}
           </CardContent>
         </Card>
       </main>
